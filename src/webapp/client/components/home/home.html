@@ -1,0 +1,281 @@
+<div class="website-wrapper">
+  <header class="main-header-section-home">
+    <div class="main-header-section">
+      <div class="container container-full">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-auto logo">
+            <a href="/">
+              <img src="../../../../assets/img/logo.png" alt="EnergieQ">
+              <label class="logo-text-part">is onderdeel van EnergieQ Groep B.V.</label>
+              <!-- <span>Energie<i>Q</i></span> -->
+            </a>
+          </div>
+   
+          <div class="col top-web-nav-wrap hide-on-767">
+            <ul class="top-web-nav">
+              <li><a ui-sref="home" ui-sref-active="active">home</a></li>
+              <li><a ui-sref="about-us" ui-sref-active="active">over ons</a></li> 
+              <li><a ui-sref="privacy-statement" ui-sref-active="active">privacy reglement</a></li>
+              <li><a ui-sref="references" ui-sref-active="active">referenties</a></li>
+              <li><a ui-sref="blog" ui-sref-active="active">blog</a></li>
+              <li><a ui-sref="question-and-answer" ui-sref-active="active">veelgestelde vragen</a></li>
+              <li><a ui-sref="contact-us" ui-sref-active="active">contact</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-auto nav-right text-right login-btn-set"> 
+            <div layout="row" layout-align="end center"> 
+            <!-- <md-menu md-position-mode="target-right target" class="mr-2 language-btn">
+              <div layout="row" layout-align="center center" class="user-setting-toggle"> 
+                <md-button aria-label="Open demo menu" class="md-icon-button md-primary eq-btn-light" ng-click="$mdMenu.open($event)">
+                  <span>EN</span>
+                </md-button>
+              </div>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button ng-click="nav.announceClick($index)">
+                    <div layout="row" flex> 
+                      <p flex>EN</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button>
+                    <div layout="row" flex> 
+                      <p flex>NL</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu> -->
+            <md-button class="eq-btn-secondary auto-width md-button hide-on-767" ui-sref="login">inloggen</md-button> 
+            <!-- <md-button class="eq-btn-secondary auto-width md-button hide-on-767" ui-sref="login">Login Candidate</md-button>  -->
+            
+            <md-menu class="show-on-767" md-position-mode="target-right target">
+              <div layout="row" layout-align="center center" class="user-setting-toggle">
+                  
+                <md-button ng-click="$mdMenu.open($event)" aria-label="Open demo menu" class="md-icon-button md-primary eq-btn-dark" >
+                  <i class="material-icons">menu</i>
+                </md-button>
+  
+              </div>
+              <md-menu-content width="3">    
+
+                <md-menu-item>
+                  <md-button ui-sref="home">
+                    <div layout="row" flex>
+                      <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                      <p flex>home</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ui-sref="about-us">
+                    <div layout="row" flex>
+                      <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                      <p flex>over ons</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ui-sref="privacy-statemen">
+                    <div layout="row" flex>
+                      <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                      <p flex>privacy reglement</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ui-sref="references">
+                    <div layout="row" flex>
+                      <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                      <p flex>referenties</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ui-sref="blog">
+                    <div layout="row" flex>
+                      <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                      <p flex>blog</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ui-sref="question-and-answer">
+                    <div layout="row" flex>
+                      <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                      <p flex>veelgestelde vragen</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ui-sref="contact-us">
+                    <div layout="row" flex>
+                      <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                      <p flex>contact</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+                
+                <mat-list class="auth-menulist">
+                  <md-menu-item>
+                    <md-button ui-sref="login" color="primary">
+                      <div layout="row" flex>
+                        <md-icon class="material-icons">power_settings_new</md-icon>
+                        <p flex>INLOGGEN</p>
+                      </div>
+                    </md-button>
+                  </md-menu-item>
+                  <mat-divider></mat-divider>
+                </mat-list>
+                
+              </md-menu-content>
+            </md-menu>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<section class="home-banner-section">
+  <div class="trans-bg">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-md-12 offset-lg-1 text-center large-typo"> 
+            <h3>Vind de baan die bij je past.</h3>
+            <p>
+                <a href="" class="inline-link-blue">Vindm.nu</a> bied je de mogelijkheid te werken aan je duurzame inzetbaarheid en je te oriënteren op werk dat toekomstbestendig is. 
+                Je vindt daarnaast actuele passende vacatures in onze innovatieve matchingstool.
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="left-img-col padding-50-0 ">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="thumb-image-block mb-3" ng-show="!showlAllOne" ng-class="{'col-md-3' : showlAllOne, 'col-md-6' : !showlAllOne}">
+        <img src="../../../../assets/img/dreamstime-workstation.jpg" alt="">
+      </div>
+      <div class="" ng-class="{'col-md-12' : showlAllOne, 'col-md-6' : !showlAllOne}"> 
+          <h3 class="heading-3">Informatie over de arbeidsmarkt</h3>
+          <p class="paragraph-3">
+              De arbeidsmarkt verandert, over 10 jaar bestaan 60% van de huidige banen niet meer. Vraag en aanbod liggen daardoor steeds verder uit elkaar. De discrepantie op de arbeidsmarkt is nu al duidelijk merkbaar in verschillende sectoren. Waar aan de ene kant banen verdwijnen, ontstaan er kansen op andere gebieden/in andere sectoren. 
+          </p>
+          <p ng-show="!showlAllOne">
+              De informatie is versnipperd en niet altijd makkelijk te vinden voor werknemers, werkzoekenden en bedrijven. </p>
+          </p>
+          <div ng-show="showlAllOne">
+            <p>
+                De informatie is versnipperd en niet altijd makkelijk te vinden voor werknemers, werkzoekenden en bedrijven. Want waarop ga je investeren als je een opleiding wilt doen? Wat adviseert u uw medewerker als hij/zij aanklopt voor advies? Waar liggen in de toekomst kansen? En wat is er nodig om daar klaar voor te zijn?
+            </p>
+            <p>
+                Vindm.nu biedt antwoord. Op deze pagina vindt u informatie die op dit moment beschikbaar wordt gesteld vanuit het UWV, onderzoeken, whitepapers, seminars en andere bronnen. We hebben kansrijke functies geclusterd per sector. Als u gebruik maakt van ons platform kunt u deze informatie verder gespecificeerd vinden in de online omgeving. Zo is het onder andere mogelijk de kwaliteiten, competenties en benodigde opleiding van de functies te bekijken. Deze zijn door onze experts op de arbeidsmarkt voor u in kaart gebracht. Hierdoor is het vinden van een passende baan en een passende kandidaat makkelijker dan het ooit was. 
+            </p>
+            <p>
+                Wij focussen op de match tussen persoon en functie. Het gaat uiteindelijk niet om de opleiding die een kandidaat heeft gevolgd 20 jaar geleden, maar om wat hij/zij allemaal meebrengt op dit moment. Wij geloven niet in matchen op cv, maar in matchen op profiel. Wij geloven in vooruit kijken en niet terug. Het gaat om de focus op kwaliteiten, affiniteit, werk- en denkniveau en persoonlijkheid. Die breng je mee. Wat je verder nodig hebt voor een functie, de kunde, is aan te leren. 
+            </p>
+            <p>
+                Als u gebruik maakt van ons platform vindt u ook de loopbaanscan zodat medewerkers erachter kunnen komen welke functies passen bij hun profiel. Deze scan biedt medewerkers veel informatie over hun eigen duurzame inzetbaarheid, hun eigenschappen en geeft advies over een te lopen ontwikkelpad. 
+            </p>
+            <p>
+                Kortom, Vindm is een uitgebreide tool die veel informatie biedt en ook daadwerkelijk matcht tussen vraag en aanbod op de arbeidsmarkt. Actuele vacatures en actuele kandidaat profielen waarvoor wij middels onze innovatieve tool duurzame matches maken. Matches worden gemaakt op basis van competenties, kwaliteiten, persoonlijkheid, werk- en denkniveau en andere kwalificaties.
+            </p>
+          </div>
+          <div class="button-block">
+              <md-button class="eq-btn-secondary md-button" ng-click="showlAllOne = !showlAllOne">
+                <span ng-show="showlAllOne">Minder meer</span> 
+                <span ng-show="!showlAllOne">Lees meer</span> 
+              </md-button> 
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="right-img-col parallax-bg-cutof">
+    <div class="trans-bg">
+  <div class="container">
+    <div class="trans-bg-white">
+      <div class="row align-items-center"> 
+          <div class="col-md-6 cutof-details" ng-class="{'col-md-12' : showlAlltwo, 'col-md-6' : !showlAlltwo}"> 
+              <h3 class="heading-3">Duurzame inzetbaarheid</h3>
+              <h5 class="heading-4">Duurzaam inzetbaar in een sterk veranderende arbeidsmarkt</h5>
+              <p class="paragraph-3" ng-show="!showlAlltwo">
+                  Vraag en aanbod op de arbeidsmarkt liggen steeds verder uit elkaar. De discrepantie op de arbeidsmarkt is nu al duidelijk merkbaar in verschillende sectoren. Waar aan de ene kant banen verdwijnen, ontstaan er kansen op andere gebieden/in andere sectoren. 
+Daarom is het belangrijk dat werknemers en werkzoekenden makkelijker buiten hun eigen beroepsrichting of sector aan de slag gaan én kunnen. Hierin spelen drie zaken een sleutelrol:
+              </p>
+              <div ng-show="showlAlltwo">
+                <p>Vraag en aanbod op de arbeidsmarkt liggen steeds verder uit elkaar. De discrepantie op de arbeidsmarkt is nu al duidelijk merkbaar in verschillende sectoren. Waar aan de ene kant banen verdwijnen, ontstaan er kansen op andere gebieden/in andere sectoren. 
+                    Daarom is het belangrijk dat werknemers en werkzoekenden makkelijker buiten hun eigen beroepsrichting of sector aan de slag gaan én kunnen. Hierin spelen drie zaken een sleutelrol:</p>
+                <ul class="list-item list-item-home">
+                 <li>Flexibiliteit van werknemers; </li>
+                 <li>Scholing;</li>
+                 <li>Inzicht in arbeidsmarktkansen. (bron: UWV) </li>
+               </ul>
+               <p>Voor werknemers en werkzoekenden is het belangrijk dat zij inzicht krijgen in het arbeidsmarktperspectief van het beroep waarin ze werken of werkten. Belangrijk is ook het verkrijgen van informatie over alternatieve beroepen waar ze – met hun kwaliteiten en competenties - eventueel naar over kunnen stappen (zie: Informatie over de arbeidsmarkt). Voor werkgevers is het belangrijk om te weten wat het aanbod is op de arbeidsmarkt en waar actuele en dreigende personeelstekorten zijn.</p>
+               <h5>Investeren in inzetbaarheid</h5>
+               <p>Om boventalligheid en daarmee gepaard gaande kosten in de toekomst te voorkomen is tijdig investeren in de inzetbaarheid van medewerkers noodzakelijk. Invulling geven aan het thema Duurzame Inzetbaarheid is voor veel organisaties een uitdaging die veel vragen oplevert. Hoe zorgen we ervoor dat medewerkers duurzaam inzetbaar zijn en blijven? Hoe zorgen we ervoor dat ze in beweging komen? </p>
+               <p>Wij bieden een pakket dat u volledig ontzorgt. Afhankelijk van de behoefte van uw organisatie kunt u kiezen voor verschillende pakketten. Zo kunt u bijvoorbeeld starten met een 0-meting binnen uw organisatie waarbij wij de bewegingsbereidheid, het informatieniveau en de faciliteiten in kaart brengen en een advies uitbrengen voor een vervolg. Geen organisatie is hetzelfde dus telkens geldt dat er sprake is van maatwerk. </p>
+               <p>Wilt u daadwerkelijk aan de slag dan kunnen uw medewerkers gebruik maken van de tools die ons platform biedt. Via een inlogcode krijgen zij toegang tot ons platform en de app waarin zij d.m.v. een loopbaanscan en het vullen van een persoonlijk profiel toegang krijgen tot een overzicht van actuele mogelijkheden die bij hen past. Dit kunnen wij volledig doen gericht op de externe arbeidsmarkt maar het is hiernaast ook mogelijk om de interne arbeidsmarkt hierin mee te nemen.</p>               
+
+              </div>
+              <div class="button-block">
+                  <md-button class="eq-btn-secondary md-button" ng-click="showlAlltwo = !showlAlltwo">
+                    <span ng-show="showlAlltwo">Minder meer</span> 
+                    <span ng-show="!showlAlltwo">Lees meer</span> 
+                  </md-button> 
+              </div>
+          </div>
+          <div ng-show="!showlAlltwo" class="thumb-image-block" ng-class="{'col-md-3' : showlAlltwo, 'col-md-6' : !showlAlltwo}">
+            <img src="../../../../assets/img/duurzame-rocket.jpg" alt="">
+          </div>
+        </div>
+    </div> 
+  </div>
+  </div>
+</section>
+
+<section class="left-img-col padding-50-0 ">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="thumb-image-block mb-3" ng-show="!showlAllThree" ng-class="{'col-md-3' : showlAllThree, 'col-md-6' : !showlAllThree}">
+        <img src="../../../../assets/img/bulb-light.jpg" alt="">
+      </div>
+      <div class="" ng-class="{'col-md-12' : showlAllThree, 'col-md-6' : !showlAllThree}"> 
+          <h3 class="heading-3">Informatie Outplacement</h3>
+          <p class="paragraph-3">
+              Als je te maken krijgt met boventalligheid is dat voor veel mensen een schok. De veranderingen op de arbeidsmarkt gaan zo snel dat we in de toekomst gaan zien dat er een mismatch is tussen wat de werknemer te bieden heeft en wat de organisatie vraagt. Van beide kanten levert dat uitdagingen op. 
+          </p> 
+          <p ng-show="!showlAllThree">
+              Bij voorkeur zijn organisaties deze stap voor en hebben zij inzicht in de ontwikkelingen die op hen afkomen. Medewerkers weten dan in een vroeg stadium al welke richting de organisatie op gaat en wat dat doet voor hun specifieke functie.
+          </p>
+          <div ng-show="showlAllThree">
+            <p>
+                Bij voorkeur zijn organisaties deze stap voor en hebben zij inzicht in de ontwikkelingen die op hen afkomen. Medewerkers weten dan in een vroeg stadium al welke richting de organisatie op gaat en wat dat doet voor hun specifieke functie. Daarover kunnen dan gesprekken worden gevoerd tussen medewerker en leidinggevende. Welke impact heeft dit op jouw functie? Wil en kun je mee in deze ontwikkeling?
+            </p>
+            <p>Als er geen mogelijkheid is om mee te gaan in de ontwikkeling en er zijn geen passende functies elders in de organisatie komt outplacement aan de orde. Outplacement is bedoeld om ervoor te zorgen dat de medewerker goed landt buiten de organisatie. Dit is een gezamenlijke verantwoordelijkheid van partijen. </p>
+            <p>Boventallig zijn of weten dat te worden is voor veel mensen schokkend. Zekerheden verdwijnen en zorgen nemen toe. Wat zijn de consequenties voor mijn inkomen? Kom ik wel weer aan het werk? Ben ik wel voorbereid op de arbeidsmarkt? </p>
+            <p>Wij bieden persoonlijke maatwerk begeleiding voor dit soort situaties. EnergieQ doet dit al jaren succesvol en heeft nu het platform vindm.nu ontwikkeld om dit technisch te ondersteunen. Het platform biedt de werknemer houvast in een onzekere situatie. De werkgever kan middels totaalrapportages zien hoe de begeleiding verloopt en welke stappen er al zijn gezet. Deze rapportage wordt gemaakt op hoofdlijnen en wordt alleen aangeboden als de gegevens een vooraf bepaald volume hebben zodat zij niet te herleiden zijn naar een persoon. </p>
+            <p>Voor de werknemer bieden wij na het inloggen op onze site middels de verstrekte code een loopbaanscan. Dit geeft richting voor een volgende loopbaanstap en helpt de werknemer naar de toekomst te kijken. Vervolgens kan de kandidaat een persoonlijk profiel maken dat toegang biedt tot een overzicht van actuele vacatures die bij hem/haar passen. </p>
+            <p>Hierbij kunnen wij volledig richten op de externe arbeidsmarkt maar het is hiernaast ook mogelijk om de interne arbeidsmarkt mee te nemen. Dit kan in een eerste fase van boventalligheid uitkomst bieden. De werknemer kan zelfstandig aan de slag, een loopbaancoach begeleidt het hele proces en ondersteunt waar maar nodig is. Werknemer kan online en offline trainingen volgen om het betreden van de arbeidsmarkt makkelijker te maken. Als er sprake is van een match tussen vacature en kandidaat dan wordt het selectieproces opgepakt door onze recruiters/ loopbaancoaches van het matchteam. </p>
+            <p>Zo combineren wij de technische mogelijkheden van dit moment met de persoonlijke maatwerk begeleiding die wij zo belangrijk vinden.</p>
+          </div>
+          <div class="button-block">
+              <md-button class="eq-btn-secondary md-button" ng-click="showlAllThree = !showlAllThree">
+                <span ng-show="showlAllThree">Minder meer</span> 
+                <span ng-show="!showlAllThree">Lees meer</span> 
+              </md-button> 
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+  
+
+</div>

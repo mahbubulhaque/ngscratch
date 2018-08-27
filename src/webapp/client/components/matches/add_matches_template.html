@@ -1,0 +1,82 @@
+<md-dialog aria-label="MATCHES" ng-controller="MatchesController as mthCtrl">
+    <form ng-cloak>
+        <md-toolbar class="eq-md-primary-toolbar">
+            <div class="md-toolbar-tools">
+                <h2>[{ 'UPDATE_MATCH_TEXT' | translate }]</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="mthCtrl.cancel()">
+                    <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div class="eq-modal-sm">
+                    <div class="row">
+
+                        <div class="col-md-12 mb-3"> 
+                            <md-input-container class="md-block">
+                                <p class="question-item"><strong>[{ 'VACANCY_NAME_TEXT' | translate }] :</strong> [{mdDialogData.vacancy.title}]</p>
+                                <!--<span >Vacancy name</span>
+                                <span> [{mdDialogData.vacancy.title}] </span>
+                                <md-select ng-model="mthCtrl.selectedVacancy" md-selected-text="mthCtrl.getSelectedVacancy()" aria-label="type" class="md-block">
+                                    <md-option ng-repeat="vacancy in mthCtrl.vacancyList" ng-value="vacancy">[{vacancy}]</md-option>
+                                    </md-select>-->
+                            </md-input-container>
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+                            <md-input-container class="md-block">
+                                <p class="question-item"><strong>[{ 'COMPANY_NAME_TEXT' | translate }] :</strong> [{mdDialogData.vacancy.company.name}]</p>
+                                <!--<label for="">Company</label>
+                                <md-select ng-model="mthCtrl.selectedCompany" md-selected-text="mthCtrl.getSelectedCompany()" aria-label="type" class="md-block">
+                                    <md-option ng-repeat="company in mthCtrl.companyList" ng-value="company">[{company}]</md-option>
+                                    </md-select>-->
+                            </md-input-container>
+                        </div> 
+
+                        <div class="col-md-12 mb-3">
+                            <p class="question-item"><strong>[{ 'CANDIDATE_NAME_TEXT' | translate }] :</strong> [{mdDialogData.user.first_name}] [{mdDialogData.user.last_name}]</p>
+                            <!--<md-input-container class="md-block">
+                                <label for="">Candidate</label>
+                                <md-select ng-model="mthCtrl.selectedCandidate" md-selected-text="mthCtrl.getSelectedCandidate()" aria-label="type" class="md-block">
+                                    <md-option ng-repeat="candidate in mthCtrl.candidateList" ng-value="candidate">[{candidate}]</md-option>
+                                    </md-select>-->
+                            </md-input-container>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <h3 class="modal-subtitle">[{ 'ACTIVE_CLOSED_TEXT' | translate }]</h3>
+
+                            <md-radio-group ng-model="mdDialogData.is_active"> 
+                                <md-radio-button ng-value="true" class="md-primary">[{ 'ACTIVE_TEXT' | translate }]</md-radio-button>
+                                <md-radio-button ng-value="false" class="md-primary">[{ 'CLOSED_TEXT' | translate }]</md-radio-button>
+                            </md-radio-group>
+                        </div>
+
+                        <div class="col-md-6 mb-3"> 
+                            <h3 class="modal-subtitle">[{ 'SUCCESSFULL_TEXT' | translate }]Successful</h3>
+
+                            <md-radio-group ng-model="mdDialogData.is_success"> 
+                                <md-radio-button ng-value="true" class="md-primary">[{ 'YES_TEXT' | translate }]</md-radio-button>
+                                <md-radio-button ng-value="false" class="md-primary">[{ 'NO_TEXT' | translate }]</md-radio-button> 
+                            </md-radio-group>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button href="" ng-click="mthCtrl.cancel()" target="_blank" md-autofocus>
+                [{ 'CANCEL_TEXT' | translate }]
+            </md-button>
+            <span flex></span>
+            <md-button ng-click="updateMatch(mdDialogData)" class="eq-btn-primary">
+                [{ 'UPDATE_TEXT' | translate }]
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

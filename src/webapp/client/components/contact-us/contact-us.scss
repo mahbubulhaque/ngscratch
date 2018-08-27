@@ -1,0 +1,30 @@
+
+// @import '~scss/main.scss';
+
+@import '../../../assets/scss/partial/variable';
+@import '../../../assets/scss/partial/mixin';
+
+.box-content-contact {
+    padding: 0 0 0 30px;
+    background: #ffffff;
+    @media (max-width: 767px) {
+        padding: 0;
+    }
+    .contact-address {
+        padding: 30px 30px 20px 30px;
+    }
+}
+.website-wrapper {
+    .main-header-section {
+        .logo {
+            padding-right: 0;
+        }
+        .nav-right {
+            padding-left: 0;
+            .auto-width {
+                min-width: inherit;
+                padding: 0 10px;
+            }
+        }
+    }
+}

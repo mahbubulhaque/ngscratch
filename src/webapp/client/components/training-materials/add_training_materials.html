@@ -1,0 +1,83 @@
+<md-dialog aria-label="To-Do" ng-controller="TrainingMaterialsController as tmCtrl">
+  <form ng-cloak>
+    <md-toolbar class="eq-md-primary-toolbar">
+      <div class="md-toolbar-tools">
+        <!-- <h2>Training Materials</h2> -->
+        <h2 ng-show="isUpdate">[{ 'TRAINING_MATERIALS_UPDATE' | translate }]</h2>
+        <h2 ng-show="!isUpdate">[{ 'TRAINING_MATERIALS_ADD' | translate }]</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="parentCtrl.cancel()">
+          <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="eq-modal-auto">
+          <div class="generic-error-messae row align-items-center" ng-show="parentCtrl.addTrainingErrorMessage">
+            <i class="material-icons">error </i> [{parentCtrl.addTrainingErrorMessage}]
+          </div>
+          <div class="row">
+            <div class="col-md-12 mr-4 mb-3">
+              <md-input-container class="md-block custom-md-input">
+                <label>[{ 'TRAINING_TITLE_TEXT' | translate }] <span class="required-sign">*</span></label>
+                <textarea ng-model="payloadObj.title" rows="1" md-select-on-focus></textarea>
+                <div class="md-errors-spacer" ng-show="parentCtrl.addTrainingErrorMessage">[{parentCtrl.errors.title}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-12 mb-3" ng-show="!isUpdate">
+              <md-input-container class="md-block custom-md-input">
+                <label for="">[{ 'SELECT_A_TYPE' | translate }] <span class="required-sign">*</span></label>
+                <md-select ng-model="payloadObj.selectedType" ng-change="bindGroupType(payloadObj.selectedType)" aria-label="type" class="md-block">
+                  <md-option ng-repeat="item in typesArray" ng-value="item.value">[{item.name}]</md-option>
+                </md-select>
+                <div class="md-errors-spacer" ng-show="parentCtrl.addTrainingErrorMessage">[{parentCtrl.errors.selectedType}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-12 mb-3" ng-show="isScan">
+              <md-input-container class="md-block custom-md-input">
+                <label>[{ 'EXTERNAL_LINK_TEXT' | translate }] <span class="required-sign">*</span></label>
+                <textarea ng-model="payloadObj.external_url" rows="1" md-select-on-focus></textarea>
+                <div class="md-errors-spacer" ng-show="parentCtrl.addTrainingErrorMessage">[{parentCtrl.errors.external_url}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-12 mb-4" ng-show="isTraining">
+              <div class="row align-items-center">
+                <div class="col-md-12 custom-md-input">
+                  <button type="file" ngf-change="fileChosen($files)" ngf-select ngf-max-size="100MB" class="eq-md-button-primary ml-0 md-button md-ink-ripple">[{ 'CHOOSE_FILE_TEXT' | translate }]</button>
+                  <div class="md-errors-spacer" ng-show="parentCtrl.addTrainingErrorMessage">[{parentCtrl.errors.selectedFile}]</div>
+                </div>
+                <div class="col-md-12 vacancy-image">
+                  <p class="mb-0" ng-show="isFile">[{parentCtrl.selectedFileName}]</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button href="" ng-click="parentCtrl.cancel()" target="_blank" md-autofocus>
+        [{ 'CANCEL_TEXT' | translate }]
+      </md-button>
+      <span flex></span>
+      <!-- <md-button ng-click="addTrainingInlist(payloadObj)" class="eq-md-button-primary">
+        Add
+      </md-button> -->
+
+      <md-button ng-click="addTrainingInlist(payloadObj)" class="eq-btn-secondary" ng-show="!isUpdate">
+        [{ 'ADD_TEXT' | translate }]
+      </md-button>
+      <md-button ng-click="updateTrainingData(payloadObj)" class="eq-md-button-primary" ng-show="isUpdate">
+        [{ 'UPDATE_TEXT' | translate }]
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

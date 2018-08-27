@@ -1,0 +1,54 @@
+<md-dialog aria-label="Vacancy" ng-controller="LoginCodeController as lcCtrl">
+  <form ng-cloak>
+    <md-toolbar class="eq-md-primary-toolbar">
+      <div class="md-toolbar-tools">
+        <h2 ng-show="isUpdate">[{ 'UPDATE_EMPLOYEE_USER_LOGIN_TEXT' | translate }]</h2>
+        <h2 ng-show="!isUpdate">Add Login code</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="lcCtrl.cancel()">
+          <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="eq-modal-auto">
+          <div class="row">
+            <div class="col-md-12 mb-2">
+              <p><strong> [{ 'EMPLOYEE_USERNAME_TEXT' | translate }] : </strong> [{mdDialogData.user_full_name}]</p>
+            </div>
+            <div class="col-md-12 mb-2">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.login_code" placeholder="[{ 'LOGIN_CODE_TEXT' | translate }]">
+              </md-input-container>
+            </div>
+            <div class="col-md-12 mb-2">
+              <md-input-container class="md-block">
+                <label for="">[{ 'LOGIN_CODE_TYPE' | translate }]: </label>
+                <md-select ng-model="mdDialogData.login_code_type" aria-label="type" class="md-block">
+                  <md-option ng-repeat="item in loginCodeTypeArray" ng-value="item.value">[{item.name}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button href="" ng-click="lcCtrl.cancel()" target="_blank" md-autofocus>
+        [{ 'CANCEL_TEXT' | translate }]
+      </md-button>
+      <span flex></span>
+
+      <md-button ng-click="addNewLoginCode(mdDialogData)" class="eq-btn-secondary" ng-show="!isUpdate">
+        [{ 'ADD_TEXT' | translate }]
+      </md-button>
+      <md-button ng-click="updateLoginCode(mdDialogData)" class="eq-md-button-primary" ng-show="isUpdate">
+        [{ 'UPDATE_TEXT' | translate }]
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

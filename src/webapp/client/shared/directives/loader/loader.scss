@@ -1,0 +1,177 @@
+
+@import '../../../../assets/scss/partial/variable';
+@import '../../../../assets/scss/partial/mixin';
+
+.custom-spinner {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  overflow: hidden; 
+} 
+
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+  -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+  div {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: -10px;
+    top: 40px;
+    background-color: #5F8AA7;
+    border-radius: 50%;
+    animation: move 4s infinite cubic-bezier(.2,.64,.81,.23);
+    &:nth-child(2) {
+      animation-delay: 150ms;
+    }
+    &:nth-child(3) {
+      animation-delay: 300ms;
+    }
+    &:nth-child(4) {
+      animation-delay: 450ms;
+    }
+  }
+}
+@keyframes move {
+  0% {left: 0%;}
+  75% {left:100%;}
+  100% {left:100%;}
+}
+
+
+
+
+
+.load-bar {
+    position: relative; 
+    width: 100%;
+    height: 5px;
+    background-color: darken(#485260, 20%);
+    .bar {
+      content: "";
+      display: inline;
+      position: absolute;
+      width: 0;
+      height: 100%;
+      left: 50%;
+      text-align: center;
+      &:nth-child(1) {
+        background-color: #485260;
+        animation: loading 3s linear infinite;
+      }
+      &:nth-child(2) {
+        background-color: darken(#485260, 10%);
+        animation: loading 3s linear 1s infinite;
+      }
+      &:nth-child(3) {
+        background-color: #285235;
+        animation: loading 3s linear 2s infinite;
+      }
+    }
+  } 
+  @keyframes loading {
+      from {left: 50%; width: 0;z-index:100;}
+      33.3333% {left: 0; width: 100%;z-index: 10;}
+      to {left: 0; width: 100%;}
+  }
+
+
+
+
+  .flip-logo {
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+    -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+
+    -webkit-animation: flip-logo 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both alternate infinite;
+            animation: flip-logo 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both alternate infinite;
+  }
+
+
+@-webkit-keyframes flip-logo {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+}
+@keyframes flip-logo {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+}
+
+
+
+
+
+
+.lds-facebook {
+  display: inline-block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+  -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  width: 13px;
+  background: lighten($primary-text-color, 65);
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 6px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 26px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 45px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 6px;
+    height: 51px;
+  }
+  50%, 100% {
+    top: 19px;
+    height: 26px;
+  }
+}
+
+
+
+
+
+ 

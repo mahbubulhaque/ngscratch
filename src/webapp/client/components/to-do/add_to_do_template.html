@@ -1,0 +1,50 @@
+<md-dialog aria-label="To-Do" ng-controller="ToDoController as todoCtrl">
+    <form ng-cloak>
+        <md-toolbar class="eq-md-primary-toolbar">
+            <div class="md-toolbar-tools">
+                <h2>To-Do</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="todoCtrl.cancel()">
+                    <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div class="eq-modal-auto">
+                    <div class="row">
+
+                        <div class="col-md-12 mb-3">
+                            <md-input-container class="md-block custom-md-input">
+                                <input type="text" ng-model="todoCtrl.issue_name" placeholder="Issue name">
+                            </md-input-container>
+                        </div> 
+
+                        <div class="col-auto mb-4">
+                            <md-datepicker ng-model="vcCtrl.issue_date" md-placeholder="Start date" class="md-block"></md-datepicker>
+                        </div>
+
+                        <div class="col-md-12 mb-2">
+                            <md-input-container class="md-block">
+                                <label>Description</label>
+                                <textarea ng-model="todoCtrl.description" rows="5" md-select-on-focus></textarea>
+                            </md-input-container>
+                        </div> 
+
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button href="" ng-click="todoCtrl.cancel()" target="_blank" md-autofocus>
+                Cancel
+            </md-button>
+            <span flex></span>
+            <md-button ng-click="todoCtrl.addTodoInlist()" class="eq-md-button-primary">
+                Add
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

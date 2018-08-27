@@ -1,0 +1,121 @@
+<div class="body-container">
+  <div class="inner-content">
+
+    <div class="box-description mb-3">
+      <p>
+        <strong>[{ 'NOTE' | translate }]:</strong> [{ 'TODO_STATIC_TEXT' | translate }]
+      </p>
+    </div>
+
+    <div class="eq-box  mb-3">
+
+      <div class="eq-box-header">
+        <div class="row align-items-center justify-content-between">
+          <div class="col">
+            <h3 class="title-1">[{ 'MENU_TRAINING_MATERIALS' | translate }]</h3>
+          </div>
+
+          <div class="col">
+            <div class="row justify-content-end">
+
+              <div class="col-auto block-on-mobile">
+                <md-input-container class="md-block no-margin">
+                  <md-select ng-model="tmCtrl.selectedItem" md-selected-text="tmCtrl.getSelectedText()" ng-change="tmCtrl.filterChanged()" aria-label="filteritem" class="md-block">
+                    <md-option ng-repeat="item in tmCtrl.items" ng-value="item">[{item.name}]</md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+              <div class="col-auto block-on-mobile">
+                <md-input-container md-no-float class="md-block custom-md-input no-margin" ng-keypress="($event.charCode==13)? tmCtrl.searchTermChanged('getTrainingList') : return">
+                  <md-icon class="material-icons">search</md-icon>
+                  <input ng-model="tmCtrl.searchTerm" placeholder="[{ 'SEARCH_TEXT' | translate }]">
+                </md-input-container>
+              </div>
+
+
+              <div ng-show="tmCtrl.canAddEditDelete()" class="col-auto">
+                <md-button class="eq-md-button-primary mr-0" ng-disabled="tmCtrl.loader" ng-click="tmCtrl.addTrainingFile($event)">[{ 'ADD_TEXT' | translate }]</md-button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <custom-loader ng-show="tmCtrl.loader"></custom-loader>
+        <div class="data-table-custom table-responsive">
+          <table class="table table-sm table-sm-custom">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>[{ 'TITLE_TEXT' | translate }]</th>
+                <th>[{ 'TRAINING_FILE_TEXT' | translate }]</th>
+                <th>[{ 'EXTERNAL_LINK_TEXT' | translate }]</th>
+                <th ng-show="tmCtrl.canAddEditDelete()" class="text-center" width="150">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in tmCtrl.trainingList track by $index">
+                <td>[{ ( ( $index + 1 ) + ( ( tmCtrl.selectedPage - 1 ) * tmCtrl.selectedPageSize ) ) }]</td>
+                <td>[{item.title}]</td>
+                <td>[{item.attached_file_view_link}]</td>
+                <td>[{item.external_url}]</td>
+                <td ng-show="tmCtrl.canAddEditDelete()" class="text-center md-button-sm-wrap">
+
+                  <md-button class="md-icon-button" aria-label="More" ng-click="tmCtrl.updateTraining($event, item, $index)">
+                    <i class="material-icons">edit</i>
+                  </md-button>
+
+                  <md-button class="md-icon-button" aria-label="Delete" ng-click="tmCtrl.showConfirm($event, item, $index)">
+                    <md-tooltip md-direction="bottom">Remove</md-tooltip>
+                    <i class="material-icons">close</i>
+                  </md-button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="eq-pagination">
+          <div class="row align-items-center justify-content-end">
+
+            <div class="col-auto">
+              [{ 'ROWS_PER_PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="tmCtrl.selectedPageSize" md-selected-text="tmCtrl.getSelectedPageSize()" ng-change="tmCtrl.paginationChanged('getTrainingList')" aria-label="page_row" class="md-block text-center">
+                  <md-option ng-repeat="item in tmCtrl.pageSize" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              [{ 'PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="tmCtrl.selectedPage" md-selected-text="tmCtrl.getSelectedPage()" ng-change="tmCtrl.paginationChanged('getTrainingList')" aria-label="page" class="md-block text-center">
+                  <md-option ng-repeat="item in tmCtrl.pageList" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              <div class="text-center">
+                <md-button class="md-icon-button" ng-disabled="tmCtrl.selectedPage<=1" ng-click="tmCtrl.prevPage('getTrainingList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                </md-button>
+                <md-button class="md-icon-button" ng-disabled="tmCtrl.selectedPage>=tmCtrl.pageList.length" ng-click="tmCtrl.nextPage('getTrainingList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

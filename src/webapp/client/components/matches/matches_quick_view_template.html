@@ -1,0 +1,45 @@
+<md-dialog aria-label="To-Do" ng-controller="MatchesController as mthCtrl">
+  <form ng-cloak>
+    <md-toolbar class="eq-md-primary-toolbar">
+      <div class="md-toolbar-tools">
+        <h2>[{ 'VACANCY_INTEREST_MATCH_DETAIL_TEXT' | translate }]</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="mthCtrl.cancel()">
+          <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="eq-modal-lrg question-answer-view">
+          <div class="row align-items-center justify-align-between">
+            <div class="col">
+              <p class="question-item"><strong>[{ 'VACANCY_TITLE_TEXT' | translate }] :</strong> [{mdQuickDialogData.vacancy.title}]</p>
+              <p class="question-item"><strong>[{ 'COMPANY_NAME_TEXT' | translate }] :</strong> [{mdQuickDialogData.vacancy.company.name}]</p>
+              <p class="question-item"><strong>[{ 'CANDIDATE_NAME_TEXT' | translate }] :</strong> [{mdQuickDialogData.user.first_name}] [{mdQuickDialogData.user.last_name}]</p>
+              <p class="question-item"><strong>[{ 'CANDIDATE_EMAIL_TEXT' | translate }] :</strong> [{mdQuickDialogData.user.email}]</p>
+              <p class="question-item"><strong>[{ 'ACTIVE_CLOSE_TEXT' | translate }] :</strong> [{mdQuickDialogData.is_active}]</p>
+              <p class="question-item"><strong>[{ 'SUCCESSFULL_TEXT' | translate }] :</strong> [{mdQuickDialogData.is_success}]</p>
+              <p class="question-item"><strong>[{ 'TOTAL_MATCH_WEIGHT_TEXT' | translate }] :</strong> [{mdQuickDialogData.total_match_weight}]</p>
+              <p class="question-item"><strong>[{ 'PERCENTAGE_MATCH_TEXT' | translate }] :</strong> [{mdQuickDialogData.percentage_match}]</p>
+            </div>
+            <!--<div class="col-auto">
+                            <span>Creation Date: 01/05/2018</span>
+                        </div>-->
+          </div>
+          <!--<div class="answer-item">
+                         <strong class="question-item">Description:</strong>
+                     </div>-->
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button href="" ng-click="mthCtrl.cancel()" target="_blank" md-autofocus>
+        [{ 'CANCEL_TEXT' | translate }]
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

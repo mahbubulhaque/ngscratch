@@ -1,0 +1,142 @@
+<div class="body-container">
+  <div class="inner-content">
+    <div class="box-description mb-3">
+      <p>
+        <strong>[{ 'NOTE' | translate }]:</strong> [{ 'MATCHES_STATIC_TEXT' | translate }]
+      </p>
+    </div>
+    <div class="eq-box  mb-3">
+      <div class="eq-box-header">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-auto">
+            <h3 class="title-1">[{ 'MATCHES_TEXT' | translate }]</h3>
+          </div>
+          <div class="col">
+            <div class="row justify-content-end">
+              <div class="col-auto">
+                <md-checkbox ng-model="mthCtrl.cadidateInterestBool" ng-change="mthCtrl.hasShownInterest()" aria-label="Checkbox 1">
+                  [{ 'VACANCY_INTERESTED_TEXT' | translate }]
+                </md-checkbox>
+              </div>
+              <div class="col-auto">
+                <md-input-container class="md-block no-margin">
+                  <md-select ng-model="mthCtrl.selectedItem" md-selected-text="mthCtrl.getSelectedText()" ng-change="mthCtrl.filterChanged()" aria-label="filteritem" class="md-block">
+                    <md-option ng-repeat="item in mthCtrl.filteritems" ng-value="item">[{item.name}]</md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+              <div class="col-auto">
+                <md-input-container md-no-float class="md-block custom-md-input no-margin" ng-keypress="($event.charCode==13)? mthCtrl.searchTermChanged('getMatchList') : return">
+                  <md-icon class="material-icons">search</md-icon>
+                  <input ng-model="mthCtrl.searchTerm" placeholder="[{ 'SEARCH_TEXT' | translate }]">
+                </md-input-container>
+              </div>
+              <div class="col-auto">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <custom-loader ng-show="mthCtrl.loader"></custom-loader>
+        <div class="data-table-custom table-responsive">
+          <table class="table table-sm table-sm-custom">
+            <thead>
+              <tr>
+                <th width="70" class="text-center">#</th>
+                <th width="30%">[{ 'VACANCY_TEXT' | translate }]</th>
+                <th>[{ 'COMPANY_TEXT' | translate }]</th>
+                <th>[{ 'CANDIDATE_TEXT' | translate }]</th>
+                <th class="text-center">[{ 'ACTIVE_CLOSED_TEXT' | translate }]</th>
+                <th class="text-center">[{ 'SUCCESSFULL_TEXT' | translate }]</th>
+                <th class="text-center">[{ 'VACANCY_INTERESTED_TEXT' | translate }]</th>
+                <th class="text-center">[{ 'DISTANCE' | translate }]</th>
+                <th class="text-center">[{ 'TOTAL_MATCH_WEIGHT_TEXT' | translate }]</th>
+                <th class="text-center">[{ 'PERCENTAGE_MATCH_TEXT' | translate }]</th>
+                <th class="text-center" width="150">[{ 'ACTION_TEXT' | translate }]</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in mthCtrl.matchesList track by $index">
+                <td>[{ ( ( $index + 1 ) + ( ( mthCtrl.selectedPage - 1 ) * mthCtrl.selectedPageSize ) ) }]</td>
+                <td>[{item.vacancy.title}]</td>
+                <td>[{item.vacancy.company.name}]</td>
+                <td>[{item.user.first_name}] [{item.user.last_name}]</td>
+                <td class="text-center"><i class="material-icons">[{item.is_active ? "check" : "close"}]</i></td>
+                <td class="text-center"><i class="material-icons">[{item.is_success ? "check" : "close"}]</i></td>
+                <td class="text-center"><i class="material-icons">[{item.has_shown_interest ? "check" : "close"}]</i></td>
+                <td class="text-center">[{item.distance | number : 2}]</td>
+                <td class="text-center">[{item.total_match_weight}]</td>
+                <td class="text-center">[{item.percentage_match}]</td>
+                <td class="text-center md-button-sm-wrap">
+                  <md-button class="md-icon-button" aria-label="More" ng-click="mthCtrl.quickView($event, item, $index)">
+                    <md-tooltip md-direction="bottom">Quick View</md-tooltip>
+                    <i class="material-icons">remove_red_eye</i>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="Edit" ng-click="mthCtrl.editMatch($event, item, $index)">
+                    <md-tooltip md-direction="bottom">Edit</md-tooltip>
+                    <i class="material-icons">edit</i>
+                  </md-button>
+                  <!--:there will be no delete option for matches as they are calculated at backend:-->
+                  <!-- <md-button class="md-icon-button" aria-label="Delete" ng-click="mthCtrl.showConfirm($event, item, $index)">
+                    <md-tooltip md-direction="bottom">Remove</md-tooltip>
+                    <i class="material-icons">close</i>
+                  </md-button> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="eq-pagination">
+          <div class="row align-items-center justify-content-end">
+            <div class="col box-amount-wrap">
+              <div class="box-amount">
+                <div class="row align-items-top justify-content-start">
+                  <div class="col-auto">
+                    <h2>[{ 'ACTIVE_TEXT' | translate }]: <span>[{ mthCtrl.summary.active}]</span></h2>
+                  </div>
+                  <div class="col-auto">
+                    <h2>[{ 'CLOSED_TEXT' | translate }]: <span>[{ mthCtrl.summary.closed}]</span></h2>
+                  </div>
+                  <div class="col-auto">
+                    <h2>[{ 'SUCCESSFULL_TEXT' | translate }]: <span>[{ mthCtrl.summary.successful}]</span></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              [{ 'ROWS_PER_PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="mthCtrl.selectedPageSize" md-selected-text="mthCtrl.getSelectedPageSize()" ng-change="mthCtrl.paginationChanged('getMatchList')" aria-label="page_row" class="md-block text-center">
+                  <md-option ng-repeat="item in mthCtrl.pageSize" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+            <div class="col-auto">
+              [{ 'PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="mthCtrl.selectedPage" md-selected-text="mthCtrl.getSelectedPage()" ng-change="mthCtrl.paginationChanged('getMatchList')" aria-label="page" class="md-block text-center">
+                  <md-option ng-repeat="item in mthCtrl.pageList" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+            <div class="col-auto">
+              <div class="text-center">
+                <md-button class="md-icon-button" ng-disabled="mthCtrl.selectedPage<=1" ng-click="mthCtrl.prevPage('getMatchList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                </md-button>
+                <md-button class="md-icon-button" ng-disabled="mthCtrl.selectedPage>=mthCtrl.pageList.length" ng-click="mthCtrl.nextPage('getMatchList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

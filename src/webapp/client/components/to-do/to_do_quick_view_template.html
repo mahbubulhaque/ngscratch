@@ -1,0 +1,48 @@
+<md-dialog aria-label="To-Do" ng-controller="ToDoController as todoCtrl">
+    <form ng-cloak>
+        <md-toolbar class="eq-md-primary-toolbar">
+            <div class="md-toolbar-tools">
+                <h2>Example to-do item</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="todoCtrl.cancel()">
+                    <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div class="eq-modal-lrg question-answer-view"> 
+                    <div class="row align-items-center justify-align-between">
+                        <div class="col">
+                            <p class="question-item"><strong>Status :</strong> Completed</p>
+                        </div>
+                        <div class="col-auto">
+                            <span>Creation Date: 01/05/2018</span>
+                        </div>
+                    </div>
+                     
+                     <div class="answer-item">
+                         <strong class="question-item">Description:</strong> 
+                         <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nesciunt at ex quas! Magni, dolorem hic aperiam animi aliquid adipisci nam aspernatur eligendi eaque est architecto incidunt in officiis rem.
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, aliquam repudiandae. Natus ipsa ullam, vel, aspernatur quibusdam minus corrupti a ipsum eligendi numquam nam distinctio, ab optio consequatur repellendus ex! Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nesciunt at ex quas! Magni, dolorem hic aperiam animi aliquid adipisci nam aspernatur eligendi eaque est architecto incidunt in officiis rem.
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, aliquam repudiandae. Natus ipsa ullam, vel, aspernatur quibusdam minus corrupti a ipsum eligendi numquam nam distinctio, ab optio consequatur repellendus ex!
+                         </p>
+                         <p>
+                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia et a voluptatem odit temporibus nihil dicta perferendis aut, ducimus, assumenda, quibusdam repellat facilis. Suscipit, non molestiae enim officiis iure porro!
+                         </p>
+                         
+                     </div>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span> 
+            <md-button href="" ng-click="todoCtrl.cancel()" target="_blank" md-autofocus>
+                Cancel
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

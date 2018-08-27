@@ -1,0 +1,162 @@
+<md-dialog aria-label="Add User" ng-controller="UserProfilesController as epCtrl">
+  <form ng-cloak>
+    <md-toolbar class="eq-md-primary-toolbar">
+      <div class="md-toolbar-tools">
+        <h2 ng-show="isUpdate">[{ 'UPDATE_EMPLOYEE_TEXT' | translate }]</h2>
+        <h2 ng-show="!isUpdate">[{ 'ADD_EMPLOYEE_TEXT' | translate }]</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="epCtrl.cancel()">
+          <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="eq-modal-sm">
+          <div class="generic-error-messae row align-items-center" ng-show="addEmployeeErrorMessage">
+            <i class="material-icons">error </i> [{addEmployeeErrorMessage}]
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.first_name" placeholder="[{ 'FIRST_NAME_TEXT' | translate }] *">
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.first_name}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.last_name" placeholder="[{ 'LAST_NAME_TEXT' | translate }] *">
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.last_name}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <input type="email" ng-model="mdDialogData.email" placeholder="[{ 'EMAIL_ADDRESS_TEXT' | translate }] *" autocomplete="new-password">
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.email}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-6" ng-show="!isUpdate">
+              <md-input-container class="md-block custom-md-input">
+                <input type="password" ng-model="mdDialogData.password" placeholder="[{ 'PASSWORD_TEXT' | translate }] *" autocomplete="new-password">
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.password}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.address" placeholder="[{ 'ADDRESS_ONE_TEXT' | translate }] *">
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.address}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.address2" placeholder="[{ 'ADDRESS_TWO_TEXT' | translate }]">
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.address2}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.phone_number" placeholder="[{ 'PHONE_NUMBER_TEXT' | translate }]">
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.phone_number}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <input type="number" ng-model="mdDialogData.house_number" placeholder="[{ 'HOUSE_NUMBER_TEXT' | translate }]">
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.house_number}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.house_number_ext" placeholder="[{ 'HOUSE_NUMBER_EXT_TEXT' | translate }]">
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.house_number_ext}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.city" placeholder="[{ 'CITY_TEXT' | translate }]">
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.city}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.post_code" placeholder="[{ 'POST_CODE_TEXT' | translate }]">
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.post_code}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.country" placeholder="[{ 'COUNTRY_TEXT' | translate }]">
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.country}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-6 mb-3" ng-show="!isUpdate">
+              <md-input-container class="md-block custom-md-input">
+                <label for="">[{ 'LOGIN_CODE_TYPE' | translate }]</label>
+                <md-select ng-model="mdDialogData.login_code_type" aria-label="type" class="md-block">
+                  <md-option ng-repeat="item in types" ng-value="item.value">[{item.name}]</md-option>
+                </md-select>
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.login_code_type}]</div>
+              </md-input-container>
+            </div>
+            <div class="col-md-6 mb-3" ng-show="isUpdate"><strong> [{ 'LOGIN_CODE_TYPE' | translate }] : </strong>[{ getLoginCodeTypeNameByValue(mdDialogData.login_code_type) }]</div>
+
+            <div class="col-md-6 mb-3" ng-show="!isUpdate">
+              <md-input-container class="md-block custom-md-input">
+                <label for="">[{ 'COMPANY_TEXT' | translate }]</label>
+                <md-select ng-model="mdDialogData.company_uuid" aria-label="type" class="md-block">
+                  <md-option ng-repeat="item in companyList" ng-value="item.uuid">[{item.name}]</md-option>
+                </md-select>
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.company_uuid}]</div>
+              </md-input-container>
+            </div>
+            <div class="col-md-6 mb-3" ng-show="isUpdate"><strong> [{ 'COMPANY_TEXT' | translate }] : </strong>[{ getCompanyNameByUuid(mdDialogData.company_uuid) }]</div>
+
+            <div class="col-md-6 mb-3" ng-show="!isUpdate">
+              <md-input-container class="md-block custom-md-input">
+                <label for="">[{ 'CUSTOM_STATUS' | translate }]</label>
+                <md-select ng-model="mdDialogData.employee_custom_status" aria-label="type" class="md-block">
+                  <md-option ng-repeat="item in statusList" ng-value="item.value">[{item.name}]</md-option>
+                </md-select>
+                <div class="md-errors-spacer" ng-show="addEmployeeErrorMessage">[{errors.statusList}]</div>
+              </md-input-container>
+            </div>
+            <div class="col-md-6 mb-3" ng-show="isUpdate" >
+              <strong> [{ 'CUSTOM_STATUS' | translate }] : </strong>
+              <span ng-class="{'red-text': mdDialogData.employee_custom_status == 0,
+                'green-text': mdDialogData.employee_custom_status == 1,
+                'orange-text': mdDialogData.employee_custom_status == 2}">[{ getStatusNameByUuid(mdDialogData.employee_custom_status) }]</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button href="" ng-click="epCtrl.cancel()" target="_blank" md-autofocus>
+        [{ 'CANCEL_TEXT' | translate }]
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="addNewEmployee(mdDialogData)" class="eq-md-button-primary" ng-show="!isUpdate">
+        [{ 'ADD_TEXT' | translate }]
+      </md-button>
+      <md-button ng-click="updateEmp(mdDialogData)" class="eq-md-button-primary" ng-show="isUpdate">
+        [{ 'UPDATE_TEXT' | translate }]
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

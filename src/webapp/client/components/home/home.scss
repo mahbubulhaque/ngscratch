@@ -1,0 +1,252 @@
+
+// @import '~scss/main.scss';
+
+@import '../../../assets/scss/partial/variable';
+@import '../../../assets/scss/partial/mixin';
+
+.padding-50-0 {
+    padding: 70px 0;
+    @media (max-width: 767px) {
+        padding: 8vw 0;
+    }
+}
+.website-wrapper {
+    padding-top: 65px;
+    padding-bottom: 30px;
+    // background: #fff;
+    // height: 100%;
+    @media (max-width: 1160px) {
+        padding-top: 100px;
+    }
+    @media (max-width: 767px) {
+        padding-top: 65px;
+    }
+}
+.md-open-menu-container {
+    z-index: 999999!important;
+}
+.home-banner-section {
+    background: url('../../../assets/img/puzzle.jpg') fixed no-repeat center -630px;
+    background-size: cover;
+    color: #e3e2f1; 
+    .trans-bg {
+        background: rgba(230, 141, 20, 0.50);
+        padding: 70px 0;
+    }
+    .large-typo h3 { 
+        color: #333;
+    }
+    .large-typo p { 
+        color: #333;
+        font-size: 21px;
+        a {
+            text-decoration: none;
+        }
+    }
+    @media (max-width: 1550px) {
+        background: url('../../../assets/img/puzzle.jpg') fixed no-repeat; 
+        background-size: cover;
+        background-position: center;
+    }
+    // @media (max-width: 767px) {
+    //     background: url('../../../assets/img/puzzle.jpg') fixed no-repeat center center;
+    // }
+}
+.page-title-banner-section {
+    background: url('../../../assets/img/puzzle.jpg') fixed no-repeat center -780px;
+    background-size: cover;
+    color: #e3e2f1; 
+    .trans-bg {
+        background: rgba(10, 30, 44, 0.85);
+        padding: 50px 0; 
+        @media (max-width: 767px) {
+            padding: 5vw 0;
+        }
+    }
+    @media (max-width: 1550px) {
+        background: url('../../../assets/img/puzzle.jpg') fixed no-repeat; 
+        background-size: cover;
+        background-position: center bottom;
+    }
+}
+.main-header-section-home {
+    background: rgba(255, 255, 255, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    .language-btn .md-icon-button span {
+        color: $primary-text-color;
+    }
+}
+
+.large-typo {
+    h3 {
+        font-size: 45px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+
+    }
+    p {
+        font-size: 24px;
+        margin: 0;
+    }
+}
+.thumb-image-block {
+    img {
+        width: 100%;
+    }
+}
+.text-typo-3 {
+    h3 {
+        font-size: 35px
+    }
+    p {
+        font-size: 18px;
+    }
+}
+.heading-1 {
+    font-size: 45px;
+    font-family: montserratbold;
+}
+.heading-2 {
+    font-size: 35px;
+    font-family: montserratbold;
+}
+.heading-3 {
+    font-size: 25px;
+    font-family: montserratbold;
+}
+.paragraph-1 {
+    font-size: 25px;
+}
+.paragraph-2 {
+    font-size: 20px;
+}
+.paragraph-3 {
+    font-size: 16px;
+}
+.paragraph-4 {
+    font-size: 14px;
+    line-height: 28px;
+}
+.button-block {
+    .md-button {
+        padding: 5px 15px;
+        margin: 0;
+    }
+}
+.white-bg {
+    background: #ffffff;
+}
+.left-img-col {
+    .thumb-image-block {
+        // padding-right: 70px;
+    }
+}
+.right-img-col {
+    .thumb-image-block {
+        // padding-left: 70px;
+    }
+}
+.parallax-bg-cutof {
+    background: url('../../../assets/img/dreamstime-workstation.jpg') fixed no-repeat center center;
+    background-size: cover;
+    .trans-bg {
+        background: rgba(10, 30, 44, 0.85);
+    }
+    .trans-bg-white {
+        background: rgba(255, 255, 255, 0.5);
+    }
+    @media (max-width: 1550px) {
+        background: url('../../../assets/img/dreamstime-workstation.jpg') fixed no-repeat; 
+        background-size: cover;
+        background-position: center;
+    }
+}
+.cutof-details {
+    padding: 30px!important;
+}
+.title-bannner{
+    .page-title {
+        margin: 0;
+    }
+}
+.title-bannner{
+    .page-title {
+        @media (max-width: 767px) {
+            font-size: 6vw;
+        }
+    }
+} 
+.box-content-wrap {
+    padding: 50px;
+    background: #f4f6fb;
+    @media (max-width: 767px) {
+        padding: 15px;
+    }
+}
+.field-row {
+    margin-bottom: 30px;
+}
+.contact-form {
+    background: #edeef5;
+    padding: 40px;
+    @media (max-width: 767px) {
+        padding: 15px;
+    }
+}
+.animated-width {
+    @include transition (0.3s);
+}
+.list-item-home li {
+    font-size: 16px;
+    &:before { 
+        left: 5px; 
+    }
+}
+.auth-menulist {
+    border-top: 1px solid #dddddd;
+}
+.top-web-nav-wrap {
+    @media (max-width: 1160px) {
+        flex-basis: 100%!important; 
+        .top-web-nav {
+            li {
+                a {
+                    padding: 10px 5px;
+                    font-size: 16px;
+                }
+            }
+        }
+    } 
+}
+.login-btn-set {
+    @media (max-width: 1160px) {
+        position: absolute!important;
+        top: 14px;
+        right: 0;
+    } 
+}
+.top-web-nav {
+    text-align: center;
+    li {
+        display: inline-block;
+        a {
+            font-family: latobold;
+            color: #333;
+            display: block;
+            font-size: 18px;
+            padding: 10px;
+            // text-transform: uppercase;
+            @include transition(0.3s);
+            &:hover {
+                color: $secondary-text-color;
+            }
+            &.active {
+                color: $secondary-text-color;
+            }
+        }
+    }
+}

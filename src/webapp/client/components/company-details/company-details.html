@@ -1,0 +1,54 @@
+<div class="body-container profile-details">
+  <div class="inner-content">
+
+    <custom-loader ng-show="cdCtrl.loader"></custom-loader>
+    <div class="profile-detials-content">
+      <div class="eq-box  mb-3">
+        <div class="profile-detials">
+          <div class="row justify-content-between">
+            <div class="col-md-3">
+              <div class="user-categories">
+                <div class="company-info-left">
+                  <div class="item-ad-row">
+                    <h3>[{ 'CONTACT_PERSON_TEXT' | translate }]:</h3>
+                    <p>[{cdCtrl.companyObj.contact_person}]</p>
+                  </div>
+                  <div class="item-ad-row">
+                    <h3>[{ 'CONTACT_INFO_TEXT' | translate }]:</h3>
+                    <p>[{cdCtrl.companyObj.contact_info}]</p>
+                  </div>
+                  <div class="item-ad-row">
+                    <h3>[{ 'NUMBER_OF_EMPLOYEE' | translate }]:</h3>
+                    <p>[{cdCtrl.companyObj.number_of_employees}]</p>
+                  </div>
+                  <div class="item-ad-row">
+                    <h3>[{ 'ADDRESS_TEXT' | translate }]:</h3>
+                    <p>[{cdCtrl.companyObj.address}]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9 left-border-col">
+              <div class="details-wrap-right">
+
+                <div class="text-right">
+                  <span class="profile-status">
+                    <strong>[{ 'COMPANY_NAME_TEXT' | translate }]:</strong> [{cdCtrl.companyObj.name}]
+                  </span>
+                </div>
+
+                <h3 class="sub-title">
+                  [{ 'DESCRIPTION_TEXT' | translate }]:
+                </h3>
+                <p>
+                  [{cdCtrl.companyObj.description}]
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

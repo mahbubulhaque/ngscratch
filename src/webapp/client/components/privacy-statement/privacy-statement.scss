@@ -1,0 +1,16 @@
+
+// @import '~scss/main.scss';
+
+@import '../../../assets/scss/partial/variable';
+@import '../../../assets/scss/partial/mixin';
+
+.list-item-number {
+    margin-bottom: 20px;
+    padding-left: 30px;
+    li {
+        position: relative; 
+        font-size: 14px;
+        line-height: 28px; 
+        list-style: decimal;
+    }
+}

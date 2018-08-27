@@ -1,0 +1,13 @@
+version: '3.6'
+
+services:
+  energieq_angular:
+      build:
+        context: ./
+        dockerfile: src/Dockerfile
+      ports:
+        - "3073:3073"
+      volumes:
+        - ./:/app
+        - /app/node_modules
+      # entrypoint: ["sh", "-c", "sleep infinity"]

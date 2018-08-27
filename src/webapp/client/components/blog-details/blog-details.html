@@ -1,0 +1,219 @@
+<div class="website-wrapper">
+    <header class="main-header-section-home">
+        <div class="main-header-section">
+          <div class="container container-full">
+            <div class="row justify-content-between align-items-center">
+              <div class="col-auto logo">
+                <a href="/">
+                  <img src="../../../../assets/img/logo.png" alt="EnergieQ">
+                  <label class="logo-text-part">is onderdeel van EnergieQ Groep B.V.</label>
+                  <!-- <span>Energie<i>Q</i></span> -->
+                </a>
+              </div>
+       
+              <div class="col top-web-nav-wrap hide-on-767">
+                <ul class="top-web-nav">
+                  <li><a ui-sref="home" ui-sref-active="active">home</a></li>
+                  <li><a ui-sref="about-us" ui-sref-active="active">over ons</a></li> 
+                  <li><a ui-sref="privacy-statement" ui-sref-active="active">privacy reglement</a></li>
+                  <li><a ui-sref="references" ui-sref-active="active">referenties</a></li>
+                  <li><a ui-sref="blog" ui-sref-active="active">blog</a></li>
+                  <li><a ui-sref="question-and-answer" ui-sref-active="active">veelgestelde vragen</a></li>
+                  <li><a ui-sref="contact-us" ui-sref-active="active">contact</a></li>
+                </ul>
+              </div>
+      
+              <div class="col-auto nav-right text-right login-btn-set"> 
+                <div layout="row" layout-align="end center"> 
+                <!-- <md-menu md-position-mode="target-right target" class="mr-2 language-btn">
+                  <div layout="row" layout-align="center center" class="user-setting-toggle"> 
+                    <md-button aria-label="Open demo menu" class="md-icon-button md-primary eq-btn-light" ng-click="$mdMenu.open($event)">
+                      <span>EN</span>
+                    </md-button>
+                  </div>
+                  <md-menu-content>
+                    <md-menu-item>
+                      <md-button ng-click="nav.announceClick($index)">
+                        <div layout="row" flex> 
+                          <p flex>EN</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button>
+                        <div layout="row" flex> 
+                          <p flex>NL</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu> -->
+                <md-button class="eq-btn-secondary auto-width md-button hide-on-767" ui-sref="login">inloggen</md-button> 
+                <!-- <md-button class="eq-btn-secondary auto-width md-button hide-on-767" ui-sref="login">Login Candidate</md-button>  -->
+                
+                <md-menu class="show-on-767" md-position-mode="target-right target">
+                  <div layout="row" layout-align="center center" class="user-setting-toggle">
+                      
+                    <md-button ng-click="$mdMenu.open($event)" aria-label="Open demo menu" class="md-icon-button md-primary eq-btn-dark" >
+                      <i class="material-icons">menu</i>
+                    </md-button>
+      
+                  </div>
+                  <md-menu-content width="3">    
+    
+                    <md-menu-item>
+                      <md-button ui-sref="home">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>home</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="about-us">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>over ons</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="privacy-statemen">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>privacy reglement</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="references">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>referenties</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="blog">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>blog</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="question-and-answer">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>veelgestelde vragen</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="contact-us">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>contact</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    
+                    <mat-list class="auth-menulist">
+                      <md-menu-item>
+                        <md-button ui-sref="login" color="primary">
+                          <div layout="row" flex>
+                            <md-icon class="material-icons">power_settings_new</md-icon>
+                            <p flex>INLOGGEN</p>
+                          </div>
+                        </md-button>
+                      </md-menu-item>
+                      <mat-divider></mat-divider>
+                    </mat-list>
+                    
+                  </md-menu-content>
+                </md-menu>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+<!-- <section class="page-title-banner-section">
+  <div class="trans-bg">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-12 offset-lg-2 text-center large-typo title-bannner"> 
+            <h3 class="page-title">Beatae explicabo impedit quam quisquam</h3>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>   -->
+
+<section class="blog-details-section padding-50-0 ">
+    <div class="container">
+      <div class="row">   
+        <div class="col-md-12">
+          <div class="blog-wrap-details">
+            <div class="row align-items-center">
+              <div class="col-md-4">
+                <div class="blog-img">
+                  <img src="../../../../assets/img/de-nieuwe-realiteit.jpg" alt="">
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <h3 class="blog-title">De nieuwe realiteit?</h3>
+                <span class="post-date-time"> <i class="fa fa-clock-o"></i> 03/07/2018 11:35 AM</span>
+              </div>
+            </div> 
+
+            <div class="blog-details-single">  
+              <p>
+                  Wat als je baan over 5 jaar niet meer bestaat? Of misschien al over 2 jaar? Wat als jij een andere functie overweegt maar daarvoor (nog) niet de juiste opleiding hebt? Wat doe je als werkgever als blijkt dat je maar geen geschikte kandidaten kunt vinden voor je vacatures? Of als je weet dat de functies die je nu in je organisatie hebt over een paar jaar erg veranderd/verdwenen zijn? Zijn je medewerkers dan nog geschikt? Hoe kun je ervoor zorgen dat zij hierop zijn voorbereid en bewust hun eigen keuzes maken?
+              </p> 
+               <p>
+                  Of je het nou hebt over recruitment, outplacement of duurzame inzetbaarheid, de kern van de uitdaging op de arbeidsmarkt is dat vraag en passend (toekomstig) aanbod elkaar niet vindt. Deels omdat het er niet is. Deels omdat ‘we’ nog onvoldoende zijn ingespeeld op de veranderingen. 
+               </p>
+               <p>
+                  Werknemers zijn zich onvoldoende bewust van de kansen binnen en buiten hun huidige beroepsgroep/functie. Welke functies ook passend zouden kunnen zijn is vaak onbekend. Je bent als werkende/werkzoekende geneigd je te identificeren met je functie en daar ook weer op te zoeken. Logisch, want vertrouwd is prettig, maar niet wenselijk. Want als over 10 jaar 60% van de huidige banen is verdwenen, hoe zorg je er dan voor dat je mee blijft doen op de arbeidsmarkt? Hoe weet je of een werkgever bereid is te investeren in eventueel benodigde opleiding? Daarbij is solliciteren arbeidsintensief, vacatures die op vacaturesites staan zijn regelmatig al vervuld of verlopen. De frustratie is groot als je erg je best hebt gedaan op je sollicitatie en daarna helemaal niets hoort.   
+               </p>
+               <p>
+                  Het deed me denken aan een overvolle kroeg waar je een nieuwe liefde tegen hoopt te komen. Vaak kom je wel een leuke ‘kandidaat’ tegen maar is hij/zij niet meer ‘beschikbaar’. En als dat wel zo is moet je nog maar afwachten of je bij elkaar past. Het lijkt erop alsof we de arbeidsmarkt nog benaderen als de overvolle kroeg, waar vraag en aanbod rondloopt. We gaan met iedereen een gesprekje aan. Ben jij ‘beschikbaar’ en zo ja ‘pas jij bij mij’? Om vervolgens 9 van de 10 keer ‘nee’ te krijgen als antwoord. Terwijl we dat zoeken naar een partner nu online vaak veel slimmer en minder tijdsintensief aanpakken. Waarom dan niet op de arbeidsmarkt?
+               </p>
+               <p>
+                  Gelukkig zorgt de wereld van data ervoor dat we steeds slimmer kunnen werven. We kunnen daar echter nog een stap in maken. Ervoor zorgen dat we een beschikbare kandidaat en beschikbare passende functie met elkaar matchen. Dat beiden direct interesse kunnen tonen zodat zoeken veel effectiever is. Dat cv en vooropleiding worden losgelaten zodat het aanbod wordt vergroot en matches duurzamer zijn. Dat kandidaten inzicht krijgen in de ontwikkelingen op de arbeidsmarkt en de mogelijkheden die dat biedt. 
+               </p>
+               <p class="mb-0">
+                  Maar nu is er Vindm.nu, hier brengen we alles samen;
+               </p>
+               <ul class="list-item list-item-home list-item-blog">
+                 <li>Informatie over kansen en beperkingen op de arbeidsmarkt</li>
+                 <li>Loopbaanscan zodat je als werknemer/werkzoekende in kaart kunt brengen waar je goed in bent en waar je aan kunt werken</li>
+                 <li>Oefeningen/scans/modules ter bevordering van duurzame inzetbaarheid en omgaan met verandering</li>
+                 <li>Persoonlijke begeleiding door een team van experts op de arbeidsmarkt</li>
+                 <li>Beschikbare, gemotiveerde en geïnformeerde kandidaten</li>
+                 <li>Functies die toekomstproof zijn en bij jouw profiel passen en actuele vacatures met bijbehorende opleidingsinformatie</li>
+                 <li>Matchsysteem dat matcht op competenties, kwaliteiten en affiniteit, niet op cv. </li>
+               </ul>
+               <p>
+                  Wij matchen op basis van wie jij nu bent, met alles wat je meebrengt. Je affiniteit, je kwaliteiten, competenties en je persoonlijkheid. Je krijgt functies voorgesteld die bij je passen én veel kans bieden in de toekomst. Zodat je (onverwachte) kansen tegenkomt en ziet wat voor aanvullende opleiding/training daarvoor nodig is. Zo kun je met voldoende informatie werken aan je duurzame inzetbaarheid. Als je direct wilt solliciteren? Dan krijg je vacatures voorgesteld die bij je passen. De potentieel werkgever krijgt direct jouw profiel te zien en kan tevens interesse tonen. Dit zijn werkgevers die bereid zijn in jouw ontwikkeling te investeren zodat jij een volledig passende werknemer kunt zijn. Dit alles wordt begeleid door onze kundige loopbaanexperts.
+               </p>
+               <p>
+                  Meer weten? Bel of e-mail gerust. We staan uiteraard voor je klaar!
+               </p>
+               <p>
+                  De volgende blog gaat over nut en noodzaak van je cv anno 2018, moeten we die niet gewoon in de prullenbak gooien?
+               </p>
+            </div>
+          </div>
+
+        </div> 
+
+      </div>
+    </div>
+  </section>
+  
+
+</div>

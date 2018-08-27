@@ -1,0 +1,151 @@
+<div class="body-container">
+  <div class="inner-content">
+
+    <div class="box-description mb-3">
+      <p>
+        <strong>[{ 'NOTE' | translate }]:</strong> [{ 'EMPLOYEE_STATIC_TEXT' | translate }]
+      </p>
+    </div>
+
+    <div class="eq-box  mb-3">
+      <div class="eq-box-header">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-auto">
+            <h3 class="title-1">[{ 'EMPLOYEE_TEXT' | translate }]</h3>
+          </div>
+          <div class="col">
+            <div class="row justify-content-end">
+
+              <div class="col-auto block-on-mobile">
+                <md-input-container class="md-block no-margin">
+                  <md-select ng-model="empCtrl.selectedTypeItem" md-selected-text="empCtrl.getSelectedText()" ng-change="empCtrl.filterChanged()" aria-label="filteritem" class="md-block">
+                    <md-option ng-repeat="item in empCtrl.typeList" ng-value="item">[{item.name}]</md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+
+              <div class="col-auto">
+                <md-input-container md-no-float class="md-block custom-md-input no-margin" ng-keypress="($event.charCode==13)? empCtrl.searchTermChanged('getEmployeeList') : return">
+                  <md-icon class="material-icons">search</md-icon>
+                  <input ng-model="empCtrl.searchTerm" placeholder="[{ 'SEARCH_TEXT' | translate }]">
+                </md-input-container>
+              </div>
+
+              <div class="col-auto">
+                <md-button class="eq-md-button-primary mr-0" ng-disabled="empCtrl.loader" ng-click="empCtrl.addEmployee($event)">[{ 'ADD_TEXT' | translate }]</md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="table-wrap">
+        <custom-loader ng-show="empCtrl.loader"></custom-loader>
+        <div class="data-table-custom table-responsive">
+          <table class="table table-sm table-sm-custom">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>[{ 'EMAIL_STATIC_TEXT' | translate }]</th>
+                <th>[{ 'NAME_TEXT' | translate }]</th>
+                <th>[{ 'COMPANY_TEXT' | translate }]</th>
+                <th>[{ 'TYPE_TEXT' | translate }]</th>
+                <th>[{ 'CUSTOM_STATUS' | translate }]</th>
+                <!-- <th>[{ 'INTELLIGENCE_TEXT' | translate }]</th>
+                <th>[{ 'DISCIPLINE_TEXT' | translate }]</th>
+                <th class="text-center">[{ 'STATUS_TEXT' | translate }]</th> -->
+                <th class="text-center" width="200">[{ 'ACTION_TEXT' | translate }]</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="employee in empCtrl.employeeListArr track by $index">
+                <td>[{ ( ( $index + 1 ) + ( ( empCtrl.selectedPage - 1 ) * empCtrl.selectedPageSize ) ) }]</td>
+                <td><a href="" class="inline-link">[{employee.email}]</a></td>
+                <td>[{employee.full_name}]</td>
+                <td>[{employee.company_list[0].name}]</td>
+                <td>[{employee.loginType}]</td>
+                <td ng-class="{'red-text': employee.employee_custom_status == 0, 'green-text': employee.employee_custom_status == 1,
+                    'orange-text': employee.employee_custom_status == 2}">
+                  [{empCtrl.getStatusNameByUuid(employee.employee_custom_status)}]
+                </td>
+                <!-- <td>[{employee.intelligence}]</td>
+                <td>[{employee.discipline}]</td>
+                <td class="text-center"><label for="" class="status-icon" ng-class="item.statusColor"></label></td> -->
+                <td class="text-center md-button-sm-wrap">
+                  <md-button ng-click="empCtrl.goToEmployeeDetails(employee)" class="md-icon-button" aria-label="More">
+                    <i class="material-icons">remove_red_eye</i>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="More" ng-click="empCtrl.updateEmployee($event, employee, $index)">
+                    <i class="material-icons">edit</i>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="Delete" ng-click="empCtrl.showConfirm($event, employee, $index)">
+                    <i class="material-icons">close</i>
+                  </md-button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="eq-pagination">
+          <div class="row align-items-center justify-content-end">
+            <div class="col box-amount-wrap">
+              <div class="box-amount">
+                <div class="row align-items-top justify-content-start">
+                  <div class="col-auto">
+                    <h2>[{ 'EMPLOYEE_USER_COUNT_TEXT' | translate }]: <span>[{ empCtrl.summary.employee_user_count}]</span></h2>
+                  </div>
+                  <!-- <div class="col-auto">
+                      <h2>[{ 'COMPANY_USER_COUNT_TEXT' | translate }]: <span>[{ empCtrl.summary.company_user_count}]</span></h2>
+                  </div>
+                  <div class="col-auto">
+                      <h2>[{ 'DASHBOARD_USER_COUNT_TEXT' | translate }]: <span>[{ empCtrl.summary.dashboard_user_count}]</span></h2>
+                  </div> -->
+                  <div class="col-auto">
+                    <h2>[{ 'SUSTAINABLE_EMPLOYEE_COUNT_TEXT' | translate }]: <span>[{ empCtrl.summary.sustainable_employability_employee_count}]</span></h2>
+                  </div>
+                  <div class="col-auto">
+                    <h2>[{ 'OUTPLACEMENT_EMPLOYEE_COUNT_TEXT' | translate }]: <span>[{ empCtrl.summary.outplacement_employee_count}]</span></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              [{ 'ROWS_PER_PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="empCtrl.selectedPageSize" md-selected-text="empCtrl.getSelectedPageSize()" ng-change="empCtrl.paginationChanged('getEmployeeList')" aria-label="page_row" class="md-block text-center">
+                  <md-option ng-repeat="item in empCtrl.pageSize" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              [{ 'PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="empCtrl.selectedPage" md-selected-text="empCtrl.getSelectedPage()" ng-change="empCtrl.paginationChanged('getEmployeeList')" aria-label="page" class="md-block text-center">
+                  <md-option ng-repeat="item in empCtrl.pageList" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              <div class="text-center">
+                <md-button class="md-icon-button" ng-disabled="empCtrl.selectedPage<=1" ng-click="empCtrl.prevPage('getEmployeeList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                </md-button>
+                <md-button class="md-icon-button" ng-disabled="empCtrl.selectedPage>=empCtrl.pageList.length" ng-click="empCtrl.nextPage('getEmployeeList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

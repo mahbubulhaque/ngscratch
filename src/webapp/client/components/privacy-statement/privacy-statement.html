@@ -1,0 +1,433 @@
+<div class="website-wrapper">
+    <header class="main-header-section-home">
+        <div class="main-header-section">
+          <div class="container container-full">
+            <div class="row justify-content-between align-items-center">
+              <div class="col-auto logo">
+                <a href="/">
+                  <img src="../../../../assets/img/logo.png" alt="EnergieQ">
+                  <label class="logo-text-part">is onderdeel van EnergieQ Groep B.V.</label>
+                  <!-- <span>Energie<i>Q</i></span> -->
+                </a>
+              </div>
+       
+              <div class="col top-web-nav-wrap hide-on-767">
+                <ul class="top-web-nav">
+                  <li><a ui-sref="home" ui-sref-active="active">home</a></li>
+                  <li><a ui-sref="about-us" ui-sref-active="active">over ons</a></li> 
+                  <li><a ui-sref="privacy-statement" ui-sref-active="active">privacy reglement</a></li>
+                  <li><a ui-sref="references" ui-sref-active="active">referenties</a></li>
+                  <li><a ui-sref="blog" ui-sref-active="active">blog</a></li>
+                  <li><a ui-sref="question-and-answer" ui-sref-active="active">veelgestelde vragen</a></li>
+                  <li><a ui-sref="contact-us" ui-sref-active="active">contact</a></li>
+                </ul>
+              </div>
+      
+              <div class="col-auto nav-right text-right login-btn-set"> 
+                <div layout="row" layout-align="end center"> 
+                <!-- <md-menu md-position-mode="target-right target" class="mr-2 language-btn">
+                  <div layout="row" layout-align="center center" class="user-setting-toggle"> 
+                    <md-button aria-label="Open demo menu" class="md-icon-button md-primary eq-btn-light" ng-click="$mdMenu.open($event)">
+                      <span>EN</span>
+                    </md-button>
+                  </div>
+                  <md-menu-content>
+                    <md-menu-item>
+                      <md-button ng-click="nav.announceClick($index)">
+                        <div layout="row" flex> 
+                          <p flex>EN</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button>
+                        <div layout="row" flex> 
+                          <p flex>NL</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu> -->
+                <md-button class="eq-btn-secondary auto-width md-button hide-on-767" ui-sref="login">inloggen</md-button> 
+                <!-- <md-button class="eq-btn-secondary auto-width md-button hide-on-767" ui-sref="login">Login Candidate</md-button>  -->
+                
+                <md-menu class="show-on-767" md-position-mode="target-right target">
+                  <div layout="row" layout-align="center center" class="user-setting-toggle">
+                      
+                    <md-button ng-click="$mdMenu.open($event)" aria-label="Open demo menu" class="md-icon-button md-primary eq-btn-dark" >
+                      <i class="material-icons">menu</i>
+                    </md-button>
+      
+                  </div>
+                  <md-menu-content width="3">    
+    
+                    <md-menu-item>
+                      <md-button ui-sref="home">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>home</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="about-us">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>over ons</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="privacy-statemen">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>privacy reglement</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="references">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>referenties</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="blog">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>blog</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="question-and-answer">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>veelgestelde vragen</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="contact-us">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>contact</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    
+                    <mat-list class="auth-menulist">
+                      <md-menu-item>
+                        <md-button ui-sref="login" color="primary">
+                          <div layout="row" flex>
+                            <md-icon class="material-icons">power_settings_new</md-icon>
+                            <p flex>INLOGGEN</p>
+                          </div>
+                        </md-button>
+                      </md-menu-item>
+                      <mat-divider></mat-divider>
+                    </mat-list>
+                    
+                  </md-menu-content>
+                </md-menu>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+<section class="page-title-banner-section">
+  <div class="trans-bg">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-12 offset-lg-2 text-center large-typo title-bannner"> 
+            <h3 class="page-title">privacy reglement</h3>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>  
+
+<section class="white-bg padding-50-0 ">
+    <div class="container">
+      <div class="row align-items-center"> 
+        <div class="col-md-12"> 
+          <div class="box-content-wrap"> 
+              <p class="paragraph-4">
+                Als EnergieQ Groep B.V. beschikking krijgt over uw persoonsgegevens, dan behandelen we deze gegevens in overeenstemming met dit privacystatement. EnergieQ Groep B.V. vindt het beschermen van de persoonsgegevens van haar websitebezoekers, werkzoekenden en kandidaten, gedetacheerden, (tijdelijke) werknemers, zelfstandig ondernemers en zakelijke relaties van groot belang. Daarom worden persoonsgegevens zorgvuldig behandeld en beveiligd conform de eisen die de Algemene Verordening Gegevensbescherming (AVG) hieraan stelt. In dit privacystatement lichten wij toe:
+              </p>
+              <ul class="list-item-number">
+                <li>Wie zijn wij? </li>
+                <li>Wanneer verzamelen wij persoonsgegevens?</li>
+                <li>Waarom verzamelen wij uw persoonsgegevens?</li>
+                <li>Welke persoonsgegevens verzamelen wij van u?</li>
+                <li>Met wie kunnen wij uw persoonsgegevens delen?</li>
+                <li>Verwerken wij uw persoonsgegevens buiten Nederland?</li>
+                <li>Uw rechten</li>
+                <li>Beveiliging</li>
+                <li>Technische informatie en cookies</li>
+                <li>Bewaartermijn</li>
+                <li>Vragen, opmerkingen of klachten</li>
+                <li>Wijzigingen</li> 
+              </ul>
+
+              <h3 class="heading-3">1. Wie zijn wij?</h3>
+              <p class="paragraph-4">
+                EnergieQ Groep B.V. is gevestigd te Apeldoorn (7311 SZ) aan de Prins Willem-Alexanderlaan 170 en is samen met haar dochtermaatschappijen (hierna tezamen: EnergieQ Groep B.V.) ‘verwerkingsverantwoordelijke’ in de zin van de AVG voor de verwerkingen van persoonsgegevens die in dit privacystatement worden beschreven. Het gaat om de volgende dochtermaatschappijen: EnergieQ Detachering B.V.; EnergieQ Projecten B.V.; Inflex Detachering B.V.; Sterk Sociaal B.V.;
+                Dit privacystatement is van toepassing op vrijwel alle gegevensverwerkingen van EnergieQ Groep B.V. inclusief de gegevensverwerkingen die plaatsvinden via de volgende websites:
+              </p>
+
+              <ul class="list-item">
+                <li><a href="http://www.energieq.nl/" class="inline-link-blue" target="_blank">www.energieq.nl </a> </li>
+                <li><a href="http://www.inflex.nl/" class="inline-link-blue" target="_blank">www.inflex.nl </a> </li>
+                <li><a href="http://www.vindm.nu/" class="inline-link-blue" target="_blank">www.vindm.nu </a> </li> 
+              </ul>
+
+              <h3 class="heading-3">2. Wanneer verzamelen wij uw persoonsgegevens?</h3>
+              <p class="paragraph-4">
+                Met persoonsgegevens wordt alle informatie over een geïdentificeerde of identificeerbare natuurlijke persoon bedoeld. Wij verzamelen onder andere op de volgende manieren persoonsgegevens:
+              </p> 
+              <ul class="list-item">
+                <li>bij het bezoeken van één van onze websites;</li>
+                <li>wanneer u uw gegevens achterlaat op één van onze websites; </li>
+                <li>wanneer u uw gegevens invult of achterlaat op één van onze vestigingen;</li> 
+                <li>wanneer u zich op andere wijze aanmeldt of wordt aangemeld om gebruik te maken van onze activiteiten en/of dienstverlening;</li>
+                <li>in het kader van een zakelijke relatie met EnergieQ Groep B.V.</li>
+              </ul>
+
+              <h3 class="heading-3">3. Waarom verzamelen wij uw persoonsgegevens?</h3>
+              <p class="paragraph-4">
+                Wij verzamelen en verwerken uw gegevens voor onderstaande doeleinden:
+              </p>
+              <ul class="list-item-number">
+                <li>Voor het doen van aanbiedingen voor en/of verstrekken en uitwisselen van informatie over en ten behoeve van de dienstverlening en overige activiteiten van de verwerkingsverantwoordelijke.  </li>
+                <li>Voor de beoordeling van de geschiktheid en de beschikbaarheid van werkzoekenden en kandidaten, gedetacheerden, (tijdelijke) werknemers en zelfstandig ondernemers, voor en/of naar bemiddeling tot vast/tijdelijk werkaanbod dan wel een opdracht.</li>
+                <li>In het kader van een overeenkomst met de werkzoekende/werknemer/zelfstandig ondernemer. Voor de voorbereiding, totstandkoming, uitvoering en beëindiging van (een) eventuele detacherings- of arbeidsovereenkomst(en), stageovereenkomst, proefplaatsing, dan wel overeenkomst van opdracht.</li>
+                <li>In het kader van een overeenkomst met de opdrachtgever. Voor de voorbereiding, totstandkoming, uitvoering en beëindiging van overeenkomsten met opdrachtgevers voor werving, selectie, terbeschikkingstelling en/of inhuur van werkzoekenden en kandidaten, gedetacheerden, (tijdelijke) werknemers en zelfstandig ondernemers.</li>
+                <li>Personeels- en salarisadministratie.</li>
+                <li>In het kader van een overeenkomst met een leverancier. Voor de voorbereiding, totstandkoming, uitvoering en beëindiging van de overeenkomst met leveranciers die werkzoekenden, kandidaten, gedetacheerden, (tijdelijke) werknemers en zelfstandig ondernemers werven, selecteren of ter beschikkingstellen aan (via) verantwoordelijke (bij opdrachtgever).</li>
+                <li>Voor training, opleiding en andere vormen van loopbaanbegeleiding en persoonlijke ontwikkeling. Daarnaast ter ontwikkeling en verbetering van onze dienstverlening.</li>
+                <li>Om te informeren over het management, het (doen) verzorgen van interne controle, bedrijfsveiligheid en het uitoefenen van audits en accountantscontrole.</li>
+                <li>Wet- en regelgeving. Voor identificatie, bestrijding van fraude, verzorging van interne controle en bedrijfsveiligheid, aanvragen subsidies, afdrachtverminderingen, premievrijstellingen en/of premiekortingen en overige wet en regelgeving.</li>
+              </ul>
+              <p class="paragraph-4">
+                Wij verwerken uw persoonsgegevens op basis van één of meerdere van de volgende juridische grondslagen:
+              </p>
+              <ul class="list-item-number"> 
+                <li>De uitvoering van een overeenkomst</li> 
+                <li>Het voldoen aan een wettelijke verplichting</li> 
+                <li>Gerechtvaardigd belang</li> 
+                <li>Uw toestemming</li> 
+              </ul>
+
+              <h3 class="heading-3">4. Welke persoonsgegevens verzamelen wij van u?</h3>
+              <p class="paragraph-4">
+                EnergieQ Groep B.V. kan onderstaande persoonsgegevens van u verwerken als u werkzoekende, kandidaat, gedetacheerde, (tijdelijke) werknemer, zelfstandig ondernemer en/of zakelijke relatie bent bij of van EnergieQ Groep B.V. U bent er zelf verantwoordelijk voor dat wij de beschikking hebben over uw juiste en relevante gegevens.
+              </p>
+              <p class="paragraph-4 mb-0"><i>Websitebezoeker </i></p>
+              <ul class="list-item">
+                <li>Gegevens betreffende het apparaat dat u gebruikt om onze website te bezoeken, zoals een IP-adres (welke zal worden geanonimiseerd);</li>
+                <li>Strikt noodzakelijke en vrijwillig mee ingestemde cookie- en soortgelijke gegevens; </li>
+                <li>Op onze website of sociale media accounts vrijwillig gepubliceerde gegevens (via sociale netwerken, reactie bij een blog, et cetera);</li>
+                <li>Via onze website vrijwillig ingevulde of achtergelaten gegevens (via een contactformulier, een aanmeldformulier, et cetera).</li>
+              </ul>
+
+              <p class="paragraph-4 mb-0"><i>Werkzoekende of kandidaat </i></p>
+              <ul class="list-item">
+                <li>NAW-gegevens, e-mailadres, telefoonnummer en andere contactgegevens;</li>
+                <li>Geboortegegevens, geslacht;</li>
+                <li>Curriculum vitae (cv), informatie over opleiding, stages en werkervaring;</li>
+                <li>Pasfoto (indien toegevoegd aan het cv);</li>
+                <li>Gegevens over trainingen, opleidingen en/of testen die u zelf of via ons heeft gevolgd of gedaan;</li>
+                <li>Gegevens over beschikbaarheid;</li>
+                <li>Alle gegevens die kandidaten zelf via hun motivatiebrief, cv of op andere wijze met EnergieQ Groep B.V. delen;</li>
+                <li>Andere gegevens die van belang (kunnen) zijn in het kader van de beoordeling van de geschiktheid van de kandidaat, bijvoorbeeld referenties en getuigschriften.</li>
+              </ul>
+
+              <p class="paragraph-4 mb-0"><i>Gedetacheerde, (tijdelijke) werknemer en zelfstandig ondernemer </i>
+                Indien u voor EnergieQ Groep B.V. of haar opdrachtgevers werkt/heeft gewerkt, kan EnergieQ Groep B.V. onderstaande gegevens verwerken: </p>
+              <ul class="list-item">
+                <li>NAW gegevens, e-mailadres, telefoonnummer en andere contactgegevens;</li>
+                <li>Geboortegegevens, geslacht;</li>
+                <li>Curriculum vitae (cv), informatie over opleiding, stages en werkervaring;</li>
+                <li>Gegevens over trainingen en opleidingen en/of testen die u zelf of via ons hebt gevolgd of gedaan;</li>
+                <li>Gegevens over beschikbaarheid;</li>
+                <li>Andere gegevens die van belang (kunnen) zijn in het kader van de beoordeling van de geschiktheid van de kandidaat, bijvoorbeeld referenties en getuigschriften;</li>
+                <li>Nationaliteit, BSN-nummer & identiteitsbewijs, werkvergunning;</li>
+                <li>Gegevens in het kader van een pre-employment screening, link naar PES-beleid;</li>
+                <li>Overige gegevens die gerelateerd zijn aan de personeels-, salaris- en verzuimregistratie.<br>
+                  Voor een meer specifiek overzicht van uw persoonsgegevens, kunt u vragen om inzage.</li> 
+              </ul>
+
+              <p class="paragraph-4 mb-0"><i>Zakelijke relatie</i>
+                EnergieQ Groep B.V. verwerkt de persoonsgegevens van betrokkenen die werkzaam zijn voor ondernemingen waarmee wij zaken doen, zoals medewerkers van opdrachtgevers, leveranciers, verkopers en referenten. We kunnen de volgende persoonsgegevens van zakelijke relaties verwerken:  </p>
+              <ul class="list-item">
+                <li>Zakelijke contactgegevens;</li>
+                <li>Persoonsgegevens die u ons verstrekt in het kader van het bijwonen van evenementen of bijeenkomsten zoals vereisten en wensen ten aanzien van toegankelijkheid en dieet.</li>
+              </ul>
+
+              <h3 class="heading-3">5. Met wie kunnen wij uw persoonsgegevens delen?</h3>
+              <p class="paragraph-4">
+                EnergieQ Groep B.V. kan uw persoonsgegevens doorgeven aan andere entiteiten van EnergieQ Groep B.V., haar opdrachtgevers, leveranciers en onderaannemers die namens EnergieQ Groep B.V. diensten verlenen of opdrachten uitvoeren (verwerkers), overheidsinstanties, bedrijfsarts en andere zakelijke relaties. Ook verstrekken wij gegevens in gevallen waarin wij daartoe worden verplicht, bijvoorbeeld door een gerechtelijk bevel of een gerechtelijk vonnis. Derden aan wie wij uw persoonsgegevens verstrekken zijn zelf verantwoordelijk voor de naleving van de privacywetgeving. EnergieQ Groep B.V. is niet verantwoordelijk noch aansprakelijk voor de verwerking van uw persoonsgegevens door deze derden. Voor zover een derde uw persoonsgegevens verwerkt in de hoedanigheid van een verwerker van EnergieQ Groep B.V., sluit EnergieQ Groep B.V. met een dergelijke derde een verwerkingsovereenkomst af die aan de in de AVG omschreven eisen voldoet. 
+              </p>
+
+              <h3 class="heading-3">6. Verwerken wij uw gegevens buiten Nederland?</h3>
+              <p class="paragraph-4">
+                Uw persoonsgegevens worden niet doorgegeven buiten Nederland. Indien persoonsgegevens toch moeten worden doorgegeven buiten Nederland, zal dit gecommuniceerd worden en zorgt EnergieQ Groep B.V. voor de nodige maatregelen  om te verzekeren dat de doorgegeven persoonsgegevens adequaat worden beschermd. 
+              </p>
+ 
+              <h3 class="heading-3">7. Uw rechten</h3>
+              <p class="paragraph-4 mb-0">U beschikt als betrokkene over de volgende rechten:  </p>
+              <ul class="list-item">
+                <li>Het recht op inzage. Dit betekent dat u een verzoek kan doen om inzage te krijgen in de persoonsgegevens die wij van u verzameld hebben;</li>
+                <li>Het recht op rectificatie of verbetering van uw gegevens indien deze onjuist of onvolledig zijn;</li> 
+                <li>Het recht op verwijdering van uw persoonsgegevens. Daarbij dient u er rekening mee te houden dat er zich omstandigheden kunnen voordoen waarin wij verplicht zijn uw gegevens te bewaren om aan onze juridische en wettelijke verplichtingen te voldoen;</li> 
+                <li>Het recht om bezwaar te maken tegen of te verzoeken om beperking van de verwerking van uw persoonsgegevens. Nogmaals, er kunnen zich omstandigheden voordoen waarin wij wettelijk bevoegd zijn om niet aan uw verzoek te voldoen;</li> 
+                <li>Het recht op dataportabiliteit. Dit houdt in dat u het recht heeft uw gegevens te ontvangen in een gestructureerde, gangbare en machineleesbare vorm. Daarbij heeft u het recht deze gegevens aan een andere verwerkingsverantwoordelijke over te dragen;</li> 
+                <li>Het recht om bezwaar te maken tegen geheel of gedeeltelijke geautomatiseerde besluitvorming. EnergieQ Groep B.V. maakt op dit moment geen gebruik van geautomatiseerde besluitvorming;</li> 
+                <li>Het recht om een klacht in te dienen bij de Functionaris Persoonsgegevens van EnergieQ Groep B.V.;</li> 
+                <li>Het recht om de gegeven toestemming in te trekken. Het intrekken van uw toestemming werkt niet met terugwerkende kracht, het intrekken van toestemming is enkel van toepassing op toekomstige verwerkingen.</li> 
+              </ul>
+
+              <p class="paragraph-4 mb-0"><i>Eigen persoonlijk account (Mijn EnergieQ, per 1 januari 2019) </i>
+                Enkele van de hierboven omschreven rechten kunt u vanaf 1 januari 2019 zelf uitoefenen indien u een persoonlijk account heeft aangemaakt bij EnergieQ Groep B.V. Indien u een eigen account heeft, heeft u namelijk inzage in een groot deel van de over u geregistreerde persoonsgegevens. U kunt zelf op elk gewenst moment een aantal gegevens wijzigen of verwijderen, zoals het doorvoeren van aanpassingen in uw cv of uw accountgegevens. Indien u geen eigen account heeft of als u inzage wenst in uw totale persoonsgegevensverwerking en/of één van de ander hierboven omschreven rechten wilt uitoefenen, dan kunt u contact opnemen met  EnergieQ’s Functionaris Persoonsgegevens. Binnen een maand na ontvangst van een verzoek zult u per e-mail geïnformeerd over het standpunt van EnergieQ Groep B.V. inzake het verzoek en welke actie EnergieQ Groep B.V. heeft ondernomen of zal ondernemen. In complexe gevallen kan de behandeltermijn met twee (2) maanden worden verlengd. Van een dergelijke verlenging zal EnergieQ Groep B.V. u binnen de eerste maand op de hoogte stellen. EnergieQ Groep B.V. kan een verzoek weigeren indien: 
+              <ul class="list-item">
+                <li>op het verzoek een afwijzingsgrond van toepassing is; </li>
+                <li>en/of het verzoek onvoldoende specifiek is; </li> 
+                <li>en/of uw identiteit niet met redelijke zekerheid kan worden vastgesteld; </li> 
+                <li>en/of het verzoek volgt binnen een onredelijke tussenpoos na een eerder verzoek of anderszins een misbruik van een van deze rechten inhoudt. Een interval van 6 maanden of minder zal over het algemeen beschouwd worden als een onredelijke tussenpoos.</li> 
+              </ul>
+
+              <h3 class="heading-3">8. Beveiliging</h3>
+              <p class="paragraph-4">
+                EnergieQ Groep B.V. doet er alles aan om uw persoonsgegevens optimaal te beveiligen tegen onrechtmatig gebruik. EnergieQ Groep B.V. heeft passende technische en organisatorische maatregelen genomen om uw persoonsgegevens te beveiligen tegen ongeoorloofde of onrechtmatige verwerking en tegen verlies, vernietiging, schade, aanpassingen of bekendmaking. Mocht u vragen hebben over de beveiliging van uw persoonsgegevens, of als er aanwijzingen zijn van misbruik, wordt u verzocht om contact met ons op te nemen via onze Functionaris Persoonsgegevens. 
+              </p>
+
+              <h3 class="heading-3">9. Technische informatie en cookies</h3>
+              <p class="paragraph-4">
+                Technische informatie <br>
+De website van EnergieQ Groep B.V. verzamelt automatisch bepaalde informatie over de (apparaten van) bezoekers van onze websites, zoals bijvoorbeeld het Internet Protocol (IP)- adres van uw computer (welke wordt geanonimiseerd door het weglaten van de laatste drie tekens), het IP-adres van uw Internet Service Provider, datum en tijd van toegang tot de website, het internetadres van de website vanwaar u rechtstreeks bent doorgelinkt naar onze website, het besturingssysteem dat u gebruikt, de onderdelen van de website die u bezoekt, de pagina’s van de website die u heeft bezocht en de informatie die u heeft bekeken, informatie over het type apparaat wat u gebruikt voor uw bezoek aan de site, de geo-locatie waar u zich bevindt en het materiaal dat u opstuurt of downloadt van de website. Deze technische informatie wordt gebruikt voor het beheer van de website en systeembeheerder, en om de kwaliteit en effectiviteit van de website te verbeteren. Uw gegevens van onze website worden niet gedeeld met Google voor haar eigen doeleinden of voor advertentiedoeleinden.
+              </p>
+
+              <p class="paragraph-4">
+                <i class="block-width">Cookies en soortgelijke technieken </i>
+                De website van EnergieQ Groep B.V. maakt gebruik van cookies en soortgelijke technieken. 
+              </p>
+
+              <p class="paragraph-4 mb-0 block-width">
+                Wat zijn cookies?
+              </p>
+
+              <p class="paragraph-4">
+                Cookies zijn eenvoudige kleine tekstbestanden die worden opgeslagen op de harde schijf of in het geheugen van uw computer/mobiel/tablet. Cookies kunnen uw computer of de bestanden die daar op staan niet beschadigen. Zowel wij als adverteerders en tussenpartijen kunnen gebruik maken van cookies en soortgelijke technieken (hierna tezamen aangeduid als: “cookies”) op onze websites.<br>
+                Het gebruik van cookies is veilig. Er kan geen persoonlijke informatie, zoals een telefoonnummer of een e-mailadres, uit cookies worden herleid. Cookies kunnen dus niet worden gebruikt voor e-mail en telemarketing acties.<br>
+                Wij vinden het van groot belang dat u weet welke cookies onze websites inzetten en voor welke doeleinden ze gebruikt worden. We willen namelijk graag én uw privacy én de gebruiksvriendelijkheid van onze websites zoveel mogelijk waarborgen. Hieronder volgt een overzicht van de cookies en vergelijkbare technieken die via onze websites worden geplaatst, per categorie de bijbehorende doeleinden en de website of partij die de cookies plaatst.<br>
+                Voor welke doeleinden kunnen wij cookies gebruiken? 
+              </p>
+              <p class="paragraph-4 mb-0">
+                <u>Functionele cookies</u>
+              </p>
+              <p class="paragraph-4 mb-0">
+                Wij gebruiken functionele cookies voor een of meer van onderstaande doeleinden:
+              </p>
+              <ul class="list-item-number">  
+                <li>het doorgeven van informatie van de ene pagina aan de volgende pagina;</li> 
+                <li>het opslaan van voorkeuren;</li> 
+                <li>het uitlezen van browserinstellingen om onze website optimaal te kunnen weergeven;</li> 
+                <li>het gelijkmatig belasten van de website, waardoor de site bereikbaar blijft;</li> 
+                <li>het aanbieden van de mogelijkheid om (in de toekomst) inloggegevens op te slaan, zodat dit niet iedere keer opnieuw behoeft te worden ingevuld.</li> 
+              </ul>
+
+              <p class="paragraph-4 mb-0">
+                <u>Analytische cookies</u>
+              </p>
+              <p class="paragraph-4 mb-0">
+                Wij gebruiken analytische cookies voor een of meer van onderstaande doeleinden:
+              </p>
+              <ul class="list-item-number">  
+                <li>het bijhouden van het aantal bezoekers op onze website en de webpagina’s;</li>  
+                <li>het bijhouden van de tijdsduur die elke bezoeker doorbrengt op onze webpagina’s;</li>  
+                <li>het bepalen van de volgorde waarin een bezoeker de verschillende webpagina’s bezoekt;</li>  
+                <li>het beoordelen welke delen van onze site aanpassing behoeven;</li>  
+                <li>het optimaliseren van de website.</li>   
+              </ul>
+
+              <p class="paragraph-4 mb-0">
+                <u>Advertentie cookies</u>
+              </p>
+              <p class="paragraph-4 mb-0">
+                Wij kunnen advertentie cookies gebruiken voor een of meer van onderstaande doeleinden:
+              </p>
+              <ul class="list-item-number">  
+                <li>het bijhouden welke advertenties de bezoeker al heeft gezien om zo te voorkomen dat deze steeds dezelfde te zien krijgt;</li>  
+                <li>het bijhouden hoeveel bezoekers op de advertentie klikken ten behoeve van afrekening met de partij waarvan de advertentieruimte wordt gekocht;</li>  
+                <li>het bijhouden hoeveel bestellingen plaatsvinden via de advertentie ten behoeve van afrekening met de adverteerder;</li>  
+                <li>het controleren van de mogelijkheid tot het tonen van banners op onze websites.</li>   
+              </ul>
+
+              <p class="paragraph-4 mb-0">
+                <u>Tracking cookies</u>
+              </p>
+              <p class="paragraph-4 mb-0">
+                Wij kunnen tracking cookies gebruiken voor een of meer van onderstaande doeleinden:
+              </p>
+              <ul class="list-item-number">  
+                <li>het registreren van uw bezoek om hiermee een inschatting te maken van uw interesses;</li>  
+                <li>het nagaan of u op een advertentie heeft geklikt;</li>  
+                <li>het doorgeven van informatie over uw surfgedrag aan andere websites;</li>  
+                <li>het gebruik maken van diensten van derde partijen om advertenties aan u te kunnen tonen;</li>   
+                <li>het tonen van interessantere advertenties op basis van uw social media gebruik.</li>
+              </ul>
+
+              <p class="paragraph-4 mb-0">
+                <u>Sociale media cookies</u>
+              </p>
+              <p class="paragraph-4 mb-0">
+                Wij kunnen sociale media cookies gebruiken voor onderstaande doeleinden:
+              </p>
+              <ul class="list-item-number">  
+                <li>het direct kunnen delen door gebruikers van bepaalde, geselecteerde social media inhoud van onze website</li>  
+                <li>het aanbieden van de mogelijkheid om direct en online te kunnen solliciteren via een social media button;</li>  
+                <li>het tonen van de integratie van social media op onze websites;</li>  
+                <li>het aanbieden van de mogelijkheid om EnergieQ Groep B.V.  te volgen via social media kanalen;</li>   
+                <li>het mogelijk maken van het gebruik van social media op onze websites.</li>
+              </ul>
+
+              <p class="paragraph-4 mb-0">
+                <u>Security cookies</u>
+              </p>
+              <p class="paragraph-4 mb-0">
+                Wij gebruiken security cookies voor onderstaand doeleinden:
+              </p>
+              <ul class="list-item-number">  
+                <li>het herleiden of een bezoek nieuw is om daarmee hackpogingen of ongeautoriseerde loginpogingen tegen te houden;</li>  
+                <li>het herleiden of een bezoek van een bot/crawler of persoon afkomstig is;</li>  
+                <li>het waarborgen dat alleen uitgenodigde personen toegang hebben tot een (specifieke) website.<br>
+                  Onze website bevat links en buttons met verwijzingen naar websites van derde partijen. Dit zijn bijvoorbeeld LinkedIn, Facebook, Instagram en YouTube. Op het moment dat u een dergelijke link of button aanklikt, verlaat u onze website en zijn deze derde partijen verantwoordelijk voor het cookiegebruik op hun website. Hier hebben wij geen invloed op.</li>  
+              </ul>
+
+              <h3 class="heading-3">10. Bewaartermijn </h3>
+              <p class="paragraph-4">EnergieQ Groep B.V. bewaart uw persoonsgegevens niet langer dan nodig is voor het bereiken van de in dit privacystatement genoemde doeleinden, dan wel om aan wet- en regelgeving te voldoen. EnergieQ Groep B.V. bewaart kandidaatgegevens met toestemming twee jaar na de verleende toestemming. Indien u uw toestemming wilt intrekken dan kan dat via de Functionaris Persoonsgegevens. </p>
+
+              <h3 class="heading-3">11. Vragen, opmerkingen of klachten </h3>
+              <p class="paragraph-4">
+                  Hebt u vragen, opmerkingen of klachten over de bescherming van uw persoonsgegevens door EnergieQ Groep B.V., dan kunt u per e-mail contact opnemen met EnergieQ’s Functionaris Persoonsgegevens via <a href="mailto:om@energieq.nl" class="inline-link-blue">om@energieq.nl</a>, of een brief sturen naar EnergieQ Groep B.V, t.a.v. Functionaris Persoonsgegevens, antwoordnummer 1243, 7300 VB Apeldoorn. 
+                </p>
+
+              <h3 class="heading-3">12. Wijzigingen</h3>
+              <p class="paragraph-4">
+                  EnergieQ Groep B.V. kan van tijd tot tijd om uiteenlopende redenen veranderingen, aanvullingen of wijzigingen aanbrengen in haar privacystatement. Het meest actuele privacystatement is te allen tijde in te zien op de websites van EnergieQ Groep B.V. Deze versie is geldig vanaf 25 mei 2018 en geldt voor onbepaalde tijd.<br>
+                  Versie: 25 mei 2018
+                </p>
+
+          </div> 
+          </div>
+      </div>
+    </div>
+  </section>
+  
+
+</div>

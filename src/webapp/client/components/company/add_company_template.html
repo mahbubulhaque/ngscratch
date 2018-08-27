@@ -1,0 +1,106 @@
+<md-dialog aria-label="Vacancy" ng-controller="CompanyController as cmpCtrl">
+  <form ng-cloak>
+    <md-toolbar class="eq-md-primary-toolbar">
+      <div class="md-toolbar-tools">
+        <h2 ng-show="isUpdate">[{ 'UPDATE_COMPANY_TEXT' | translate }]</h2>
+        <h2 ng-show="!isUpdate">[{ 'ADD_COMPANY_TEXT' | translate }]</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cmpCtrl.cancel()">
+          <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="eq-modal-auto">
+          <div class="generic-error-messae row align-items-center" ng-show="parentCtrl.addCompanyErrorMessage">
+            <i class="material-icons">error </i> [{parentCtrl.addCompanyErrorMessage}]
+          </div>
+          <div class="row">
+
+            <div class="col-md-12 mb-2">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.name" placeholder="[{ 'COMPANY_NAME_TEXT' | translate }] *">
+                <div class="md-errors-spacer" ng-show="parentCtrl.addCompanyErrorMessage">[{parentCtrl.errors.name}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-12 mb-3" ng-show="!isUpdate">
+              <div class="row align-items-center">
+                <div class="col-auto vacancy-image">
+                  <img ng-show="!parentCtrl.isImage" src="../../../assets/img/no-image.jpg" alt="">
+                  <img ng-show="parentCtrl.isImage" ngf-src="parentCtrl.companyImage" class="thumb">
+                </div>
+                <div class="col-auto">
+                  <button type="file" ngf-change="parentCtrl.imgChosen($files)" ngf-select ngf-max-size="100MB" class="eq-md-button-primary md-button md-ink-ripple">[{ 'COMPANY_IMAGE_TEXT' | translate }]</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 mb-3" ng-show="isUpdate">
+              <div class="row align-items-center">
+                <div class="col-auto vacancy-image">
+                  <img ng-show="!isImage" src="companyImage" alt="">
+                  <img ng-show="isImage" ngf-src="companyImage" class="thumb">
+                </div>
+                <div class="col-auto">
+                  <button type="file" ngf-change="imgChosen($files)" ngf-select ngf-max-size="100MB" class="eq-md-button-primary md-button md-ink-ripple">[{ 'COMPANY_IMAGE_TEXT' | translate }]</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 mb-2">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.description" placeholder="[{ 'COMPANY_DESCRIPTION_TEXT' | translate }]">
+                <div class="md-errors-spacer" ng-show="parentCtrl.addCompanyErrorMessage">[{parentCtrl.errors.description}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-12 mb-2">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.address" placeholder="[{ 'COMPANY_ADDRESS_TEXT' | translate }]">
+                <div class="md-errors-spacer" ng-show="parentCtrl.addCompanyErrorMessage">[{parentCtrl.errors.address}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-12 mb-2">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.contact_person" placeholder="[{ 'CONTACT_PERSON_NAME_TEXT' | translate }]">
+                <div class="md-errors-spacer" ng-show="parentCtrl.addCompanyErrorMessage">[{parentCtrl.errors.contact_person}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-12 mb-2">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.contact_info" placeholder="[{ 'CONTACT_INFO_TEXT' | translate }]">
+                <div class="md-errors-spacer" ng-show="parentCtrl.addCompanyErrorMessage">[{parentCtrl.errors.contact_info}]</div>
+              </md-input-container>
+            </div>
+
+            <!-- <div class="col-md-12 mb-2">
+              <md-input-container class="md-block custom-md-input">
+                <input ng-model="mdDialogData.number_of_employees" type="number" placeholder="Employee number">
+                <div class="md-errors-spacer" ng-show="errorMessage">[{errors.number_of_employees}]</div>
+              </md-input-container>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button href="" ng-click="parentCtrl.cancel()" target="_blank" md-autofocus>
+        [{ 'CANCEL_TEXT' | translate }]
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="parentCtrl.addNewCompany(mdDialogData)" class="eq-md-button-primary" ng-show="!isUpdate">
+        [{ 'ADD_TEXT' | translate }]
+      </md-button>
+      <md-button ng-click="parentCtrl.updateComp(mdDialogData)" class="eq-md-button-primary" ng-show="isUpdate">
+        [{ 'UPDATE_TEXT' | translate }]
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

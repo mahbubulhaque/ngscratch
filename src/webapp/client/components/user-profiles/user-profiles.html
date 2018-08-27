@@ -1,0 +1,144 @@
+<div class="body-container">
+  <div class="inner-content">
+
+    <div class="box-description mb-3">
+      <!-- <p>[{ 'USER_PROFILE_STATIC_TEXT' | translate }]</p> -->
+      <p>
+        <strong>[{ 'NOTE' | translate }] :</strong> [{ 'USER_PROFILE_STATIC_TEXT' | translate }]
+      </p>
+    </div>
+
+    <div class="eq-box  mb-3">
+      <div class="eq-box-header">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-auto">
+            <h3 class="title-1">[{ 'USER_PROFILES_TEXT' | translate }]</h3>
+          </div>
+          <div class="col">
+            <div class="row justify-content-end">
+              <div class="col-auto block-on-mobile">
+                <md-input-container class="md-block no-margin">
+                  <md-select ng-cloak="" ng-model="epCtrl.selectedItem" md-selected-text="epCtrl.getSelectedText()" ng-change="epCtrl.filterChanged()" aria-label="filteritem" class="md-block">
+                    <md-option ng-repeat="item in epCtrl.items" ng-value="item">[{item.name}]</md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+              <div class="col-auto block-on-mobile">
+                <md-input-container md-no-float class="md-block custom-md-input no-margin" ng-keypress="($event.charCode==13)? epCtrl.searchTermChanged('getUserList') : return">
+                  <md-icon class="material-icons">search</md-icon>
+                  <input ng-model="epCtrl.searchTerm" placeholder="[{ 'SEARCH_TEXT' | translate }]">
+                </md-input-container>
+              </div>
+
+              <div class="col-auto">
+                <md-button class="eq-md-button-primary mr-0" ng-disabled="epCtrl.loader" ng-click="epCtrl.addUser($event)">[{ 'ADD_TEXT' | translate }]</md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="table-wrap">
+        <!-- <div class="loader-overlay" ng-show="epCtrl.loader">
+          <div class="spin-loader"></div>
+        </div> -->
+        <custom-loader ng-show="epCtrl.loader"></custom-loader>
+        <div class="data-table-custom table-responsive">
+          <table class="table table-sm table-sm-custom">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>[{ 'EMAIL_STATIC_TEXT' | translate }]</th>
+                <th>[{ 'USER_GROUP_TYPE_TEXT' | translate }]</th>
+                <th>[{ 'TELEPHONE_TEXT' | translate }]</th>
+                <th>[{ 'START_DATE_TEXT' | translate }]</th>
+                <th>[{ 'PLANNED_END_DATE_TEXT' | translate }]</th>
+                <th class="text-center" width="180">[{ 'ACTION_TEXT' | translate }]</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="user in epCtrl.userListArr track by $index">
+                <td>[{ ( ( $index + 1 ) + ( ( epCtrl.selectedPage - 1 ) * epCtrl.selectedPageSize ) ) }]</td>
+                <td><a href="" class="inline-link">[{user.email}]</a></td>
+                <td>[{user.user_group_type}]</td>
+                <td>[{user.phone_number}]</td>
+                <td>[{user.startDate}]</td>
+                <td>[{user.expireDate}]</td>
+                <td class="text-center md-button-sm-wrap">
+                  <md-button ng-click="epCtrl.goToUserProfileDetails(user)" class="md-icon-button" aria-label="More">
+                    <i class="material-icons">remove_red_eye</i>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="More" ng-click="epCtrl.updateUser($event, user, $index)">
+                    <i class="material-icons">edit</i>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="Delete" ng-click="epCtrl.showConfirm($event, user, $index)">
+                    <i class="material-icons">close</i>
+                  </md-button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="eq-pagination">
+          <div class="row align-items-center justify-content-end">
+            <div class="col box-amount-wrap">
+              <div class="box-amount">
+                <div class="row align-items-top justify-content-start">
+                  <div class="col-auto">
+                    <h2>[{ 'EMPLOYEE_USER_COUNT_TEXT' | translate }]: <span>[{ epCtrl.summary.employee_user_count}]</span></h2>
+                  </div>
+                  <div class="col-auto">
+                    <h2>[{ 'COMPANY_USER_COUNT_TEXT' | translate }]: <span>[{ epCtrl.summary.company_user_count}]</span></h2>
+                  </div>
+                  <div class="col-auto">
+                    <h2>[{ 'DASHBOARD_USER_COUNT_TEXT' | translate }]: <span>[{ epCtrl.summary.dashboard_user_count}]</span></h2>
+                  </div>
+                  <div class="col-auto">
+                    <h2>[{ 'SUSTAINABLE_EMPLOYEE_COUNT_TEXT' | translate }]: <span>[{ epCtrl.summary.sustainable_employability_employee_count}]</span></h2>
+                  </div>
+                  <div class="col-auto">
+                    <h2>[{ 'OUTPLACEMENT_EMPLOYEE_COUNT_TEXT' | translate }]: <span>[{ epCtrl.summary.outplacement_employee_count}]</span></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              [{ 'ROWS_PER_PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="epCtrl.selectedPageSize" md-selected-text="epCtrl.getSelectedPageSize()" ng-change="epCtrl.paginationChanged('getUserList')" aria-label="page_row" class="md-block text-center">
+                  <md-option ng-repeat="item in epCtrl.pageSize" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              [{ 'PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="epCtrl.selectedPage" md-selected-text="epCtrl.getSelectedPage()" ng-change="epCtrl.paginationChanged('getUserList')" aria-label="page" class="md-block text-center">
+                  <md-option ng-repeat="item in epCtrl.pageList" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              <div class="text-center">
+                <md-button class="md-icon-button" ng-disabled="epCtrl.selectedPage<=1" ng-click="epCtrl.prevPage('getUserList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                </md-button>
+                <md-button class="md-icon-button" ng-disabled="epCtrl.selectedPage>=epCtrl.pageList.length" ng-click="epCtrl.nextPage('getUserList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

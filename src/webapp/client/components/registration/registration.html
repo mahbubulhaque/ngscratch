@@ -1,0 +1,271 @@
+<div class="EnergieQ-wrapper inner-wrapper" ng-if="reg.packageGetStatus">
+  <div class="container-full">
+
+    <form>
+      <section class="auth-box auth-box-sign-up">
+        <div class="logo-auth">
+          <a href="[{ reg.coreFactory.systemSettings.ROOT_URL }]">
+                <img ng-src="[{ reg.coreFactory.systemSettings.STATIC_URL }]assets/img/logo.png" alt=""></a>
+        </div>
+
+        <div class="auth-filed-wrap mb-4">
+
+          <div ng-if="reg.registrationSuccess">
+            <div class="alert alert-success custom-success-alert-static" role="success">
+              <i class="fa fa-check"></i> [{reg.registrationSuccess}]
+            </div>
+          </div>
+
+          <div class="selected-package" ng-if="reg.packageGetStatus">
+            <h2>Selected Package: [{reg.selectedPackage.package_type}]</h2>
+            <p>
+              Price : $[{reg.selectedPackage.monthly_price}] <a href="[{ reg.coreFactory.systemSettings.ROOT_URL }]#pricing">Change</a>
+            </p>
+          </div>
+
+          <div ng-if="!reg.packageGetStatus" class="invalid-package-message">
+            <h2>Invalid Package!</h2>
+            <p>
+              <a href="[{ reg.coreFactory.systemSettings.ROOT_URL }]#pricing">Click here</a> to select valid package.
+            </p>
+          </div>
+
+
+          <div ng-if="reg.packageGetStatus">
+
+            <div ng-show="reg.errorMessage">
+              <div class="alert alert-danger custom-danger-alert" role="alert">
+                <i class="fa fa-exclamation circle-excl"></i> [{reg.errorMessage}]
+              </div>
+            </div>
+
+            <div class="input-group input-group-sm mb-3 input-group-custom" ng-if="reg.hideForm">
+              <label for="emailaddress" class="field-caption block-width">Email Address:</label>
+              <input type="text" ng-model="reg.userData.email" class="form-control custom-sm-filed">
+              <p ng-show="reg.errorMessage" class="error-message block-width">[{reg.errors.email}]</p>
+            </div>
+
+            <div class="input-group input-group-sm mb-4 input-group-custom" ng-if="reg.hideForm">
+              <label for="subdomain" class="field-caption block-width">Subdomain:</label>
+              <input type="text" ng-model="reg.userData.subdomain" class="form-control custom-sm-filed">
+              <p ng-show="reg.errorMessage" class="error-message block-width">[{reg.errors.subdomain}]</p>
+            </div>
+
+            <div class="form-action-auth form-action-auth-cutom" ng-if="reg.hideForm">
+              <button class="btn btn-theme-blue-md btn-block" type="submit" ng-click="reg.register()">Register</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="right-align auth-footer">
+          <p class="margin-bottom-25 inline-link-indisc">Already have an account? <a class="theme-link" ui-sref="login">Login</a></p>
+        </div>
+
+      </section>
+
+    </form>
+  </div>
+  <div>
+
+  </div>
+</div>
+
+
+<!-- <div class="EnergieQ-wrapper inner-wrapper" ng-if="reg.packageGetStatus"> -->
+<div class="EnergieQ-wrapper inner-wrapper" ng-show="reg.feeeeeeeee">
+  <div class="container-full">
+    <section class="title-action-bar title-action-back">
+      <div class="row">
+        <div class="col" ng-if="reg.hideForm">
+          <h2 class="inc-back"> <a href="javascript:void(0)"><i class="fa fa-angle-left"></i></a> Enter Company Details </h2>
+        </div>
+      </div>
+    </section>
+    <section class="form-row" ng-if="reg.registrationSuccess">
+      <div class="row block-width">
+        <div class="col-md-3">&nbsp;</div>
+        <div class="col-md-7">
+          <div class="alert alert-success custom-success-alert-static" role="success">
+            <i class="fa fa-check"></i> [{reg.registrationSuccess}]
+          </div>
+        </div>
+      </div>
+    </section>
+    <form>
+      <section class="form-row" ng-if="reg.packageGetStatus">
+        <div class="row block-width" ng-show="reg.errorMessage">
+          <div class="col-md-3">&nbsp;</div>
+          <div class="col-md-7">
+            <div class="alert alert-danger custom-danger-alert" role="alert">
+              <i class="fa fa-exclamation circle-excl"></i> [{reg.errorMessage}]
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center input-group input-group-sm mb-3 input-group-custom" ng-if="reg.hideForm">
+          <div class="col-md-3">
+            <label for="emailaddress" class="field-caption block-width right-align">Email Address:</label>
+          </div>
+          <div class="col-md-7">
+            <input type="text" ng-model="reg.userData.email" class="form-control custom-sm-filed">
+            <p ng-show="reg.errorMessage" class="error-message">[{reg.errors.email}]</p>
+          </div>
+        </div>
+
+        <div class="row align-items-center input-group input-group-sm mb-3 input-group-custom" ng-if="reg.hideForm">
+          <div class="col-md-3">
+            <label for="subdomain" class="field-caption block-width right-align">Subdomain:</label>
+          </div>
+          <div class="col-md-7">
+            <input type="text" ng-model="reg.userData.subdomain" class="form-control custom-sm-filed">
+            <p ng-show="reg.errorMessage" class="error-message">[{reg.errors.subdomain}]</p>
+          </div>
+        </div>
+      </section>
+      <section class="form-row" ng-if="!reg.packageGetStatus">
+        <div class="row align-items-center input-group input-group-sm mb-3 input-group-custom">
+          <div class="col-md-7 offset-md-3">
+            <div class="row">
+              <div class="col-sm-6 right-align">
+                <h2 class="margin-bottom-25 inline-link-indisc" style="color:aliceblue">Invalid Package!
+                  <a style="color:#5cb2e3" class="theme-link" href="[{ reg.coreFactory.systemSettings.ROOT_URL }]#pricing">Select your package here!</a></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!--<section class="form-row">
+
+        <div class="row block-width" ng-show="reg.errorMessage">
+          <div class="col-md-3">&nbsp;</div>
+          <div class="col-md-7">
+            <div class="alert alert-danger custom-danger-alert" role="alert">
+              <i class="fa fa-exclamation circle-excl"></i> [{reg.errorMessage}]
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center input-group input-group-sm mb-3 input-group-custom">
+          <div class="col-md-3">
+            <label for="firstname" class="field-caption block-width right-align">First Name:</label>
+          </div>
+          <div class="col-md-7">
+            <input type="text" ng-model="reg.userData.firstName" class="form-control custom-sm-filed">
+          </div>
+        </div>
+
+        <div class="row align-items-center input-group input-group-sm mb-3 input-group-custom">
+          <div class="col-md-3">
+            <label for="companyname" class="field-caption block-width right-align">Company Name:</label>
+          </div>
+          <div class="col-md-7">
+            <input type="text" ng-model="reg.userData.companyName" class="form-control custom-sm-filed">
+          </div>
+        </div>
+
+        <div class="row align-items-center input-group input-group-sm mb-3 input-group-custom">
+          <div class="col-md-3">
+            <label for="address" class="field-caption block-width right-align">Address Line 1:</label>
+          </div>
+          <div class="col-md-7">
+            <input type="text" ng-model="reg.userData.address1" class="form-control custom-sm-filed">
+          </div>
+        </div>
+
+        <div class="row align-items-center input-group input-group-sm mb-3 input-group-custom">
+          <div class="col-md-3">
+            <label for="address" class="field-caption block-width right-align">Address Line 2:</label>
+          </div>
+          <div class="col-md-7">
+            <input type="text" ng-model="reg.userData.address2" class="form-control custom-sm-filed">
+          </div>
+        </div>
+
+        <div class="row align-items-center input-group input-group-sm mb-3 input-group-custom">
+          <div class="col-md-3">
+            <label for="phonenumber" class="field-caption block-width right-align">Phone Number:</label>
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-3">
+                <div class="custom-dropdown">
+                  <dropdown placeholder="Selecteer een korting" list="reg.models.countries" selected="reg.country" property="name"></dropdown>
+                </div>
+              </div>
+              <div class="col-auto code-type bold-type-label">
+                <input type="text" disabled ng-model="reg.country.code" class="form-control custom-sm-filed">
+              </div>
+              <div class="col-3">
+                <input type="text" ng-model="reg.userData.phone_number" class="form-control custom-sm-filed">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-center input-group input-group-sm mb-3 input-group-custom">
+            <div class="col-md-3">
+              <label for="password" class="field-caption block-width right-align">Password:</label>
+            </div>
+            <div class="col-md-7">
+              <input type="password" ng-model="reg.userData.password" class="form-control custom-sm-filed">
+              <p ng-show="reg.errorMessage" class="error-message">[{reg.errors.password}]</p>
+            </div>
+          </div>
+
+        <div class="row align-items-center input-group input-group-sm mb-3 input-group-custom">
+          <div class="col-md-3">
+            <label for="vatno" class="field-caption block-width right-align">VAT No:</label>
+          </div>
+          <div class="col-md-7">
+            <input type="text" ng-model="reg.userData.vatNumber" class="form-control custom-sm-filed">
+          </div>
+        </div>
+
+        <div class="row align-items-center input-group input-group-sm mb-3 input-group-custom">
+          <div class="col-md-3">
+            <label for="subdomain" class="field-caption block-width right-align">Subdomain:</label>
+          </div>
+          <div class="col-md-7">
+              <input type="text" ng-model="reg.userData.subdomain" class="form-control custom-sm-filed">
+              <p ng-show="reg.errorMessage" class="error-message">[{reg.errors.subdomain}]</p>
+          </div>
+        </div>
+
+      </section>-->
+      <!-- <section class="form-row">
+        <div class="row align-items-center input-group input-group-sm mb-3 input-group-custom">
+          <div class="col-md-3">
+            <label for="facebookaccount" class="field-caption block-width right-align">Facebook Account:</label>
+          </div>
+          <div class="col-md-8">
+            <div class="row align-items-center">
+              <div class="col-10 relative-item">
+                <div class="fb-ac-item">
+                  <div class="custom-dropdown">
+                    <dropdown placeholder="Selecteer een korting" list="reg.models.actypes" selected="reg.actype" property="name"></dropdown>
+                  </div>
+                </div>
+                <div class="field-with-icon field-with-icon-fbac">
+                  <input type="text" ng-model="reg.userData.facebookAcc" class="form-control custom-sm-filed">
+                  <i class="input-icon fa fa-plus-circle"></i>
+                </div>
+              </div>
+              <div class="col-auto input-icon-check">
+                <i class="fa fa-check"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <section class="auth-form-action-button margin-bottom-25" ng-if="reg.packageGetStatus">
+        <div class="row justify-content-end">
+          <div class="col-2 right-align" ng-if="reg.hideForm">
+            <button class="btn btn-theme-blue-md btn-block" type="submit" ng-click="reg.register()">Next <i class="fa fa-long-arrow-right"></i></button>
+          </div>
+        </div>
+      </section>
+    </form>
+  </div>
+</div>

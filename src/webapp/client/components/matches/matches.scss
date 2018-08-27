@@ -1,0 +1,23 @@
+
+@import '../../../assets/scss/partial/variable';
+@import '../../../assets/scss/partial/mixin';
+.box-amount-wrap {
+    @media (max-width: 1200px) {
+        width: 100%!important;
+        flex: 100%;
+        flex-basis: 100%!important;
+    }
+}
+.box-amount {
+    h2 {
+        font-size: 16px;
+        letter-spacing: .005em;
+        font-weight: 400;
+        color: $primary-text-color;
+        font-family: 'montserratregular';
+        margin: 0 0 10px 0;
+        span {
+            color: $secondary-text-color;
+        }
+    }
+}

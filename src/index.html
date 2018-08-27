@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="EnergieQApp">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="webapp/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="webapp/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="webapp/assets/img/favicons/favicon-16x16.png">
+    <!-- <link rel="manifest" href="webapp/assets/img/favicons/site.webmanifest"> -->
+    <link rel="mask-icon" href="webapp/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>EnergieQ</title>
+  </head>
+  <body ng-controller="mainController" ng-class="{'openSideNav' : showSideNav}">
+    <div class="wrapper">
+
+      <div class="top-nav-section" ng-show="showNavbar">
+        <navbar></navbar>
+      </div>
+
+      <div class="sidenav-section" ng-class="{'hideSidenav' : location.path() === '/home' || location.path() === '/about-us' || location.path() === '/terms-and-condition' || location.path() === '/privacy-statement' || location.path() === '/references' || location.path() === '/blog' || location.path() === '/blog-details' || location.path() === '/question-and-answer' || location.path() === '/contact-us' || location.path() === '/login' }">
+        <side-nav></side-nav>
+      </div>
+       
+      <ui-view></ui-view>
+ 
+      <!-- <custom-loader ng-class="{'animated fadeOut' : loadingDone}"></custom-loader> -->
+
+
+      <footer ng-class="{'loginFooter' : location.path() === '/login' }">
+        <div class="footer-container">
+          <div class="row">
+            <div class="col-12">
+              <ul class="footer-nav">
+                <li><a ui-sref="home">home</a></li>
+                <li><a ui-sref="about-us">over ons</a></li>
+                <!-- <li><a ui-sref="terms-and-condition">Terms and conditions</a></li> -->
+                <li><a ui-sref="privacy-statement">privacy reglement</a></li>
+                <li><a ui-sref="references">referenties</a></li>
+                <li><a ui-sref="blog">blog</a></li>
+                <li><a ui-sref="question-and-answer">veelgestelde vragen</a></li>
+                <li><a ui-sref="contact-us">contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <div class="intro-text-loader" ng-hide="hideIntroLoader" ng-class="{'animated fadeOut' : hideIntroLoader}">
+        <h1>
+            <p class="loader-logo">
+              <img src="../../../../assets/img/logo.png" alt="EnergieQ">
+              <label class="logo-text-part">is onderdeel van EnergieQ Groep B.V.</label>
+            </p>
+            <span class="let1">l</span>
+            <span class="let2">o</span>
+            <span class="let3">a</span>
+            <span class="let4">d</span>
+            <span class="let5">i</span>
+            <span class="let6">n</span>
+            <span class="let7">g</span>
+        </h1> 
+    </div> 
+
+  </body>
+</html>
