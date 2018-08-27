@@ -1,0 +1,87 @@
+
+<div class="nav-list" ng-controller="SideNavController as sdnav">
+  <ul>
+    <li ng-show="sdnav.userBasedNavCheck('employee-dashboard')">
+        <a md-button ui-sref="employee-dashboard" class="md-primary block-width" ng-class="{active: ('employee-dashboard' | 
+includedByState) }"> <md-icon class="materials-icon">dashboard</md-icon> [{ 'MENU_DASHBOARD' | translate }]</a>
+    </li>
+    <li ng-show="sdnav.userBasedNavCheck('user-profiles')">
+        <a md-button ui-sref="user-profiles" class="md-primary block-width" ng-class="{active: ('user-profiles' | 
+includedByState) || ('user-profile-details' | includedByState) }"> <md-icon class="materials-icon">face</md-icon> [{ 'MENU_USER_PROFILE' | translate }]</a>
+    </li>
+    <li ng-show="sdnav.userBasedNavCheck('category')">
+        <a md-button ui-sref="category" class="md-primary block-width" ng-class="{active: ('category' | 
+includedByState)}"> <md-icon class="material-icons">list_alt</md-icon> [{ 'MENU_CATEGORY' | translate }]</a>
+    </li>
+    <li ng-show="sdnav.userBasedNavCheck('category-items')">
+        <a md-button ui-sref="category-items" class="md-primary block-width" ng-class="{active: ('category-items' | 
+includedByState)}"> <md-icon class="material-icons">playlist_add_check</md-icon> [{ 'MENU_CATEGORY_ITEMS' | translate }]</a>
+    </li>
+    <li ng-show="sdnav.userBasedNavCheck('category-validations')">
+      <a md-button ui-sref="category-validations" class="md-primary block-width" ng-class="{active: ('category-validation' |
+    includedByState)}"> <md-icon class="material-icons">event_available</md-icon> [{ 'MENU_CATEGORY_VALIDATION' | translate }]</a>
+    </li>
+      <li ng-show="sdnav.userBasedNavCheck('job-domain')">
+          <a md-button ui-sref="job-domain" class="md-primary block-width" ng-class="{active: ('job-domain' |
+includedByState)}"> <md-icon class="material-icons">domain</md-icon> [{ 'MENU_JOBDOMAINS' | translate }]</a>
+      </li>
+    <li ng-show="sdnav.userBasedNavCheck('vacancies')">
+        <a md-button ui-sref="vacancies" class="md-primary block-width" ng-class="{active: ('vacancies' | 
+includedByState) || ('vacancy-details' | includedByState) }"> <md-icon class="material-icons">person_add</md-icon> [{ 'MENU_VACANCIES' | translate }]</a>
+    </li>
+    <li ng-show="sdnav.userBasedNavCheck('favourite-vacancies')">
+        <a md-button ui-sref="favourite-vacancies" class="md-primary block-width" ng-class="{active: ('favourite-vacancies' | 
+includedByState) || ('vacancy-details' | includedByState) }"> <md-icon class="material-icons">person_add</md-icon> [{ 'MENU_FAVOURITE_VACANCIES' | translate }]</a>
+    </li>
+    <li ng-show="sdnav.userBasedNavCheck('company')">
+        <a md-button ui-sref="company" class="md-primary block-width" ng-class="{active: ('company' | 
+includedByState)}"> <md-icon class="material-icons">business</md-icon> [{ 'MENU_COMPANY' | translate }]</a>
+    </li>
+    <li ng-show="sdnav.userBasedNavCheck('employee')">
+        <a md-button ui-sref="employee" class="md-primary block-width" ng-class="{active: ('employee' | 
+includedByState) || ('employee-details' | includedByState) }"> <md-icon class="material-icons">supervisor_account</md-icon> [{ 'MENU_EMPLOYEES' | translate }]</a>
+    </li>
+    <li ng-show="sdnav.userBasedNavCheck('login-code')">
+        <a md-button ui-sref="login-code" class="md-primary block-width" ng-class="{active: ('login-code' | 
+includedByState)}"> <md-icon class="material-icons">security</md-icon> [{ 'MENU_LOGIN_CODE' | translate }]</a>
+    </li>
+    <li ng-show="sdnav.userBasedNavCheck('question-answer')">
+        <a md-button ui-sref="questions-answer" class="md-primary block-width" ng-class="{active: ('questions-answer' | 
+includedByState)}"> <md-icon class="material-icons">question_answer</md-icon> [{ 'MENU_QUESTION_ANSWER' | translate }]</a>
+    </li>
+    <!-- <li ng-show="sdnav.userBasedNavCheck()">
+        <a md-button ui-sref="to-do" class="md-primary block-width" ng-class="{active: ('to-do' | 
+includedByState)}"> <md-icon class="material-icons">playlist_play</md-icon> [{ 'MENU_TODO' | translate }]</a>
+    </li> -->
+    <li ng-show="sdnav.userBasedNavCheck('matches')">
+        <a md-button ui-sref="matches" class="md-primary block-width" ng-class="{active: ('matches' | 
+includedByState)}"> <md-icon class="material-icons">brightness_medium</md-icon> [{ 'MENU_MATCHES' | translate }]</a>
+    </li>
+    <li ng-show="sdnav.userBasedNavCheck('training-materials')">
+        <a md-button ui-sref="training-materials" class="md-primary block-width" ng-class="{active: ('training-materials' | 
+includedByState)}"> <md-icon class="material-icons">school</md-icon> [{ 'MENU_TRAINING_MATERIALS' | translate }]</a>
+    </li>
+      <li ng-show="sdnav.userBasedNavCheck('contact-data')">
+          <a md-button ui-sref="contact-data" class="md-primary block-width" ng-class="{active: ('contact-data' |
+includedByState)}"> <md-icon class="material-icons">contacts</md-icon> [{ 'MENU_CONTACTDATA' | translate }]</a>
+      </li>
+    <!-- <li>
+        <a md-button ui-sref="training-scan" class="md-primary block-width" ng-class="{active: ('training-scan' | 
+includedByState)}"> <md-icon class="material-icons">graphic_eq</md-icon> Training Scan</a>
+    </li> -->
+    <!-- <li>
+        <a md-button class="md-primary block-width" ng-class="{selected_nav: sdnav.isSet(3)}" ng-click="sdnav.setTab(3)"> <md-icon class="materials-icon">note</md-icon> Pages <i class="material-icons">keyboard_arrow_down</i></a>
+        <ul ng-show="sdnav.isSet(3)" ng-class="{'showNavItem' : sdnav.isSet(3)}">
+          <li><a href="">Menu item 01</a></li> 
+          <li><a href="">Menu item 03</a></li>
+          <li><a href="">Menu item 04</a></li>
+        </ul>
+    </li>
+    <li>
+        <a md-button class="md-primary block-width" ng-class="{selected_nav: sdnav.isSet(4)}" ng-click="sdnav.setTab(4)"> <md-icon class="materials-icon">contact_phone</md-icon> Contact us</a> 
+    </li>
+    <li>
+        <a md-button class="md-primary block-width" ng-class="{selected_nav: sdnav.isSet(5)}" ng-click="sdnav.setTab(5)"> <md-icon class="materials-icon">security</md-icon> Privacy</a> 
+    </li> -->
+  </ul>
+</div>

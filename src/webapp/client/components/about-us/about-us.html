@@ -1,0 +1,180 @@
+<div class="website-wrapper">
+    <header class="main-header-section-home">
+        <div class="main-header-section">
+          <div class="container container-full">
+            <div class="row justify-content-between align-items-center">
+              <div class="col-auto logo">
+                <a href="/">
+                  <img src="../../../../assets/img/logo.png" alt="EnergieQ">
+                  <label class="logo-text-part">is onderdeel van EnergieQ Groep B.V.</label>
+                  <!-- <span>Energie<i>Q</i></span> -->
+                </a>
+              </div>
+       
+              <div class="col top-web-nav-wrap hide-on-767">
+                <ul class="top-web-nav">
+                  <li><a ui-sref="home" ui-sref-active="active">home</a></li>
+                  <li><a ui-sref="about-us" ui-sref-active="active">over ons</a></li> 
+                  <li><a ui-sref="privacy-statement" ui-sref-active="active">privacy reglement</a></li>
+                  <li><a ui-sref="references" ui-sref-active="active">referenties</a></li>
+                  <li><a ui-sref="blog" ui-sref-active="active">blog</a></li>
+                  <li><a ui-sref="question-and-answer" ui-sref-active="active">veelgestelde vragen</a></li>
+                  <li><a ui-sref="contact-us" ui-sref-active="active">contact</a></li>
+                </ul>
+              </div>
+      
+              <div class="col-auto nav-right text-right login-btn-set"> 
+                <div layout="row" layout-align="end center"> 
+                <!-- <md-menu md-position-mode="target-right target" class="mr-2 language-btn">
+                  <div layout="row" layout-align="center center" class="user-setting-toggle"> 
+                    <md-button aria-label="Open demo menu" class="md-icon-button md-primary eq-btn-light" ng-click="$mdMenu.open($event)">
+                      <span>EN</span>
+                    </md-button>
+                  </div>
+                  <md-menu-content>
+                    <md-menu-item>
+                      <md-button ng-click="nav.announceClick($index)">
+                        <div layout="row" flex> 
+                          <p flex>EN</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button>
+                        <div layout="row" flex> 
+                          <p flex>NL</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu> -->
+                <md-button class="eq-btn-secondary auto-width md-button hide-on-767" ui-sref="login">inloggen</md-button> 
+                <!-- <md-button class="eq-btn-secondary auto-width md-button hide-on-767" ui-sref="login">Login Candidate</md-button>  -->
+                
+                <md-menu class="show-on-767" md-position-mode="target-right target">
+                  <div layout="row" layout-align="center center" class="user-setting-toggle">
+                      
+                    <md-button ng-click="$mdMenu.open($event)" aria-label="Open demo menu" class="md-icon-button md-primary eq-btn-dark" >
+                      <i class="material-icons">menu</i>
+                    </md-button>
+      
+                  </div>
+                  <md-menu-content width="3">    
+    
+                    <md-menu-item>
+                      <md-button ui-sref="home">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>home</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="about-us">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>over ons</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="privacy-statemen">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>privacy reglement</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="references">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>referenties</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="blog">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>blog</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="question-and-answer">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>veelgestelde vragen</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="contact-us">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>contact</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    
+                    <mat-list class="auth-menulist">
+                      <md-menu-item>
+                        <md-button ui-sref="login" color="primary">
+                          <div layout="row" flex>
+                            <md-icon class="material-icons">power_settings_new</md-icon>
+                            <p flex>INLOGGEN</p>
+                          </div>
+                        </md-button>
+                      </md-menu-item>
+                      <mat-divider></mat-divider>
+                    </mat-list>
+                    
+                  </md-menu-content>
+                </md-menu>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+<section class="page-title-banner-section">
+  <div class="trans-bg">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-12 offset-lg-2 text-center large-typo title-bannner"> 
+            <h3 class="page-title">over ons</h3>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>  
+
+<section class="white-bg padding-50-0 ">
+    <div class="container">
+      <div class="row align-items-center"> 
+        <div class="col-md-12"> 
+          <div class="box-content-wrap"> 
+              <p class="paragraph-4">
+                Vindm.nu is onderdeel van EnergieQ Groep B.V. De naam EnergieQ is jong, maar onze kennis gaat al veel langer mee. Al 25 jaar werken wij met veel plezier en energie samen met opdrachtgevers aan diverse HR-vraagstukken. Voor meer informatie over EnergieQ, kijk op <a href="https://www.energieq.nl./" target="_blank" class="inline-link-blue">www.energieq.nl</a>. Wat ons motiveert is het leggen van mooie, duurzame verbindingen tussen opdrachtgever en werkzoekenden. 
+              </p>
+              <p class="paragraph-4">
+                Vanuit deze motivatie is Vindm.nu ontstaan. Wij geloven dat we hiermee zowel aan medewerkers als aan bedrijven een platform bieden dat voor een drietal vraagstukken een oplossing biedt:
+              </p>
+               <ul class="list-item">
+                 <li>Duurzame inzetbaarheid </li>
+                 <li>Outplacement</li>
+                 <li>Personeelstekort door veranderingen op de arbeidsmarkt </li>
+               </ul>
+              <p class="paragraph-4">
+                Kijk rustig rond en stel eventuele vragen via ons contactformulier of direct telefonisch. Wij helpen u graag. 
+              </p>
+          </div> 
+          </div>
+      </div>
+    </div>
+  </section>
+  
+
+</div>

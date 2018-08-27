@@ -1,0 +1,165 @@
+<div class="body-container profile-details">
+  <div class="inner-content inner-content-profile-details">
+
+    <custom-loader ng-show="empdCtrl.loader"></custom-loader>
+    <div class="user-pro-header">
+      <div class="trans-wrap">
+        <div class="row justify-content-start align-items-center">
+          <div class="col-auto">
+            <div class="user-avater">
+              <img src="../assets/img/default_avatar.png" alt="">
+            </div>
+          </div>
+          <div class="col-auto">
+            <h3>[{empdCtrl.employeeObj.full_name}]</h3>
+            <a href="">[{empdCtrl.employeeObj.email}]</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-detials-content">
+      <div class="eq-box  mb-3">
+        <div class="profile-detials">
+          <div class="row justify-content-between">
+
+            <div class="col-md-4 user-categories">
+              <div class="user-details-item eq-box  mb-3" ng-repeat="data in empdCtrl.personInfoArray">
+                <label for="" class="ctg-name">[{data.category_name}] :</label>
+                <div class="ctg-status">[{data.category_item_name}]</div>
+              </div>
+              <!-- <div class="user-categories">
+                <div class="user-details-item eq-box  mb-3">
+                  <label for="" class="ctg-name">[{ 'AFFINITY_WITH_TEXT' | translate }] :</label>
+                  <div class="ctg-status">[{empdCtrl.personInfoObj.affinity_with}]</div>
+                </div>
+
+                <div class="user-details-item eq-box  mb-3">
+                  <label for="" class="ctg-name">[{ 'QUALITIES_TEXT' | translate }] :</label>
+                  <div class="ctg-status">[{empdCtrl.personInfoObj.qualities_strengths}]</div>
+                </div>
+
+                <div class="user-details-item eq-box  mb-3">
+                  <label for="" class="ctg-name">[{ 'COMPETENCE_TEXT' | translate }] :</label>
+                  <div class="ctg-status">[{empdCtrl.personInfoObj.competences}]</div>
+                </div>
+
+                <div class="user-details-item eq-box  mb-3">
+                  <label for="" class="ctg-name">[{ 'PERSONAL_TEXT' | translate }] :</label>
+                  <div class="ctg-status">[{empdCtrl.personInfoObj.personal_preferences_caracter}]</div>
+                </div>
+
+                <div class="user-details-item eq-box  mb-3">
+                  <label for="" class="ctg-name">[{ 'INTELLIGENCE_TEXT' | translate }] :</label>
+                  <div class="ctg-status">[{empdCtrl.personInfoObj.work_and_intelligence_level}]</div>
+                </div>
+
+                <div class="user-details-item eq-box  mb-3">
+                  <label for="" class="ctg-name">[{ 'HOURS_SCHEDULE_TEXT' | translate }] :</label>
+                  <div class="ctg-status">[{empdCtrl.personInfoObj.hours_and_scedule_per_week}]</div>
+                </div>
+
+              </div> -->
+            </div>
+
+            <div class="col-md-8">
+              <div class="details-wrap-right">
+
+                <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'NAME_TEXT' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>
+                      [{empdCtrl.employeeObj.full_name}]
+                    </p>
+                  </div>
+                </div>
+
+                <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'EMAIL_STATIC_TEXT' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>
+                      [{empdCtrl.employeeObj.email}]
+                    </p>
+                  </div>
+                </div>
+
+                <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'PHONE_NUMBER_TEXT' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>
+                      [{empdCtrl.employeeObj.phone_number}]
+                    </p>
+                  </div>
+                </div>
+
+                <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'ADDRESS_TEXT' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>
+                      [{empdCtrl.employeeObj.address}]
+                    </p>
+                  </div>
+                </div>
+
+                <!-- <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'INTELLIGENCE_TEXT' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>
+                      [{empdCtrl.employeeObj.intelligence}]
+                    </p>
+                  </div>
+                </div> -->
+
+                <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'DESCRIPTION_TEXT' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>
+                      [{empdCtrl.employeeObj.discipline}]
+                    </p>
+                  </div>
+                </div>
+
+                <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'EMPLOYEE_TYPE_TEXT' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>
+                      [{empdCtrl.employeeObj.loginType}]
+                    </p>
+                  </div>
+                </div>
+
+                <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'COMPANY_NAME_TEXT' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>
+                      [{empdCtrl.employeeObj.company_list[0].name}]
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>

@@ -1,0 +1,35 @@
+<md-dialog aria-label="Update Category" ng-controller="ContactDataController as cntdataCtrl">
+    <form ng-cloak>
+        <md-toolbar class="eq-md-primary-toolbar">
+            <div class="md-toolbar-tools">
+                <h2>[{ 'CONTACT_DATA_DETAILS' | translate }]</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cntdataCtrl.cancel()">
+                    <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div class="eq-modal-sm">
+                    <div class="row">
+                        <div class="col-md-12 mb-3"><strong> [{ 'NAME_TEXT' | translate }] : </strong>[{ mdDialogData.name }]</div>
+                        <div class="col-md-12 mb-3"><strong> [{ 'EMAIL_STATIC_TEXT' | translate }] : </strong>[{ mdDialogData.email }]</div>
+                        <div class="col-md-12 mb-3"><strong> [{ 'PHONE_NUMBER_TEXT' | translate }] : </strong>[{ mdDialogData.phone }]</div>
+                        <div class="col-md-12 mb-3"><strong> [{ 'MESSAGE_STATIC_TEXT' | translate }] : </strong>
+                            <p>[{ mdDialogData.message }]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button href="" ng-click="cntdataCtrl.cancel()" target="_blank" md-autofocus>
+                [{ 'CANCEL_TEXT' | translate }]
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -1,0 +1,107 @@
+<div class="body-container">
+  <div class="inner-content">
+
+    <div class="box-description mb-3">
+      <p>
+        <strong>[{ 'NOTE' | translate }] :</strong> [{ 'CATEGORY_STATIC_TEXT' | translate }]
+      </p>
+    </div>
+
+    <div class="eq-box  mb-3">
+      <div class="eq-box-header">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-auto">
+            <h3 class="title-1">[{ 'CATEGORIES_TEXT' | translate }]</h3>
+          </div>
+          <div class="col">
+            <div class="row justify-content-end">
+              <div class="col-auto">
+                <md-input-container md-no-float class="md-block custom-md-input no-margin" ng-keypress="($event.charCode==13)? ctgCtrl.searchTermChanged('getCategoryList') : return">
+                  <md-icon class="material-icons">search</md-icon>
+                  <input ng-model="ctgCtrl.searchTerm" placeholder="[{ 'SEARCH_TEXT' | translate }]">
+                </md-input-container>
+              </div>
+              <div class="col-auto">
+                <md-button class="eq-md-button-primary mr-0" ng-disabled="ctgCtrl.loader" ng-click="ctgCtrl.addCategory($event)">[{ 'ADD_TEXT' | translate }]</md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <custom-loader ng-show="ctgCtrl.loader"></custom-loader>
+        <div class="data-table-custom table-responsive">
+          <table class="table table-sm table-sm-custom">
+            <thead>
+              <tr>
+                <th width="70" class="text-center">#</th>
+                <th width="20%">[{ 'NAME_TEXT' | translate }]</th>
+                <th>[{ 'ITEM_TEXT' | translate }]</th>
+                <th class="text-center" width="150">[{ 'ACTION_TEXT' | translate }]</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="category in ctgCtrl.categoryList track by $index">
+                <td class="text-center">[{ ( ( $index + 1 ) + ( ( ctgCtrl.selectedPage - 1 ) * ctgCtrl.selectedPageSize ) ) }]</td>
+                <td>[{category.name}]</td>
+                <td>[{category.itemNameStr}]</td>
+                <!-- TODO: Status trfic light should be implemented after getting client's threshold value-->
+                <!-- <td class="text-center"><label for="" class="status-icon" ng-class="item.statusColor"></label></td> -->
+                <!-- <td class="text-center">[{category.employee_usage_count}]</td>
+                <td class="text-center">[{category.vacancy_usage_count}]</td> -->
+                <td class="text-center md-button-sm-wrap">
+                  <md-button class="md-icon-button" aria-label="Edit" ng-click="ctgCtrl.editCategory($event, category)">
+                    <md-tooltip md-direction="bottom">Edit</md-tooltip>
+                    <i class="material-icons">edit</i>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="Delete" ng-click="ctgCtrl.showConfirm($event, category)">
+                    <md-tooltip md-direction="bottom">Remove</md-tooltip>
+                    <i class="material-icons">close</i>
+                  </md-button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="eq-pagination">
+          <div class="row align-items-center justify-content-end">
+
+            <div class="col-auto">
+              [{ 'ROWS_PER_PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="ctgCtrl.selectedPageSize" md-selected-text="ctgCtrl.getSelectedPageSize()" ng-change="ctgCtrl.paginationChanged('getCategoryList')" aria-label="page_row" class="md-block text-center">
+                  <md-option ng-repeat="item in ctgCtrl.pageSize" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              [{ 'PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="ctgCtrl.selectedPage" md-selected-text="ctgCtrl.getSelectedPage()" ng-change="ctgCtrl.paginationChanged('getCategoryList')" aria-label="page" class="md-block text-center">
+                  <md-option ng-repeat="item in ctgCtrl.pageList" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              <div class="text-center">
+                <md-button class="md-icon-button" ng-disabled="ctgCtrl.selectedPage<=1" ng-click="ctgCtrl.prevPage('getCategoryList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                </md-button>
+                <md-button class="md-icon-button" ng-disabled="ctgCtrl.selectedPage>=ctgCtrl.pageList.length" ng-click="ctgCtrl.nextPage('getCategoryList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,143 @@
+@import '../../../../assets/scss/partial/variable';
+@import '../../../../assets/scss/partial/mixin';
+
+.sidenav-section { 
+    position: fixed;
+    top: 0;
+    left: -239px;
+    width: 239px;
+    height: 100%;
+    // background: darken($primary-color, 25);
+    background: darken($primary-color, 5);
+    padding: 75px 0 0 0; 
+    z-index: 1;
+    // z-index: 9;
+    overflow: auto;
+    @include transition(0.2s); 
+    @media (max-width: 767px) {
+        left: 0;
+        padding: 48px 0 0 0; 
+    }
+} 
+.body-container { 
+    padding-left: 0;
+    @include transition(0.3s);
+}
+.openSideNav {
+    .body-container { 
+        padding-left: 238px;
+        @include transition(0.3s);
+        @media (max-width: 767px) {
+            padding-left: 0;
+        }
+    }
+}
+.openSideNav {  
+    @include transition(0.3s);
+    .sidenav-section {  
+        left: 0;  
+        @include transition(0.5s); 
+        @media (max-width: 767px) {
+            left: -239px;
+        }
+    }
+}
+.nav-list {
+    padding: 20px 0;
+    ul {
+        li {
+            .md-button {
+                width: 100%;
+                margin: 0;
+                text-align: left;
+                font-size: 15px;
+                font-family: 'latoregular';
+                color: lighten($primary-color, 48);
+                text-transform: capitalize;
+                position: relative;
+                padding-right: 35px;
+                @include transition(0.3s);
+                &.selected_nav {
+                    background: darken($primary-color, 10);
+                    color: lighten($primary-color, 80); 
+                    .material-icons { 
+                        color: lighten($primary-color, 80); 
+                    }
+                }
+                &.active {
+                    background: darken($primary-color, 10);
+                    color: lighten($primary-color, 80); 
+                    .material-icons { 
+                        color: lighten($primary-color, 80); 
+                    }
+                }
+                &:hover { 
+                    background: darken($primary-color, 10);
+                    color: lighten($primary-color, 80); 
+                    .material-icons { 
+                        color: lighten($primary-color, 80); 
+                    }
+                }
+                .material-icons {
+                    font-size: 17px;
+                    color: lighten($primary-color, 48);
+                    margin-left: 10px;
+                    line-height: 19px;
+                    margin-right: 0;
+                    @include transition(0.3s);
+                }
+                &.selected_nav {
+                    i.material-icons {  
+                        -moz-transform: rotate(-180deg);
+                        -webkit-transform: rotate(-180deg);
+                        -o-transform: rotate(-180deg);
+                        -ms-transform: rotate(-180deg);
+                        transform: rotate(-180deg);
+                    }
+                }
+                i.material-icons { 
+                    position: absolute;
+                    right: 10px;
+                    top: 8px;
+                    font-size: 20px;
+                    color: lighten($primary-color, 48);
+
+                    @include transition(0.5s);
+                }
+            }
+            ul {
+                background: darken($primary-color, 28);
+                padding: 10px 22px;
+                // -webkit-transform: scaleY(0);
+                //     transform: scaleY(0);
+                // @include transition(0.5s);
+                &.showNavItem {
+                    // -webkit-transform: scaleY(1);
+                    // transform: scaleY(1);
+                }
+                li {
+                    a {
+                        font-size: 14px;
+                        font-family: 'latoregular';
+                        color: lighten($primary-color, 48);
+                        text-transform: capitalize;
+                        position: relative;
+                        &:hover {
+                            color: lighten($primary-color, 70);
+                        }
+                        &:before { 
+                            background: lighten($primary-color, 48);
+                            content: ""; 
+                            width: 5px; 
+                            height: 5px;  
+                            margin-right: 17px; 
+                            float: left; 
+                            margin-top: 9px;
+                            @include border-radius(100%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

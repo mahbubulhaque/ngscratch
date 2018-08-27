@@ -1,0 +1,56 @@
+<md-dialog aria-label="Update Category" ng-controller="CategoryItemsController as ctgICtrl">
+  <form ng-cloak>
+    <md-toolbar class="eq-md-primary-toolbar">
+      <div class="md-toolbar-tools">
+        <h2 ng-show="isUpdate">[{ 'UPDATE_CATEGORY_ITEM_TEXT' | translate }]</h2>
+        <h2 ng-show="!isUpdate">[{ 'ADD_CATEGORY_ITEM_TEXT' | translate }]</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="ctgICtrl.cancel()">
+          <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="eq-modal-sm">
+          <div class="generic-error-messae row align-items-center" ng-show="addCategoryItemErrorMessage">
+            <i class="material-icons">error </i> [{addCategoryItemErrorMessage}]
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.name" placeholder="[{ 'CATEGORY_NAME_TEXT' | translate }] *">
+                <div class="md-errors-spacer" ng-show="addCategoryItemErrorMessage">[{errors.name}]</div>
+              </md-input-container>
+            </div>
+            <div class="col-md-12 mb-2">
+              <md-input-container class="md-block custom-md-input" ng-show="!isUpdate">
+                <label for="">[{ 'CATEGORY_TEXT' | translate }]: </label>
+                <md-select ng-model="mdDialogData.job_category_uuid" aria-label="type" class="md-block">
+                  <md-option ng-repeat="item in ctgICtrl.categoryList" ng-value="item.uuid">[{item.name}]</md-option>
+                </md-select>
+                <div class="md-errors-spacer" ng-show="addCategoryItemErrorMessage">[{errors.job_category_uuid}]</div>
+              </md-input-container>
+              <div ng-cloak="" ng-show="isUpdate"><strong> [{ 'CATEGORY_TEXT' | translate }] : </strong>[{ ctgICtrl.getCategoryNameByUuid(mdDialogData.job_category_uuid) }]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button href="" ng-click="ctgICtrl.cancel()" target="_blank" md-autofocus>
+        [{ 'CANCEL_TEXT' | translate }]
+      </md-button>
+      <span flex></span>
+
+      <md-button ng-click="addCtgItem(mdDialogData)" class="eq-md-button-primary" ng-show="!isUpdate">
+        [{ 'ADD_TEXT' | translate }]
+      </md-button>
+      <md-button ng-click="updateCtgItem(mdDialogData)" class="eq-md-button-primary" ng-show="isUpdate">
+        [{ 'UPDATE_TEXT' | translate }]
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

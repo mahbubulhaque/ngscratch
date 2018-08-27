@@ -1,0 +1,164 @@
+<div class="body-container profile-details">
+  <div class="inner-content inner-content-profile-details">
+    <custom-loader ng-show="pfCtrl.loader"></custom-loader>
+    <div class="user-pro-header">
+      <div class="trans-wrap">
+        <div class="row justify-content-start align-items-center margin-adj">
+
+          <div class="col-auto block-on-mobile" ng-show="pfCtrl.mdDialogData.profile_image_view_link !== null">
+            <div class="user-avater">
+              <img ng-src="[{pfCtrl.mdDialogData.profile_image_view_link}]" alt="">
+              <!-- <img ng-src="http://localhost:8073/api/users/image/c4009479-5ff0-4002-b304-a885c796f499/" alt=""> -->
+            </div>
+          </div>
+
+          <div class="col-auto block-on-mobile" ng-show="pfCtrl.mdDialogData.profile_image_view_link === null">
+            <div class="user-avater">
+              <img src="../assets/img/default_avatar.png" alt="">
+            </div>
+          </div>
+
+          <div class="col-auto block-on-mobile">
+            <md-button class="md-raised custom-padding" type="file" ngf-select="pfCtrl.changeProfilePic($file, $invalidFiles)" accept="image/*">Change picture</md-button>
+            <!-- <br><br> File:
+            <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+              <span class="progress" ng-show="f.progress >= 0">
+                         <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div>
+                    </span>
+            </div>
+            {{errorMsg}} -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-detials-content">
+
+      <div class="eq-box  mb-3">
+        <form ng-cloak name="profileForm">
+          <div class="profile-detials">
+            <div class="col-md-8 offset-md-1">
+              <div class="generic-error-messae row align-items-center" ng-show="pfCtrl.errorMessage">
+                <i class="material-icons">error </i> [{pfCtrl.errorMessage}]
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <md-input-container class="md-block custom-md-input">
+                    <input type="text" ng-model="pfCtrl.mdDialogData.first_name" placeholder="[{ 'FIRST_NAME_TEXT' | translate }]">
+                    <div class="md-errors-spacer" ng-show="pfCtrl.errorMessage">[{pfCtrl.errors.first_name}]</div>
+                  </md-input-container>
+                </div>
+
+                <div class="col-md-6">
+                  <md-input-container class="md-block custom-md-input">
+                    <input type="text" ng-model="pfCtrl.mdDialogData.last_name" placeholder="[{ 'LAST_NAME_TEXT' | translate }]">
+                    <div class="md-errors-spacer" ng-show="pfCtrl.errorMessage">[{pfCtrl.errors.last_name}]</div>
+                  </md-input-container>
+                </div>
+
+                <div class="col-md-6">
+                  <md-input-container class="md-block custom-md-input">
+                    <input type="email" ng-model="pfCtrl.mdDialogData.email" placeholder="[{ 'EMAIL_ADDRESS_TEXT' | translate }]" autocomplete="new-password">
+                    <div class="md-errors-spacer" ng-show="pfCtrl.errorMessage">[{pfCtrl.errors.email}]</div>
+                  </md-input-container>
+                </div>
+
+                <div class="col-md-6">
+                  <md-input-container class="md-block custom-md-input">
+                    <input type="text" ng-model="pfCtrl.mdDialogData.address" placeholder="[{ 'ADDRESS_ONE_TEXT' | translate }]">
+                    <div class="md-errors-spacer" ng-show="pfCtrl.errorMessage">[{pfCtrl.errors.address}]</div>
+                  </md-input-container>
+                </div>
+
+                <div class="col-md-6">
+                  <md-input-container class="md-block custom-md-input">
+                    <input type="text" ng-model="pfCtrl.mdDialogData.phone_number" placeholder="[{ 'PHONE_NUMBER_TEXT' | translate }]">
+                    <div class="md-errors-spacer" ng-show="pfCtrl.errorMessage">[{pfCtrl.errors.phone_number}]</div>
+                  </md-input-container>
+                </div>
+
+                <div class="col-md-6">
+                  <md-input-container class="md-block custom-md-input">
+                    <input type="number" ng-model="pfCtrl.mdDialogData.house_number" placeholder="[{ 'HOUSE_NUMBER_TEXT' | translate }]">
+                    <div class="md-errors-spacer" ng-show="pfCtrl.errorMessage">[{pfCtrl.errors.house_number}]</div>
+                  </md-input-container>
+                </div>
+
+                <div class="col-md-6">
+                  <md-input-container class="md-block custom-md-input">
+                    <input type="text" ng-model="pfCtrl.mdDialogData.house_number_ext" placeholder="[{ 'HOUSE_NUMBER_EXT_TEXT' | translate }]">
+                    <div class="md-errors-spacer" ng-show="pfCtrl.errorMessage">[{pfCtrl.errors.house_number_ext}]</div>
+                  </md-input-container>
+                </div>
+
+                <div class="col-md-6">
+                  <md-input-container class="md-block custom-md-input">
+                    <input type="text" ng-model="pfCtrl.mdDialogData.city" placeholder="[{ 'CITY_TEXT' | translate }]">
+                    <div class="md-errors-spacer" ng-show="pfCtrl.errorMessage">[{pfCtrl.errors.city}]</div>
+                  </md-input-container>
+                </div>
+
+                <div class="col-md-6">
+                  <md-input-container class="md-block custom-md-input">
+                    <input type="text" ng-model="pfCtrl.mdDialogData.post_code" placeholder="[{ 'POST_CODE_TEXT' | translate }]">
+                    <div class="md-errors-spacer" ng-show="pfCtrl.errorMessage">[{pfCtrl.errors.post_code}]</div>
+                  </md-input-container>
+                </div>
+
+                <div class="col-md-6">
+                  <md-input-container class="md-block custom-md-input">
+                    <input type="text" ng-model="pfCtrl.mdDialogData.country" placeholder="[{ 'COUNTRY_TEXT' | translate }]">
+                    <div class="md-errors-spacer" ng-show="pfCtrl.errorMessage">[{pfCtrl.errors.country}]</div>
+                  </md-input-container>
+                </div>
+                <!-- -------------------------------:job category item list:start:------------------------------- -->
+                <div class="col-12" ng-show="pfCtrl.employeeUser"> <!--ng-show="pfCtrl.mdDialogData.user_group_type === 'employee_user'"-->
+                  <h2 class="modal-subtitle">[{ 'PROFILE_OF_SUITABLE_CADIDATE' | translate }]</h2>
+                </div>
+
+                <div class="col-md-6" ng-repeat="jobCategory in pfCtrl.jobCategoryList track by $index" ng-show="pfCtrl.employeeUser">
+
+                    <md-input-container class="md-block" ng-init="currentJobCategory = jobCategory">
+                      <label>[{currentJobCategory.name}]</label>
+                      <md-select ng-model="pfCtrl.mdDialogData.selectedCategoryItems[jobCategory.uuid]"
+                                 data-md-container-class="selectdemoSelectHeader"
+                                 multiple=""
+                                 ng-required="jobCategory.min_item > 0"
+                                 minlength="[{jobCategory.min_item}]"
+                                 maxlength="[{jobCategory.max_item}]"
+                                 name="[{jobCategory.uuid}]">
+
+                        <md-optgroup label="[{currentJobCategory.name}]">
+                          <md-option ng-value="childItem" ng-repeat="childItem in currentJobCategory.category_item_list" ng-selected="pfCtrl.checkIfPreSelected(childItem)">[{childItem.name}]</md-option>
+                        </md-optgroup>
+                      </md-select>
+                      <div ng-messages="profileForm[jobCategory.uuid].$error">
+
+                        <div ng-message="required">[{ 'REQUIRED_FIELD_VALIDATION_TEXT' | translate }]</div>
+                        <div ng-message="minlength">[{ 'SELECT_MINIMUM_VALIDATION_TEXT' | translate }] [{jobCategory.min_item}] [{ 'ITEMS_VALIDATION_TEXT' | translate }].</div>
+                        <div ng-message="maxlength">[{ 'SELECT_MAXIMUM_VALIDATION_TEXT' | translate }] [{jobCategory.max_item}] [{ 'ITEMS_VALIDATION_TEXT' | translate }].</div>
+
+                      </div>
+                    </md-input-container>
+
+                </div>
+
+                <!-- -------------------------------:job category item list:end:------------------------------- -->
+              </div>
+
+              <div class="text-right">
+                <md-button ng-click="pfCtrl.updateProfile()" class="eq-md-button-primary">
+                  [{ 'UPDATE_TEXT' | translate }]
+                </md-button>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

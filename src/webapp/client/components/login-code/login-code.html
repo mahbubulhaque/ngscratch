@@ -1,0 +1,107 @@
+<div class="body-container">
+  <div class="inner-content">
+
+    <div class="box-description mb-3">
+      <p>
+        <strong>[{ 'NOTE' | translate }]:</strong> [{ 'LOGIN_CODE_STATIC_TEXT' | translate }]
+      </p>
+    </div>
+
+    <div class="eq-box  mb-3">
+      <div class="eq-box-header">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-auto">
+            <h3 class="title-1">[{ 'LOGIN_CODES_TEXT' | translate }]</h3>
+          </div>
+          <div class="col">
+            <div class="row justify-content-end">
+
+              <div class="col-auto">
+                <md-input-container md-no-float class="md-block custom-md-input no-margin" ng-keypress="($event.charCode==13)? lcCtrl.searchTermChanged('getLoginCodeList') : return">
+                  <md-icon class="material-icons">search</md-icon>
+                  <input ng-model="lcCtrl.searchTerm" placeholder="[{ 'SEARCH_TEXT' | translate }]">
+                </md-input-container>
+              </div>
+
+              <!--<div class="col-auto">
+                <md-button class="eq-md-button-primary mr-0" ng-click="lcCtrl.addLoginCode($event)">Add</md-button>
+              </div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <custom-loader ng-show="lcCtrl.loader"></custom-loader>
+        <div class="data-table-custom table-responsive">
+          <table class="table table-sm table-sm-custom">
+            <thead>
+              <tr>
+                <th width="70" class="text-center">#</th>
+                <th>[{ 'USER_NAME_TEXT' | translate }]</th>
+                <th>[{ 'LOGIN_CODE_TEXT' | translate }]</th>
+                <th>[{ 'LOGIN_CODE_TYPE' | translate }]</th>
+                <th class="text-center" width="150">[{ 'ACTION_TEXT' | translate }]</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in lcCtrl.loginCodeList track by $index">
+                <td class="text-center">[{ $index +1 }]</td>
+                <td>[{item.user_full_name}]</td>
+                <td>[{item.login_code}]</td>
+                <td>[{item.lCodeType}]</td>
+                <td class="text-center md-button-sm-wrap">
+                  <md-button class="md-icon-button" aria-label="Edit" ng-click="lcCtrl.updateLoginCode($event, item)">
+                    <md-tooltip md-direction="bottom">Edit</md-tooltip>
+                    <i class="material-icons">edit</i>
+                  </md-button>
+                  <!--<md-button class="md-icon-button" aria-label="Delete" ng-click="lcCtrl.showConfirm($event, item)">
+                    <md-tooltip md-direction="bottom">Remove</md-tooltip>
+                    <i class="material-icons">close</i>
+                    </md-button>-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="eq-pagination">
+          <div class="row align-items-center justify-content-end">
+
+            <div class="col-auto">
+              [{ 'ROWS_PER_PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="lcCtrl.selectedPageSize" md-selected-text="lcCtrl.getSelectedPageSize()" ng-change="lcCtrl.paginationChanged('getLoginCodeList')" aria-label="page_row" class="md-block text-center">
+                  <md-option ng-repeat="item in lcCtrl.pageSize" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              [{ 'PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="lcCtrl.selectedPage" md-selected-text="lcCtrl.getSelectedPage()" ng-change="lcCtrl.paginationChanged('getLoginCodeList')" aria-label="page" class="md-block text-center">
+                  <md-option ng-repeat="item in lcCtrl.pageList" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              <div class="text-center">
+                <md-button class="md-icon-button" ng-disabled="lcCtrl.selectedPage<=1" ng-click="lcCtrl.prevPage('getLoginCodeList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                </md-button>
+                <md-button class="md-icon-button" ng-disabled="lcCtrl.selectedPage>=lcCtrl.pageList.length" ng-click="lcCtrl.nextPage('getLoginCodeList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

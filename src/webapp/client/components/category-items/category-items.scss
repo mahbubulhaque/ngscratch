@@ -1,0 +1,27 @@
+
+@import '../../../assets/scss/partial/variable';
+@import '../../../assets/scss/partial/mixin';
+
+.status-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    @include border-radius(100%);
+    &.green{
+        background: green;
+    }
+    &.orange{
+        background: orange;
+    }
+    &.red{
+        background: red;
+    }
+}
+.table {
+    tr {
+        td {
+            vertical-align: middle;
+        }
+    }
+}

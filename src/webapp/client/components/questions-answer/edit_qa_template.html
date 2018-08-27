@@ -1,0 +1,63 @@
+<md-dialog aria-label="Edit Question and Answer" ng-controller="QuestionsAnswerController as qaCtrl">
+  <form ng-cloak>
+    <md-toolbar class="eq-md-primary-toolbar">
+      <div class="md-toolbar-tools">
+        <h2 ng-show="isUpdate">[{ 'UPDATE_QUESTION_ANSWER' | translate }]</h2>
+        <h2 ng-show="!isUpdate">[{ 'ADD_QUESTION_TEXT' | translate }]</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="qaCtrl.cancel()">
+          <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="eq-modal-auto">
+          <div class="generic-error-messae row align-items-center" ng-show="addQuestionErrorMessage">
+            <i class="material-icons">error </i> [{addQuestionErrorMessage}]
+          </div>
+          <div class="row">
+
+            <div class="col-md-12 mb-2">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.question" placeholder="[{ 'QUESTION_TEXT' | translate }] *">
+                <div class="md-errors-spacer" ng-show="addQuestionErrorMessage">[{errors.question}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-12 mb-2">
+              <md-input-container class="md-block">
+                <label>[{ 'ANSWER_TEXT' | translate }]</label>
+                <textarea ng-model="mdDialogData.answer" rows="5" md-select-on-focus></textarea>
+              </md-input-container>
+            </div>
+
+            <div class="col-md-12 mb-2" layout="column">
+              <h3 class="modal-subtitle">[{ 'SET_AS_FAQ_TEXT' | translate }]</h3>
+
+              <md-radio-group ng-model="mdDialogData.is_faq">
+                <md-radio-button ng-value="true" class="md-primary">[{ 'YES_TEXT' | translate }]</md-radio-button>
+                <md-radio-button ng-value="false" class="md-primary"> [{ 'NO_TEXT' | translate }] </md-radio-button>
+              </md-radio-group>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button href="" ng-click="qaCtrl.cancel()" target="_blank" md-autofocus>
+        [{ 'CANCEL_TEXT' | translate }]
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="addQa(mdDialogData)" class="eq-md-button-primary" ng-show="!isUpdate">
+        [{ 'ADD_TEXT' | translate }]
+      </md-button>
+      <md-button ng-click="updateQa(mdDialogData)" class="eq-md-button-primary" ng-show="isUpdate">
+        [{ 'UPDATE_TEXT' | translate }]
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

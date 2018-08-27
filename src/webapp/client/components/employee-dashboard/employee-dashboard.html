@@ -1,0 +1,549 @@
+<div class="body-container profile-details">
+  <div class="inner-content">
+  	<custom-loader ng-show="edCtrl.loader"></custom-loader>
+	
+	<div class="box-description mb-3">
+		<p>
+			<label>Dashboard</label>
+			[{ 'DASHBOARD_STATIC_TEXT' | translate }]
+		</p>
+	</div>
+
+    <div class="profile-detials-content">
+      	<div class="eq-box  mb-3">
+	        <div class="profile-detials">
+	        	<div class="row justify-content-between">
+	        		<div class="col-md-9 offset-md-1">
+	        			<!--:start of employee user:-->
+	        			<div ng-show="edCtrl.isEmployeeUser()" class="details-wrap-right">
+	        			<!-----------------------: other overviews for employee user :-------------------------->
+	        				<!-- <div>
+		                  		<span class="profile-status mb-2 pt-3 block-width">
+			                    	[{ 'DASHBOARD_OVERVIEW_TEXT' | translate }]
+			                  	</span>
+							</div> -->
+							
+							<div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<span class="profile-status mb-2 pt-3 block-width text-right">
+										[{ 'DASHBOARD_OVERVIEW_TEXT' | translate }]:
+									</span>
+			                  	</div> 
+			                </div>
+							
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_MATCHES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.amount_of_matches}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_VAFOURITE_VACANCIES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.favorite_vacancies}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <!-----------------------: profile overview for employee user:-------------------------->
+			                 
+							
+							<div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<span class="profile-status mb-2 pt-3 block-width text-right">
+											[{ 'DASHBOARD_PROFILE_OVERVIEW_TEXT' | translate }]:
+									</span>
+			                  	</div> 
+			                </div>
+
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'FULLNAME_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.profile_overview.full_name}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'EMAIL_STATIC_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.profile_overview.email}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'TELEPHONE_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.profile_overview.phone_number}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'LOGIN_CODE_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.profile_overview.user_login_code[0].login_code}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'COMPANY_NAME_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.profile_overview.company_list[0].name}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <!-----------------------: new vacancy for employee user :-------------------------->
+			                 
+							
+							<div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<span class="profile-status mb-2 pt-3 block-width text-right">
+											[{ 'DASHBOARD_NEW_VACANCY_INFORMATION_TEXT' | translate }]:
+									</span>
+			                  	</div> 
+			                </div>
+
+			                <div ng-repeat="newVacancy in edCtrl.dashboardOverview.new_vacancies">				                
+				                <div class="content-row row">
+				                	<div class="col-sm-5">
+				                    	<h3 class="sub-title text-right">[{ 'VACANCY_TITLE_TEXT' | translate }]:</h3>
+				                  	</div>
+				                  	<div class="col-sm-7 vc-details">
+				                    	<p>
+				                      		[{newVacancy.title}]
+				                    	</p>
+				                  	</div>
+				                </div>
+				                <div class="content-row row">
+				                	<div class="col-sm-5">
+				                    	<h3 class="sub-title text-right">[{ 'VACANCY_DESCRIPTION_TEXT' | translate }]:</h3>
+				                  	</div>
+				                  	<div class="col-sm-7 vc-details">
+				                    	<p>
+				                      		[{newVacancy.description}]
+				                    	</p>
+				                  	</div>
+				                </div>
+				                <div class="content-row row">
+				                	<div class="col-sm-5">
+				                    	<h3 class="sub-title text-right">[{ 'VACANCY_TEXT' | translate }] [{ 'COMPANY_TEXT' | translate }]:</h3>
+				                  	</div>
+				                  	<div class="col-sm-7 vc-details">
+				                    	<p>
+				                      		[{newVacancy.company.name}]
+				                    	</p>
+				                  	</div>
+				                </div>
+				                <div class="content-row row">
+				                	<div class="col-sm-5">
+				                    	<h3 class="sub-title text-right">[{ 'VACANCY_TEXT' | translate }] [{ 'START_DATE_TEXT' | translate }]:</h3>
+				                  	</div>
+				                  	<div class="col-sm-7 vc-details">
+				                    	<p>
+				                      		[{newVacancy.start_date | date}]
+				                    	</p>
+				                  	</div>
+				                </div>
+				                <div class="content-row row">
+				                	<div class="col-sm-5">
+				                    	<h3 class="sub-title text-right">[{ 'VACANCY_TEXT' | translate }] [{ 'END_DATE_TEXT' | translate }]:</h3>
+				                  	</div>
+				                  	<div class="col-sm-7 vc-details">
+				                    	<p>
+				                      		[{newVacancy.end_date | date}]
+				                    	</p>
+				                  	</div>
+				                </div>
+				                <div class="content-row row">
+				                	<div class="col-sm-5">
+				                    	<h3 class="sub-title text-right">[{ 'VACANCY_TEXT' | translate }] [{ 'SALARY_RANGE' | translate }]:</h3>
+				                  	</div>
+				                  	<div class="col-sm-7 vc-details">
+				                    	<p>
+				                      		[{newVacancy.salary}]
+				                    	</p>
+				                  	</div>
+				                </div>
+				                <div class="content-row row">
+				                	<div class="col-sm-5">
+				                    	<h3 class="sub-title text-right">[{ 'VACANCY_DETAIL_TEXT' | translate }]:</h3>
+				                  	</div>
+				                  	<div class="col-sm-7 vc-details">
+				                    	<md-button ng-click="edCtrl.goToVacancyDetails(newVacancy)" class="md-icon-button" aria-label="More">
+					                    	<md-tooltip md-direction="bottom">View Details</md-tooltip>
+						                    <i class="material-icons">remove_red_eye</i>
+					                  	</md-button>
+				                  	</div>
+				                </div>
+				            </div>
+				            <!--:end of iterable vacancy:-->    
+	        			</div>
+	        			<!--:end of employee user:-->
+	        			<!--:start of Compnay user:-->
+	        			<div ng-show="edCtrl.isCompanyUser()" class="details-wrap-right">
+	        				<!-----------------------: company Info for company user :-------------------------->
+	        				 							
+							<div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<span class="profile-status mb-2 pt-3 block-width text-right">
+											[{ 'DASHBOARD_COMPANY_INFORMATION_TEXT' | translate }]:
+									</span>
+			                  	</div> 
+			                </div>
+
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'COMPANY_NAME_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.company_info[0].name}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'COMPANY_ADDRESS_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.company_info[0].address}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'CONTACT_PERSON_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.company_info[0].contact_person}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'CONTACT_INFO_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.company_info[0].contact_info}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_TOTAL_VACANCIES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.company_info[0].total_vacancy}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <!-----------------------: vacancy Info for company user :-------------------------->
+			                 
+														
+							<div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<span class="profile-status mb-2 pt-3 block-width text-right">
+										[{ 'DASHBOARD_VACANCY_INFORMATION_TEXT' | translate }]:
+									</span>
+			                  	</div> 
+			                </div>
+
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_OPEN_VACANCIES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.active_vacancies}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_CLOSE_VACANCIES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.closed_vacancies}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_SUCCESSFUL_VACANCIES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.successful_vacancies}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <!-----------------------: employee Info for company user :-------------------------->
+			                
+							
+							<div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<span class="profile-status mb-2 pt-3 block-width text-right">
+										[{ 'DASHBOARD_EMPLOYEE_INFORMATION_TEXT' | translate }]:
+									</span>
+			                  	</div> 
+			                </div>
+
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_SUSTAINABLE_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.sustainable_employability_employee_count}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_OUTPLACEMENT_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.outplacement_employee_count}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_GREEN_STATUS_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.employee_green_status_count}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_ORANGE_STATUS_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.employee_orange_status_count}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_RED_STATUS_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.employee_red_status_count}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_ACTIVE_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.employee_user_active}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_INACTIVE_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.employee_user_inactive}]
+			                    	</p>
+			                  	</div>
+			                </div>
+	        			</div>
+	        			<!--:end of company user:-->
+	        			<!--:start of dashboar user:-->
+	        			<div ng-show="edCtrl.isDashboardUser()" class="details-wrap-right">
+	        				<!-----------------------: Vacancy Info for dashboard user :-------------------------->
+	        				 
+							
+							<div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<span class="profile-status mb-2 pt-3 block-width text-right">
+										[{ 'DASHBOARD_VACANCY_INFORMATION_TEXT' | translate }]:
+									</span>
+			                  	</div> 
+			                </div>
+
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_OPEN_VACANCIES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.active_vacancies}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_CLOSE_VACANCIES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.closed_vacancies}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <!-----------------------: Employee Info for dashboard user :-------------------------->
+							
+							<div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<span class="profile-status mb-2 pt-3 block-width text-right">
+										[{ 'DASHBOARD_EMPLOYEE_INFORMATION_TEXT' | translate }]:
+									</span>
+			                  	</div> 
+			                </div>
+
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_SUSTAINABLE_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.sustainable_employability_employee_count}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_OUTPLACEMENT_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.outplacement_employee_count}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_GREEN_STATUS_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.employee_green_status_count}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_ORANGE_STATUS_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.employee_orange_status_count}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_RED_STATUS_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.employee_red_status_count}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_ACTIVE_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.employee_user_active}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_AMOUNT_OF_INACTIVE_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.employee_user_inactive}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <!-----------------------: Company Info for dashboard user :-------------------------->
+	        				 
+							<div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<span class="profile-status mb-2 pt-3 block-width text-right">
+										[{ 'DASHBOARD_COMPANY_INFORMATION_TEXT' | translate }]:
+									</span>
+			                  	</div> 
+							</div>
+							
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_COMPANIES_THAT_USE_VACANCIES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.companies_that_use_vacancies}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_COMPANIES_THAT_USE_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.companies_that_has_employees}]
+			                    	</p>
+			                  	</div>
+			                </div>
+			                <div class="content-row row">
+			                	<div class="col-sm-5">
+			                    	<h3 class="sub-title text-right">[{ 'DASHBOARD_COMPANIES_THAT_USE_BOTH_VACANCIES_AND_EMPLOYEES_TEXT' | translate }]:</h3>
+			                  	</div>
+			                  	<div class="col-sm-7 vc-details">
+			                    	<p>
+			                      		[{edCtrl.dashboardOverview.companies_that_has_employees_and_vacancies}]
+			                    	</p>
+			                  	</div>
+			                </div>
+	        			</div>
+	        			<!--:end of dashboar user:-->
+	        		</div>
+	        	</div>
+	        </div>
+      	</div>
+    </div>
+  </div>
+</div>

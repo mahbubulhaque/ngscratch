@@ -1,0 +1,179 @@
+<div class="website-wrapper">
+    <header class="main-header-section-home">
+        <div class="main-header-section">
+          <div class="container container-full">
+            <div class="row justify-content-between align-items-center">
+              <div class="col-auto logo">
+                <a href="/">
+                  <img src="../../../../assets/img/logo.png" alt="EnergieQ">
+                  <label class="logo-text-part">is onderdeel van EnergieQ Groep B.V.</label>
+                  <!-- <span>Energie<i>Q</i></span> -->
+                </a>
+              </div>
+       
+              <div class="col top-web-nav-wrap hide-on-767">
+                <ul class="top-web-nav">
+                  <li><a ui-sref="home" ui-sref-active="active">home</a></li>
+                  <li><a ui-sref="about-us" ui-sref-active="active">over ons</a></li> 
+                  <li><a ui-sref="privacy-statement" ui-sref-active="active">privacy reglement</a></li>
+                  <li><a ui-sref="references" ui-sref-active="active">referenties</a></li>
+                  <li><a ui-sref="blog" ui-sref-active="active">blog</a></li>
+                  <li><a ui-sref="question-and-answer" ui-sref-active="active">veelgestelde vragen</a></li>
+                  <li><a ui-sref="contact-us" ui-sref-active="active">contact</a></li>
+                </ul>
+              </div>
+      
+              <div class="col-auto nav-right text-right login-btn-set"> 
+                <div layout="row" layout-align="end center"> 
+                <!-- <md-menu md-position-mode="target-right target" class="mr-2 language-btn">
+                  <div layout="row" layout-align="center center" class="user-setting-toggle"> 
+                    <md-button aria-label="Open demo menu" class="md-icon-button md-primary eq-btn-light" ng-click="$mdMenu.open($event)">
+                      <span>EN</span>
+                    </md-button>
+                  </div>
+                  <md-menu-content>
+                    <md-menu-item>
+                      <md-button ng-click="nav.announceClick($index)">
+                        <div layout="row" flex> 
+                          <p flex>EN</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button>
+                        <div layout="row" flex> 
+                          <p flex>NL</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu> -->
+                <md-button class="eq-btn-secondary auto-width md-button hide-on-767" ui-sref="login">inloggen</md-button> 
+                <!-- <md-button class="eq-btn-secondary auto-width md-button hide-on-767" ui-sref="login">Login Candidate</md-button>  -->
+                
+                <md-menu class="show-on-767" md-position-mode="target-right target">
+                  <div layout="row" layout-align="center center" class="user-setting-toggle">
+                      
+                    <md-button ng-click="$mdMenu.open($event)" aria-label="Open demo menu" class="md-icon-button md-primary eq-btn-dark" >
+                      <i class="material-icons">menu</i>
+                    </md-button>
+      
+                  </div>
+                  <md-menu-content width="3">    
+    
+                    <md-menu-item>
+                      <md-button ui-sref="home">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>home</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="about-us">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>over ons</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="privacy-statemen">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>privacy reglement</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="references">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>referenties</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="blog">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>blog</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="question-and-answer">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>veelgestelde vragen</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ui-sref="contact-us">
+                        <div layout="row" flex>
+                          <md-icon class="material-icons">keyboard_arrow_right</md-icon>
+                          <p flex>contact</p>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                    
+                    <mat-list class="auth-menulist">
+                      <md-menu-item>
+                        <md-button ui-sref="login" color="primary">
+                          <div layout="row" flex>
+                            <md-icon class="material-icons">power_settings_new</md-icon>
+                            <p flex>INLOGGEN</p>
+                          </div>
+                        </md-button>
+                      </md-menu-item>
+                      <mat-divider></mat-divider>
+                    </mat-list>
+                    
+                  </md-menu-content>
+                </md-menu>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+<section class="page-title-banner-section">
+  <div class="trans-bg">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-12 offset-lg-2 text-center large-typo title-bannner"> 
+            <h3 class="page-title">Blog</h3>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>  
+
+<section class="white-bg padding-50-0 ">
+    <div class="container">
+      <!-- <p class="paragraph-1 text-center">De eerste blog is hier vanaf 2 juli te lezen.</p> -->
+      <div class="row"> 
+
+        <div class="col-md-6">
+          <div class="blog-wrap">
+            <div class="blog-img">
+              <img src="../../../../assets/img/de-nieuwe-realiteit.jpg" alt="">
+            </div>
+            <div class="blog-thumb-details">
+              <h2><a ui-sref="blog-details">De nieuwe realiteit?</a></h2>
+              <p>
+                  Wat als je baan over 5 jaar niet meer bestaat? Of misschien al over 2 jaar? Wat als jij een andere functie overweegt maar daarvoor (nog) niet de juiste opleiding hebt? Wat doe je als werkgever als blijkt dat je maar geen geschikte kandidaten kunt vinden voor je vacatures? Of als je weet dat de functies die je nu in je organisatie hebt over een paar jaar erg...
+              </p>
+              <span class="post-date-time"> <i class="fa fa-clock-o"></i> 03/07/2018 11:35 AM</span>
+            </div>
+          </div>
+        </div> 
+
+      </div>
+    </div>
+  </section>
+  
+
+</div>

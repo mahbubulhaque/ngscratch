@@ -1,0 +1,107 @@
+<div class="body-container">
+  <div class="inner-content">
+
+    <div class="box-description mb-3">
+      <p>
+        <strong>[{ 'NOTE' | translate }] :</strong> [{ 'JOB_DOMAIN_STATIC_TEXT' | translate }]
+      </p>
+    </div>
+
+    <div class="eq-box  mb-3">
+      <div class="eq-box-header">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-auto">
+            <h3 class="title-1">[{ 'JOBDOMAINS_TEXT' | translate }]</h3>
+          </div>
+          <div class="col">
+            <div class="row justify-content-end">
+              <div class="col-auto">
+                <md-input-container md-no-float class="md-block custom-md-input no-margin" ng-keypress="($event.charCode==13)? jdCtrl.searchTermChanged('getJobdomainList') : return">
+                  <md-icon class="material-icons">search</md-icon>
+                  <input ng-model="jdCtrl.searchTerm" placeholder="[{ 'SEARCH_TEXT' | translate }]">
+                </md-input-container>
+              </div>
+              <div ng-show="jdCtrl.canAddEditDelete()" class="col-auto">
+                <md-button class="eq-md-button-primary mr-0" ng-disabled="jdCtrl.loader" ng-click="jdCtrl.addJobdomain($event)">[{ 'ADD_TEXT' | translate }]</md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <custom-loader ng-show="jdCtrl.loader"></custom-loader>
+        <div class="data-table-custom table-responsive">
+          <table class="table table-sm table-sm-custom">
+            <thead>
+            <tr>
+              <th width="70" class="text-center">#</th>
+              <th width="20%">[{ 'TITLE_TEXT' | translate }]</th>
+              <th>[{ 'DESCRIPTION_TEXT' | translate }]</th>
+              <th ng-show="jdCtrl.canAddEditDelete()" class="text-center" width="150">[{ 'ACTION_TEXT' | translate }]</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="jobdomain in jdCtrl.jobdomainList track by $index">
+              <td class="text-center">[{ ( ( $index + 1 ) + ( ( jdCtrl.selectedPage - 1 ) * jdCtrl.selectedPageSize ) ) }]</td>
+              <td>[{jobdomain.title}]</td>
+              <td>[{jobdomain.description}]</td>
+              <!-- TODO: Status trfic light should be implemented after getting client's threshold value-->
+              <!-- <td class="text-center"><label for="" class="status-icon" ng-class="item.statusColor"></label></td> -->
+              <!-- <td class="text-center">[{jobdomain.employee_usage_count}]</td>
+              <td class="text-center">[{jobdomain.vacancy_usage_count}]</td> -->
+              <td ng-show="jdCtrl.canAddEditDelete()" class="text-center md-button-sm-wrap">
+                <md-button class="md-icon-button" aria-label="Edit" ng-click="jdCtrl.editJobDomain($event, jobdomain)">
+                  <md-tooltip md-direction="bottom">Edit</md-tooltip>
+                  <i class="material-icons">edit</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Delete" ng-click="jdCtrl.showConfirm($event, jobdomain)">
+                  <md-tooltip md-direction="bottom">Remove</md-tooltip>
+                  <i class="material-icons">close</i>
+                </md-button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="eq-pagination">
+          <div class="row align-items-center justify-content-end">
+
+            <div class="col-auto">
+              [{ 'ROWS_PER_PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="jdCtrl.selectedPageSize" md-selected-text="jdCtrl.getSelectedPageSize()" ng-change="jdCtrl.paginationChanged('getJobdomainList')" aria-label="page_row" class="md-block text-center">
+                  <md-option ng-repeat="item in jdCtrl.pageSize" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              [{ 'PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="jdCtrl.selectedPage" md-selected-text="jdCtrl.getSelectedPage()" ng-change="jdCtrl.paginationChanged('getJobdomainList')" aria-label="page" class="md-block text-center">
+                  <md-option ng-repeat="item in jdCtrl.pageList" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              <div class="text-center">
+                <md-button class="md-icon-button" ng-disabled="jdCtrl.selectedPage<=1" ng-click="jdCtrl.prevPage('getJobdomainList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                </md-button>
+                <md-button class="md-icon-button" ng-disabled="jdCtrl.selectedPage>=jdCtrl.pageList.length" ng-click="jdCtrl.nextPage('getJobdomainList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

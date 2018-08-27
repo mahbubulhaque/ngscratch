@@ -1,0 +1,98 @@
+<header ng-controller="NavbarController as nav">
+  <div class="main-header-section">
+    <div class="container container-full">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-auto logo logo-app">
+          <a href="/">
+            <img src="../../../../assets/img/logo.png" alt="EnergieQ">
+            <label class="logo-text-part">is onderdeel van EnergieQ Groep B.V.</label>
+            <!-- <span>Energie<i>Q</i></span> -->
+          </a>
+        </div>
+
+        <div class="col-auto nav-bar-toggle">
+          <md-button class="md-icon-button md-primary eq-btn-light" ng-click="nav.showSidenav(nav.showSideNav)" aria-label="Settings">
+            <i class="material-icons">reorder</i>
+          </md-button>
+        </div>
+
+        <div class="col text-right">
+          <!-- <md-button class="md-icon-button md-primary eq-btn-light" ng-click="nav.showSidenav(nav.showSideNav)" aria-label="Settings"> habib@binate-solutions.com
+            <i class="material-icons">account_circle</i>
+          </md-button>  -->
+
+          <div layout="row" layout-align="end center">
+            <md-button class="md-raised" onclick="window.history.go(-1)">[{ 'BACK' | translate }]</md-button>
+            <!-- <md-button class="md-raised" ng-click="nav.changeLanguage('nl')">Back</md-button> -->
+            <md-menu md-position-mode="target-right target" class="mr-2 language-btn">
+              <div layout="row" layout-align="center center" class="user-setting-toggle">
+                <md-button aria-label="Open demo menu" class="md-icon-button md-primary eq-btn-light" ng-click="$mdMenu.open($event)">
+                  <span ng-show="nav.selectedLan=='en'">EN</span>
+                  <span ng-show="nav.selectedLan=='nl'">NL</span>
+                </md-button>
+              </div>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button ng-click="nav.changeLanguage('en')">
+                    <div layout="row" flex>
+                      <p flex>EN</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="nav.changeLanguage('nl')">
+                    <div layout="row" flex>
+                      <p flex>NL</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+
+            <md-menu md-position-mode="target-right target">
+              <div layout="row" layout-align="center center" class="user-setting-toggle" ng-click="$mdMenu.open($event)">
+                <span flex class="user-email">{{nav.userEmail}}</span>
+
+                <label class="avater-img" ng-show="nav.profileImgLink === null">
+                    <img src="../../../../assets/img/default_avatar.png" alt="">
+                </label>
+
+                <label class="avater-img" ng-show="nav.profileImgLink !== null">
+                    <img ng-src="[{nav.getProfileImgLink()}]" alt="">
+                </label>
+
+              </div>
+              <md-menu-content width="3">
+                <md-menu-item class="show-on-767" ng-if="nav.userEmail">
+                  <md-button ng-disabled="true">
+                    <div layout="row" flex>
+                      <md-icon class="material-icons">email</md-icon>
+                      <p flex>{{nav.userEmail}}</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+
+                <md-menu-item>
+                  <md-button ng-click="nav.announceClick($index)" ui-sref="profile">
+                    <div layout="row" flex>
+                      <md-icon class="material-icons">settings</md-icon>
+                      <p flex>Edit profile</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="nav.logout()">
+                    <div layout="row" flex>
+                      <md-icon class="material-icons">power_settings_new</md-icon>
+                      <p flex>Logout</p>
+                    </div>
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

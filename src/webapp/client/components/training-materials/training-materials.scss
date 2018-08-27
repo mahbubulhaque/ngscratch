@@ -1,0 +1,25 @@
+
+@import '../../../assets/scss/partial/variable';
+@import '../../../assets/scss/partial/mixin';
+
+.file-uploader-custom {
+    position: relative;
+    input {
+        position: absolute;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 99;
+        height: 100%;
+        top: 0;
+        left: 0;
+    } 
+    label {
+        margin: 10px 0;
+        font-size: 13px;
+    }
+}
+.eq-modal-min-width {
+    width: 500px;
+    max-width: 100%;
+}

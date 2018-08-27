@@ -1,0 +1,36 @@
+<md-dialog aria-label="Question and Answer" ng-controller="QuestionsAnswerController as qaCtrl">
+  <form ng-cloak>
+    <md-toolbar class="eq-md-primary-toolbar">
+      <div class="md-toolbar-tools">
+        <h2>[{ 'QUESTION_AND_ANSWER_TEXT' | translate }]</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="qaCtrl.cancel()">
+          <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="eq-modal-lrg question-answer-view">
+          <h3 class="modal-subtitle">[{ 'ASKED_BY_TEXT' | translate }]: [{ mdQuickDialogData.asked_by.first_name}] [{ mdQuickDialogData.asked_by.last_name}]</h3>
+          <p class="question-item"><strong>[{ 'QUESTION_TEXT' | translate }] :</strong>[{mdQuickDialogData.question}]</p>
+          <div class="answer-item">
+            <strong class="question-item">[{ 'ANSWER_TEXT' | translate }] :</strong>
+            <p>
+              [{ mdQuickDialogData.answer}]
+            </p>
+            <span>[{ 'ANSWERED_BY_TEXT' | translate }]: [{ mdQuickDialogData.answered_by.first_name}] [{ mdQuickDialogData.answered_by.last_name}]</span>
+          </div>
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button href="" ng-click="qaCtrl.cancel()" target="_blank" md-autofocus>
+        [{ 'CLOSE_TEXT' | translate }]
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

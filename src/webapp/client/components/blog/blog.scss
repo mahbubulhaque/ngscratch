@@ -1,0 +1,95 @@
+
+// @import '~scss/main.scss';
+
+@import '../../../assets/scss/partial/variable';
+@import '../../../assets/scss/partial/mixin';
+
+.blog-wrap {
+    background: #fafafa;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #f1f1f1;
+    @include transition(0.5s);
+    &:hover{ 
+        background: #f1f1f1;
+        @include box-shadow(0, 0, 5px, 0, rbga($primary-text-color, 0.90), $inset: false);
+        border-bottom: 1px solid $primary-text-color;
+        a {  
+            color: $primary-text-color; 
+        }
+    }
+    .blog-img {
+        height: 360px;
+        overflow: hidden;
+        text-align: center;
+        img {
+            height: 100%;
+        }
+    }
+    .blog-thumb-details {
+        padding: 15px 25px;
+        h2 {
+            a {
+                font-size: 22px;
+                color: $primary-color;
+                font-weight: normal;
+                &:hover {
+                    color: $primary-text-color;
+                }
+            }
+        }
+        p {
+            font-size: 15px;
+        }
+        span {
+            display: block;
+            text-align: right;
+            color: #888888;
+            font-size: 13px;
+        }
+    }
+}
+.blog-details-section {
+    .blog-wrap-details {
+        background: #ffffff;
+        padding: 40px;
+        @media (max-width: 767px) {
+            padding: 15px;
+        }
+    }
+}
+.blog-wrap-details {
+    .blog-title {
+        font-size: 35px;
+        border-bottom: 1px solid #e9e9e9;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        @media (max-width: 767px) {
+            font-size: 20px;
+        }
+    }
+    .blog-img {
+        margin-bottom: 30px;
+        @media (max-width: 767px) {
+            margin-bottom: 15px;
+        }
+        img {
+            width: 100%;
+        }
+    } 
+    .post-date-time {
+        display: block; 
+        font-size: 14px;
+        text-align: right;
+        color: #999;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 16px;
+    } 
+    .blog-details-single {
+        p {
+            line-height: 30px;
+            color: #444444;
+        }
+    }
+}

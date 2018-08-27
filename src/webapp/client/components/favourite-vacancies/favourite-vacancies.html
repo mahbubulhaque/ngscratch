@@ -1,0 +1,125 @@
+<div class="body-container">
+  <div class="inner-content">
+
+    <div class="box-description mb-3">
+      <p>
+        <strong>[{ 'NOTE' | translate }] :</strong> [{ 'VACANCY_STATIC_TEXT' | translate }]
+      </p>
+    </div>
+
+    <div class="eq-box  mb-3">
+      <div class="eq-box-header">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-auto">
+            <h3 class="title-1">[{ 'FAVOURITE_VACANCY_TEXT' | translate }]</h3>
+          </div>
+          <div class="col">
+            <div class="row justify-content-end">
+              <div class="col-auto">
+                <md-input-container md-no-float class="md-block custom-md-input no-margin" ng-keypress="($event.charCode==13)? fvcCtrl.searchTermChanged('getVacancyList') : return">
+                  <md-icon class="material-icons">search</md-icon>
+                  <input ng-model="fvcCtrl.searchTerm" placeholder="[{ 'SEARCH_TEXT' | translate }]">
+                </md-input-container>
+              </div>
+
+              <div ng-show="fvcCtrl.canAddEditDelete()" class="col-auto">
+                <md-button class="eq-md-button-primary mr-0" ng-disabled="fvcCtrl.loader" ng-click="fvcCtrl.addVacancy($event)">[{ 'ADD_TEXT' | translate }] </md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <custom-loader ng-show="fvcCtrl.loader"></custom-loader>
+        <div class="data-table-custom table-responsive">
+          <table class="table table-sm table-sm-custom">
+            <thead>
+              <tr>
+                <th width="70" class="text-center">#</th>
+                <th>[{ 'VACANCY_NAME_TEXT' | translate }]</th>
+                <th>[{ 'COMPANY_TEXT' | translate }]</th>
+                <th class="text-center">[{ 'START_DATE_TEXT' | translate }]</th>
+                <th class="text-center">[{ 'END_DATE_TEXT' | translate }]</th>
+                <th class="text-center" width="200">[{ 'ACTION_TEXT' | translate }]</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="vacancy in fvcCtrl.vacancyList track by $index">
+                <td class="text-center">[{ ( ( $index + 1 ) + ( ( fvcCtrl.selectedPage - 1 ) * fvcCtrl.selectedPageSize ) ) }]</td>
+                <td>[{vacancy.title}]</td>
+                <td>[{vacancy.company.name}]</td>
+                <td class="text-center">[{vacancy.start_date}]</td>
+                <td class="text-center">[{vacancy.end_date}]</td>
+                <td class="text-center md-button-sm-wrap">
+                  <md-button ng-click="fvcCtrl.goToVacancyDetails(vacancy)" class="md-icon-button" aria-label="More">
+                    <md-tooltip md-direction="bottom">View Details</md-tooltip>
+                    <i class="material-icons">remove_red_eye</i>
+                  </md-button>
+                  <md-button ng-show="fvcCtrl.canAddEditDelete()" class="md-icon-button" aria-label="Edit" ng-click="fvcCtrl.updateVacancy($event, vacancy, $index)">
+                    <md-tooltip md-direction="bottom">Edit</md-tooltip>
+                    <i class="material-icons">edit</i>
+                  </md-button>
+                  <md-button ng-show="fvcCtrl.canAddEditDelete()" class="md-icon-button" aria-label="Delete" ng-click="fvcCtrl.showConfirm($event, vacancy, $index)">
+                    <md-tooltip md-direction="bottom">Remove</md-tooltip>
+                    <i class="material-icons">close</i>
+                  </md-button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="eq-pagination">
+          <div class="row align-items-center justify-content-end">
+
+            <div class="col box-amount-wrap">
+              <div class="box-amount">
+                <div class="row align-items-top justify-content-start">
+                  <div class="col-auto">
+                    <h2>[{ 'ACTIVE_TEXT' | translate }]: <span>[{ fvcCtrl.summary.active}]</span></h2>
+                  </div>
+                  <div class="col-auto">
+                    <h2>[{ 'ARCHIVED_TEXT' | translate }]: <span>[{ fvcCtrl.summary.archived}]</span></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-auto">
+              [{ 'ROWS_PER_PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="fvcCtrl.selectedPageSize" md-selected-text="fvcCtrl.getSelectedPageSize()" ng-change="fvcCtrl.paginationChanged('getVacancyList')" aria-label="page_row" class="md-block text-center">
+                  <md-option ng-repeat="item in fvcCtrl.pageSize" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              [{ 'PAGE_TEXT' | translate }]:
+            </div>
+            <div class="col-auto">
+              <md-input-container class="md-block no-margin">
+                <md-select ng-model="fvcCtrl.selectedPage" md-selected-text="fvcCtrl.getSelectedPage()" ng-change="fvcCtrl.paginationChanged('getVacancyList')" aria-label="page" class="md-block text-center">
+                  <md-option ng-repeat="item in fvcCtrl.pageList" ng-value="item">[{item}]</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto">
+              <div class="text-center">
+                <md-button class="md-icon-button" ng-disabled="fvcCtrl.selectedPage<=1" ng-click="fvcCtrl.prevPage('getVacancyList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                </md-button>
+                <md-button class="md-icon-button" ng-disabled="fvcCtrl.selectedPage>=fvcCtrl.pageList.length" ng-click="fvcCtrl.nextPage('getVacancyList')" aria-label="More">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </md-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="auth-box-wrap min-height-1">
+  <div class="min-height-1 auth-trans-wrap">
+    <div class="auth-main">
+      <div class="auth-box-header padding-25">
+        <h2 class="center-align auth-box-logo">
+          <div class="inline-block">
+            <img src="../../../../assets/img/logo.png" alt="EnergieQ">
+            <label class="logo-text-part">is onderdeel van EnergieQ Groep B.V.</label>
+          </div>
+        </h2>
+      </div>
+      <div class="padding-25">
+
+        <div layout="column" class="padding-25">
+
+          <div class="generic-error-messae row align-items-center" ng-show="log.errorMessage">
+            <i class="material-icons">error </i> [{log.errorMessage}]
+          </div>
+
+          <md-input-container md-no-float class="md-block custom-md-input">
+            <input ng-model="log.userCredentials.email" required type="email" placeholder="Email">
+            <div class="md-errors-spacer" ng-show="log.errorMessage">[{log.errors.email}]</div>
+          </md-input-container>
+
+          <md-input-container md-no-float class="md-block custom-md-input mb-5">
+            <input ng-model="log.userCredentials.password" type="password" placeholder="Password" ng-keypress="log.enterKeyCallback($event)" >
+            <div class="md-errors-spacer" ng-show="log.errorMessage">[{log.errors.password}]</div>
+          </md-input-container>
+
+          <!-- <div class="customCheck-wrap mb-4">
+            <input type="checkbox" id="rememberme" ng-model="log.doRemember" />
+            <label for="rememberme">[{ 'REMEMBER_ME_TEXT' | translate }]</label>
+          </div> -->
+          <div class="mb-4">
+            <a ui-sref="forget-password" ui-sref-active="active">Forget password</a>
+          </div>
+
+          <div class="button-row" layout="column">
+            <button class="eq-btn-secondary btn-large" ng-click="log.login()" md-button>Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

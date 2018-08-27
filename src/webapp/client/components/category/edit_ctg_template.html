@@ -1,0 +1,47 @@
+<md-dialog aria-label="Update Category" ng-controller="CategoryController as ctgCtrl">
+  <form ng-cloak>
+    <md-toolbar class="eq-md-primary-toolbar">
+      <div class="md-toolbar-tools">
+        <h2 ng-show="isUpdate">[{ 'UPDATE_CATEGORY_TEXT' | translate }]</h2>
+        <h2 ng-show="!isUpdate">[{ 'ADD_CATEGORY_TEXT' | translate }]</h2>
+
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="ctgCtrl.cancel()">
+          <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="eq-modal-sm">
+          <div class="generic-error-messae row align-items-center" ng-show="addCategoryErrorMessage">
+            <i class="material-icons">error </i> [{addCategoryErrorMessage}]
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.name" placeholder="[{ 'CATEGORY_NAME_TEXT' | translate }] *">
+                <div class="md-errors-spacer" ng-show="addCategoryErrorMessage">[{errors.name}]</div>
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button href="" ng-click="ctgCtrl.cancel()" target="_blank" md-autofocus>
+        [{ 'CANCEL_TEXT' | translate }]
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="addCategory(mdDialogData)" class="eq-md-button-primary" ng-show="!isUpdate">
+        [{ 'ADD_TEXT' | translate }]
+      </md-button>
+      <md-button ng-click="updateCategory(mdDialogData)" class="eq-md-button-primary" ng-show="isUpdate">
+        [{ 'UPDATE_TEXT' | translate }]
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

@@ -1,0 +1,51 @@
+<md-dialog aria-label="Update Category" ng-controller="CategoryValidationsController as ctgICtrl">
+  <form ng-cloak>
+    <md-toolbar class="eq-md-primary-toolbar">
+      <div class="md-toolbar-tools">
+        <h2 ng-show="isUpdate">[{ 'UPDATE_CATEGORY_ITEM_TEXT' | translate }]</h2>
+        <!--<h2 ng-show="!isUpdate">[{ 'ADD_CATEGORY_ITEM_TEXT' | translate }]</h2>-->
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="thisCntrlr.cancel()">
+          <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="eq-modal-sm">
+          <div class="generic-error-messae row align-items-center" ng-show="addCategoryValidationErrorMessage">
+            <i class="material-icons">error </i> [{addCategoryValidationErrorMessage}]
+          </div>
+          <div class="row">
+            <div class="col-md-12 mb-3"><strong> [{ 'CATEGORY_NAME_TEXT' | translate }] : </strong>[{ mdDialogData.job_category.name }]</div>
+            <div class="col-md-12 mr-4 mb-3">
+              <md-input-container class="md-block custom-md-input">
+                <!--<label>[{ 'MAX_ITEM' | translate }]</label>-->
+                <input type="text" ng-model="mdDialogData.max_item" placeholder="[{ 'MAX_ITEM' | translate }]">
+                <div class="md-errors-spacer" ng-show="addCategoryValidationErrorMessage">[{errors.max_item}]</div>
+              </md-input-container>
+            </div>
+            <div class="col-md-12 mr-4 mb-3">
+              <md-input-container class="md-block custom-md-input">
+                <!--<label>[{ 'MIN_ITEM' | translate }]</label>-->
+                <input type="text" ng-model="mdDialogData.min_item" placeholder="[{ 'MIN_ITEM' | translate }]">
+                <div class="md-errors-spacer" ng-show="addCategoryValidationErrorMessage">[{errors.min_item}]</div>
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button href="" ng-click="thisCntrlr.cancel()" target="_blank" md-autofocus>
+        [{ 'CANCEL_TEXT' | translate }]
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="updateCtgValidation(mdDialogData)" class="eq-md-button-primary" ng-show="isUpdate">
+        [{ 'UPDATE_TEXT' | translate }]
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

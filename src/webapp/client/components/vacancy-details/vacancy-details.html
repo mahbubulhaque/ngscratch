@@ -1,0 +1,127 @@
+<div class="body-container profile-details">
+  <div class="inner-content">
+
+    <custom-loader ng-show="vcdCtrl.loader"></custom-loader>
+    <div class="profile-detials-content">
+      <div class="eq-box  mb-3">
+        <div class="profile-detials">
+          <div class="row justify-content-between">
+
+            <div class="col-md-3 user-categories">
+              <div class="user-details-item eq-box  mb-3" ng-repeat="data in vcdCtrl.personInfoArray">
+                <label for="" class="ctg-name">[{data.category_name}] :</label>
+                <div class="ctg-status">[{data.category_item_name}]</div>
+              </div>
+              <!-- <div class="user-categories">
+                <div class="user-details-item eq-box  mb-3">
+                  <label for="" class="ctg-name">Intelligence:</label>
+                  <div class="ctg-status"> <span>Item 01</span>, <span>Item 02</span></div>
+                </div>
+
+                <div class="user-details-item eq-box  mb-3">
+                  <label for="" class="ctg-name">Discipline :</label>
+                  <div class="ctg-status"> <span>Item 01</span>, <span>Item 02</span></div>
+                </div>
+
+                <div class="user-details-item eq-box  mb-3">
+                  <label for="" class="ctg-name">Strengths:</label>
+                  <div class="ctg-status"> <span>Item 01</span>, <span>Item 02</span></div>
+                </div>
+
+                <div class="user-details-item eq-box  mb-3">
+                  <label for="" class="ctg-name">Talents :</label>
+                  <div class="ctg-status"> <span>Item 01</span>, <span>Item 02</span></div>
+                </div>
+
+                <div class="user-details-item eq-box  mb-3">
+                  <label for="" class="ctg-name">Workinghours a week :</label>
+                  <div class="ctg-status"> <span>Item 01</span>, <span>Item 02</span></div>
+                </div>
+
+                <div class="user-details-item eq-box  mb-3">
+                  <label for="" class="ctg-name">Employment :</label>
+                  <div class="ctg-status"> <span>Item 01</span>, <span>Item 02</span></div>
+                </div>
+              </div> -->
+            </div>
+
+            <div class="col-md-9">
+              <div class="details-wrap-right">
+                <div>
+                  <p class="text-right row justify-content-end date-time">
+                    <i class="material-icons">access_time</i> [{ 'START_DATE_TEXT' | translate }]: [{vcdCtrl.vacancyObj.start_date}] - [{ 'END_DATE_TEXT' | translate }]: [{vcdCtrl.vacancyObj.end_date}]
+                  </p>
+                  <span class="profile-status mb-4 block-width">
+                    [{ 'VACANCY_DETAIL_TEXT' | translate }]
+                  </span>
+                </div>
+
+                <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'COMPANY_OVERVIEW_TEXT' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>
+                      [{vcdCtrl.vacancyObj.company.description}]
+                    </p>
+                  </div>
+                </div>
+
+                <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'VACANCY_DESCRIPTION_TEXT' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>
+                      [{vcdCtrl.vacancyObj.description}]
+                    </p>
+                  </div>
+                </div>
+
+                <!-- <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'COMPANY_BRANCH' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>
+                      Branch name
+                    </p>
+                  </div>
+                </div> -->
+
+                <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'COMPANY_LOCATION' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>[{vcdCtrl.vacancyObj.company.address}]</p>
+                  </div>
+                </div>
+
+                <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'SALARY_RANGE' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>$[{vcdCtrl.vacancyObj.salary}]</p>
+                  </div>
+                </div>
+
+                <div class="content-row row">
+                  <div class="col-sm-3">
+                    <h3 class="sub-title text-right">[{ 'EDUCATION_NECESSARY' | translate }]:</h3>
+                  </div>
+                  <div class="col-sm-9 vc-details">
+                    <p>[{vcdCtrl.vacancyObj.education_necessary}]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

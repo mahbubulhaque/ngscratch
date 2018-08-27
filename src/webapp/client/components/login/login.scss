@@ -1,0 +1,37 @@
+
+// @import '~scss/main.scss';
+
+@import '../../../assets/scss/partial/variable';
+@import '../../../assets/scss/partial/mixin';
+
+
+.form-row-login {
+    padding: 70px 0 30px!important;
+}
+
+.auth-box-header {
+    background: lighten($primary-color, 60);
+    h2 {
+        margin: 0;
+        color: #ffffff;
+    }
+}
+.auth-box-logo {
+    img {
+        height: 80px;
+    }
+    .inline-block {
+        display: inline-block;
+    }
+    .logo-text-part { 
+        display: block;
+        font-size: 13px;
+        font-weight: normal;
+        font-family: montserratregular;
+        margin: 0; 
+        line-height: 15px;
+        color: lighten(#262930, 40);
+        padding-top: 5px;
+        margin-left: 12px; 
+    }
+}

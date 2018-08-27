@@ -1,0 +1,159 @@
+<md-dialog aria-label="Vacancy" ng-controller="VacanciesController as vcCtrl">
+  <form ng-cloak name="vacancyForm">
+    <md-toolbar class="eq-md-primary-toolbar">
+      <div class="md-toolbar-tools">
+        <h2 ng-show="isUpdate">[{ 'UPDATE_VACANCY_TEXT' | translate }]</h2>
+        <h2 ng-show="!isUpdate">[{ 'ADD_VACANCY_TEXT' | translate }]</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="vcCtrl.cancel()">
+          <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="eq-modal-sm">
+          <div class="generic-error-messae row align-items-center" ng-show="parentCtrl.addVacancyErrorMessage">
+            <i class="material-icons">error </i> [{parentCtrl.addVacancyErrorMessage}]
+          </div>
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <md-input-container class="md-block custom-md-input">
+                <label>[{ 'VACANCY_TITLE_TEXT' | translate }]<span class="required-sign">*</span></label>
+                <textarea ng-model="mdDialogData.title" rows="1" md-select-on-focus></textarea>
+                <div class="md-errors-spacer" ng-show="parentCtrl.addVacancyErrorMessage">[{parentCtrl.errors.title}]</div>
+              </md-input-container>
+            </div>
+            <div class="col-md-12 mb-3" ng-show="!isUpdate">
+              <div class="row align-items-center">
+                <div class="col-auto vacancy-image">
+                  <img ng-show="!parentCtrl.isImage" src="../../../assets/img/no-image.jpg" alt="">
+                  <img ng-show="parentCtrl.isImage" ngf-src="parentCtrl.vacancyImage" class="thumb">
+                </div>
+                <div class="col-auto">
+                  <button type="file" ngf-change="parentCtrl.imgChosen($files)" ngf-select ngf-max-size="100MB" class="eq-md-button-primary md-button md-ink-ripple">[{ 'VACANCY_IMAGE_TEXT' | translate }]</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 mb-3" ng-show="isUpdate">
+              <div class="row align-items-center">
+                <div class="col-auto vacancy-image">
+                  <img ng-show="!isImage" src="../../../assets/img/no-image.jpg" class="thumb">
+                  <img ng-show="isImage" ngf-src="vacancyImage" alt="">
+                </div>
+                <div class="col-auto">
+                  <button type="file" ngf-change="imgChosen($files)" ngf-select ngf-max-size="100MB" class="eq-md-button-primary md-button md-ink-ripple">[{ 'VACANCY_IMAGE_TEXT' | translate }]</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <md-input-container class="md-block custom-md-input">
+                <label>[{ 'VACANCY_DESCRIPTION_TEXT' | translate }]</label>
+                <textarea ng-model="mdDialogData.description" rows="5" md-select-on-focus></textarea>
+              </md-input-container>
+            </div>
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <input type="text" ng-model="mdDialogData.address" placeholder="[{ 'VACANCY_ADDRESS_TEXT' | translate }] *">
+                <div class="md-errors-spacer" ng-show="parentCtrl.addVacancyErrorMessage">[{parentCtrl.errors.address}]</div>
+              </md-input-container>
+            </div>
+            <div class="col-12">
+              <h2 class="modal-subtitle">[{ 'PROFILE_OF_SUITABLE_CADIDATE' | translate }]</h2>
+            </div>
+            <div class="col-md-12">
+              <div class="row" ng-repeat="jobCategory in jobCategoryList track by $index">
+                <div class="col-md-6">
+                  <md-input-container class="md-block" ng-init="currentJobCategory = jobCategory">
+                    <label>[{currentJobCategory.name}]</label>
+                    <md-select ng-model="mdDialogData.selectedCategoryItems[jobCategory.uuid]"
+                               data-md-container-class="selectdemoSelectHeader"
+                               multiple=""
+                               ng-required="jobCategory.min_item > 0"
+                               minlength="[{jobCategory.min_item}]"
+                               maxlength="[{jobCategory.max_item}]"
+                               name="[{jobCategory.uuid}]">
+
+                      <md-optgroup label="[{currentJobCategory.name}]">
+                        <md-option ng-value="childItem" ng-repeat="childItem in currentJobCategory.category_item_list" ng-selected="checkIfPreSelected(childItem,mdDialogData,coreFactory)">[{childItem.name}]</md-option>
+                      </md-optgroup>
+                    </md-select>
+                    <div ng-messages="vacancyForm[jobCategory.uuid].$error">
+                      <!--<div ng-message-exp="['maxlength', 'minlength', 'required']">This field is required. Please select minimum [{jobCategory.min_item}] and maximum [{jobCategory.max_item}] items.</div>-->
+                      <!--<div ng-message="required" ng-show="vacancyForm[jobCategory.uuid].$invalid">[{ 'REQUIRED_FIELD_VALIDATION_TEXT' | translate }]</div>-->
+                      <div ng-message="required">[{ 'REQUIRED_FIELD_VALIDATION_TEXT' | translate }]</div>
+                      <div ng-message="minlength">[{ 'SELECT_MINIMUM_VALIDATION_TEXT' | translate }] [{jobCategory.min_item}] [{ 'ITEMS_VALIDATION_TEXT' | translate }].</div>
+                      <div ng-message="maxlength">[{ 'SELECT_MAXIMUM_VALIDATION_TEXT' | translate }] [{jobCategory.max_item}] [{ 'ITEMS_VALIDATION_TEXT' | translate }].</div>
+
+                    </div>
+                  </md-input-container>
+                </div>
+                <div class="col-md-6">
+                  <md-input-container class="md-block">
+                    <label>[{ 'WEIGHT_FACTOR_TEXT' | translate }]</label>
+                    <input type="number" ng-model="mdDialogData.weightFactor[jobCategory.uuid]">
+                  </md-input-container>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <h2 class="modal-subtitle">[{ 'GENERAL_VACANCY_INFORMATION' | translate }]</h2>
+            </div>
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <label>[{ 'TEAM_AND_WAY_OF_WORKING' | translate }]</label>
+                <textarea ng-model="mdDialogData.way_of_working" rows="4" md-select-on-focus></textarea>
+              </md-input-container>
+            </div>
+            <div class="col-md-6">
+              <md-input-container class="md-block custom-md-input">
+                <label>[{ 'EDUCATION_NECESSARY' | translate }]</label>
+                <textarea ng-model="mdDialogData.education_necessary" rows="4" md-select-on-focus></textarea>
+              </md-input-container>
+            </div>
+            <div class="col-md-6 mb-3" ng-show="!isUpdate">
+              <md-input-container class="md-block custom-md-input">
+                <label>[{ 'COMPANY_LIST' | translate }] <span class="required-sign">*</span></label>
+                <md-select ng-model="mdDialogData.selectedCompany" aria-label="filteritem" class="md-block">
+                  <md-option ng-repeat="item in parentCtrl.companyList" ng-value="item" ng-selected="item.uuid == mdDialogData.selectedCompany.uuid">[{item.name}]</md-option>
+                </md-select>
+                <div class="md-errors-spacer" ng-show="parentCtrl.addVacancyErrorMessage">[{parentCtrl.errors.company_uuid}]</div>
+              </md-input-container>
+            </div>
+            <div class="col-md-6 mb-3" ng-show="isUpdate">
+                <md-input-container class="md-block">
+                    <p class="question-item"><strong>[{ 'COMPANY_NAME_TEXT' | translate }] :</strong> [{mdDialogData.selectedCompany.name}]</p>
+                </md-input-container>
+            </div>
+            <div class="col-md-6 mb-3">
+              <md-input-container class="md-block custom-md-input">
+                <label>[{ 'SALARY_RANGE' | translate }]</label>
+                <textarea ng-model="mdDialogData.salary" rows="1" md-select-on-focus></textarea>
+                <div class="md-errors-spacer" ng-show="parentCtrl.addVacancyErrorMessage">[{parentCtrl.errors.salary}]</div>
+              </md-input-container>
+            </div>
+
+            <div class="col-auto mb-3 custom-md-input">
+              <md-datepicker ng-model="mdDialogData.end_date_picker" md-placeholder="[{ 'END_DATE_TEXT' | translate }] * " class="md-block"></md-datepicker>
+              <div class="md-errors-spacer text-right" ng-show="parentCtrl.addVacancyErrorMessage">[{parentCtrl.errors.end_date}]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button href="" ng-click="vcCtrl.cancel()" target="_blank" md-autofocus>
+        [{ 'CANCEL_TEXT' | translate }]
+      </md-button>
+      <span flex></span>
+      <md-button ng-show="!isUpdate" ng-click="parentCtrl.addNewVacancy(mdDialogData)" class="eq-md-button-primary">
+        [{ 'ADD_TEXT' | translate }]
+      </md-button>
+      <md-button ng-show="isUpdate" ng-click="parentCtrl.updateExistingVacancy(mdDialogData)" class="eq-md-button-primary">
+        [{ 'UPDATE_TEXT' | translate }]
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

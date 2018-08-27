@@ -1,0 +1,29 @@
+
+@import '../../../assets/scss/partial/variable';
+@import '../../../assets/scss/partial/mixin';
+
+.faq-status {
+    color: $secondary-color;
+    margin-top: 10px;
+}
+.question-answer-view {
+    .question-item {
+        font-size: 20px;
+        margin-bottom: 10px;
+        strong {
+
+        }
+    }
+    .answer-item {
+        strong {
+
+        }
+        span {
+            padding: 10px 0;
+            display: block;
+            text-align: right;
+            font-size: 14px;
+            color: #666;
+        }
+    }
+}
