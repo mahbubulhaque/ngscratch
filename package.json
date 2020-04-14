@@ -75,7 +75,7 @@
     "font-awesome": "4.7.0",
     "fontmin-webpack": "1.0.2",
     "html-loader": "0.5.1",
-    "jquery": "3.2.1",
+    "jquery": "3.5.0",
     "jslizer": "1.0.93",
     "lodash": "4.17.11",
     "match-media": "0.2.0",
