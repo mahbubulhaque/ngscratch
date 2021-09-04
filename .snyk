@@ -1,0 +1,14 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.21.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:minimatch:20160620':
+    - angular-multiple-select > gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2021-09-04T03:45:17.338Z'
+    - angular-multiple-select > gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2021-09-04T03:45:17.338Z'
+    - angular-multiple-select > gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2021-09-04T03:45:17.338Z'
+    - angular-multiple-select > gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2021-09-04T03:45:17.338Z'
