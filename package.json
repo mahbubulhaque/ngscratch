@@ -20,7 +20,9 @@
     "lint": "eslint src config",
     "lint:fix": "npm run lint -- --fix",
     "install_frontend": "npm install",
-    "watch": " ./node_modules/webpack/bin/webpack.js --watch --watch-poll"
+    "watch": " ./node_modules/webpack/bin/webpack.js --watch --watch-poll",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "angular-translate": "^2.18.1",
@@ -73,7 +75,7 @@
     "animate.css": "3.6.1",
     "bootstrap": "4.3.1",
     "font-awesome": "4.7.0",
-    "fontmin-webpack": "1.0.2",
+    "fontmin-webpack": "3.0.1",
     "html-loader": "0.5.1",
     "jquery": "3.2.1",
     "jslizer": "1.0.93",
@@ -82,6 +84,8 @@
     "material-design-icons": "3.0.1",
     "ng-file-upload": "12.2.13",
     "normalize.css": "7.0.0",
-    "rxjs": "5.5.10"
-  }
+    "rxjs": "5.5.10",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
